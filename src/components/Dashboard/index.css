@@ -1,0 +1,43 @@
+.details {
+	padding: 0;	
+	margin: auto;
+}
+
+h1 {
+	text-align: left;
+	padding-left: none;
+}
+
+.info {
+	display: inline-block;
+	width: 40%;
+	padding: 20px;
+}
+
+.details-section {
+	background: #F5F5F5;
+	display: inline-block;
+	margin-left: 100px;
+	margin-right: 100px;
+}
+
+.description {
+	padding-left: none;
+	font-size: 13px;
+	line-height: 1.7em;
+}
+
+.buy {
+	float: left;
+	margin-left: 20px;
+	margin-bottom: 20px;
+}
+
+.buy-btn {
+	background-color: #73E4CA;
+	color: #2E584E;
+	padding: 14px 30px;
+	border: 1px solid #65C9B2;
+	font-size: 16px;
+	border-radius: 4px;
+}

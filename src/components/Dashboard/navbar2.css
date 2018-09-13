@@ -1,0 +1,26 @@
+.nav2 {
+  padding: 10px 16px;
+  background: #fdd947;
+}
+
+.logo2 {
+  font-family: 'Amatic SC', cursive;
+  font-size: 70px;
+  margin-top: 0px;
+  display: inline-block;
+}
+
+.links {
+  font-family: 'Noto sans', normal;
+  display: inline-block;
+  float: right;
+  font-size: 25px;
+}
+
+li {
+  text-align: left;
+}
+
+a:visited {
+  color: #252525;
+}
