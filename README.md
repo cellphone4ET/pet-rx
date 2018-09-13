@@ -1,4 +1,7 @@
-Cluster app
+Pet.rx
 
-1.  npm i
-1.  npm start
+To-Do:
+
+1. check data structure
+2. check onscroll nav bar
+3. fix whitespace above header/nav
