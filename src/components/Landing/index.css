@@ -1,31 +1,82 @@
+hr {
+  color: #fdd947;
+}
 
+h2 {
+  font-weight: bold;
+  font-size: 1.3em;
+}
 
 .landingHeader {
-	font-family: 'Amatic SC', cursive;
-	font-size: 200px;
+  font-family: "Amatic SC", cursive;
+  letter-spacing: -15px;
+  font-weight: bold;
+  font-size: 200px;
   text-align: left;
-	margin-left: 10%;
+  margin-left: 10%;
   position: relative;
   top: 200px;
   color: black;
 }
 
-p, h2 {
-	text-align: left;
-	line-height: 1.7em;
-}
-
 .hero {
-	height: 800px;
-	background-size: cover;
-	background-image: url("https://images.unsplash.com/photo-1531617494862-4e322fb560c9?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=b997cc348b85d4663263413bb725b2d1&auto=format&fit=crop&w=1351&q=80");
+  height: 800px;
+  background-size: cover;
+  background-image: url("https://images.unsplash.com/photo-1531617494862-4e322fb560c9?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=b997cc348b85d4663263413bb725b2d1&auto=format&fit=crop&w=1351&q=80");
 }
 
-.section {
-	max-width: 30%;
-	float: left;
+.card-content {
+  font-family: "Noto Sans", normal;
+  text-align: center;
+  line-height: 1.7em;
+  border-color: black;
 }
 
-.highlights {
-	display: inline-block;
+.bottombuttons {
+  font-family: "Noto Sans", normal;
+  right: 100%;
+  display: inline-block;
+  float: right;
+  background-color: #252525;
+  color: #ffffff;
+  height: 50px;
+  width: 15%;
+  color: #ffffff;
+  font-size: 20px;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.bottombuttonsbox {
+  margin-top: 100px;
+}
+
+.pawimage {
+  display: inline-block;
+  width: 100%;
+  height: 50px;
+}
+
+#main-statement {
+  text-align: center;
+  margin: 60px 0px 60px 0px;
+  font-family: "Noto Sans", normal;
+  font-size: 45px;
+  letter-spacing: -5px;
+}
+
+#firstline {
+  text-align: center;
+  width: 25%;
+  margin-bottom: 100px;
+  color: #fdd947;
+  border-color: #fdd947;
+}
+
+#petrx {
+  margin-top: 30px;
+  font-family: "Amatic SC", cursive;
+  font-weight: bold;
+  font-size: 150px;
+  letter-spacing: -7px;
 }

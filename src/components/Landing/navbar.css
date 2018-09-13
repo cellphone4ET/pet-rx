@@ -1,37 +1,43 @@
 .logo {
   font-color: #252525;
-  font-family: 'Amatic SC', cursive;
-  font-size: 30px;
+  letter-spacing: -5px;
+  font-family: "Amatic SC", cursive;
+  font-weight: bold;
+  font-size: 70px;
   display: inline-block;
   margin-top: 0px;
   margin-bottom: 0px;
 }
 
 .button {
+  font-family: "Noto Sans", normal;
   right: 100%;
   display: inline-block;
   float: right;
+  background-color: #252525;
+  color: #ffffff;
+  height: 50px;
+  width: 15%;
+  color: #ffffff;
+  font-size: 20px;
+  border-radius: 5px;
+  margin-top: 10px;
 }
 
-/* Style the header */
+/* Start css for sticky nav DO NOT EDIT*/
 .header {
   padding: 10px 16px;
   background: #fdd947;
 }
-
-/* Page content */
 .content {
   padding: 16px;
 }
-
-/* The sticky class is added to the header with JS when it reaches its scroll position */
 .sticky {
   position: fixed;
   top: 0;
-  width: 100%
+  width: 100%;
 }
-
-/* Add some top padding to the page content to prevent sudden quick movement (as the header gets a new position at the top of the page (position:fixed and top:0) */
 .sticky + .content {
   padding-top: 102px;
 }
+/* END STICKY NAV CSS */
