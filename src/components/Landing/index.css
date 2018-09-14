@@ -66,6 +66,7 @@ footer {
   margin-top: 10px;
   font-size: 1.2em;
   width: 25%;
+  color: blue;
 }
 
 .petrx {
@@ -114,6 +115,10 @@ footer {
   border-color: #fdd947;
   margin-top: 100px;
   margin-bottom: 160px;
+}
+
+#login {
+  color: #252525;
 }
 
 #bottom-expo {
