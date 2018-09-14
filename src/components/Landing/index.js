@@ -22,7 +22,7 @@ export function LandingPage(props) {
               Take control of your pets health with . . .
               <br />
             </span>
-            <div id="petrx">Pet.rx </div>
+            <div className="petrx">Pet.rx </div>
           </p>
         </div>
 
@@ -93,8 +93,28 @@ export function LandingPage(props) {
 
       <hr id="secondline" />
 
+      <div id="bottom-expo">
+        Managing health records is not an easy task. Whether it be keeping track
+        of your own information or someone else’s, it is way too easy to miss
+        annual checkups due to disorganization and forgetfulness. After an
+        international move with my dog, Yoda, it became even more apparent to me
+        that there had to be a better way to store my pet’s health information
+        in one easily accessible place. <br />
+        <br />Out of this need, Pet.rx was born. <br />
+        <br />Regardless of whether or not you have access to your past
+        veterinarians and their often hard-to-decipher records of your pets
+        health you can now easily store, manage, and track all your pets health
+        information with ease from wherever you are with . . . <br />
+        <div className="petrx petrxdiv">Pet.rx</div>
+        <br />
+      </div>
+
+      <hr id="thirdline" />
+
       <footer>
-        <div className="footerDiv">© Erica Garcia</div>
+        <div className="footerDiv">
+          <p>© Erica Garcia</p>
+        </div>
       </footer>
     </div>
   );

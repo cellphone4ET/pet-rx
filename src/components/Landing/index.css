@@ -51,6 +51,10 @@ footer {
   margin-right: 1.2%;
 }
 
+.bottombuttons:hover {
+  cursor: pointer;
+}
+
 .bottombuttonsbox {
   margin-top: 375px;
   text-align: center;
@@ -62,6 +66,18 @@ footer {
   margin-top: 10px;
   font-size: 1.2em;
   width: 25%;
+}
+
+.petrx {
+  margin-top: 30px;
+  font-family: "Amatic SC", cursive;
+  font-weight: bold;
+  font-size: 150px;
+  letter-spacing: -7px;
+}
+
+.petrxdiv {
+  margin-top: 100px;
 }
 
 .footerDiv {
@@ -85,26 +101,30 @@ footer {
 }
 
 #secondline {
-  margin-bottom: 150px;
-  margin-top: 75px;
-  width: 50%;
+  margin-bottom: 100px;
+  margin-top: 125px;
+  width: 40%;
   color: #fdd947;
   border-color: #fdd947;
 }
 
-#petrx {
-  margin-top: 30px;
-  font-family: "Amatic SC", cursive;
-  font-weight: bold;
-  font-size: 150px;
-  letter-spacing: -7px;
+#thirdline {
+  width: 30%;
+  color: #fdd947;
+  border-color: #fdd947;
+  margin-top: 100px;
+  margin-bottom: 160px;
+}
+
+#bottom-expo {
+  margin: 80px 80px 60px 80px;
+  font-family: "Noto Sans", normal;
+  font-size: 1.4em;
+  text-align: center;
+  line-height: 35px;
 }
 
 @media only screen and (max-width: 720px) {
-  #main-statement {
-    font-size: 25px;
-  }
-
   .hero {
     background-size: cover;
     background-image: url(./Leo_Small.png);
@@ -121,5 +141,19 @@ footer {
   .bottombuttons {
     height: 75px;
     width: 35%;
+  }
+
+  #main-statement {
+    font-size: 25px;
+  }
+
+  #secondline {
+    margin-bottom: 25px;
+  }
+  #bottom-expo {
+    margin: 80px 50px 60px 50px;
+    font-size: 1em;
+    text-align: center;
+    line-height: 23px;
   }
 }
