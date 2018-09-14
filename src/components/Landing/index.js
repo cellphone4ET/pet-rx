@@ -19,16 +19,11 @@ export function LandingPage(props) {
         <div id="main-statement">
           <p>
             <span id="main-statment-span">
-              Take control of your pets health with
+              Take control of your pets health with . . .
               <br />
             </span>
-            <div id="petrx">Pet.rx</div>
+            <div id="petrx">Pet.rx </div>
           </p>
-          <img
-            className="pawimage"
-            src="https://image.flaticon.com/icons/svg/87/87979.svg"
-            alt="paw prints"
-          />
         </div>
 
         <hr id="firstline" />
@@ -43,8 +38,9 @@ export function LandingPage(props) {
             <div className="card-content">
               <h2>Your Pets Health</h2>
               <p>
-                Can’t remember the last time your pet had their rabies
-                vaccination? How about the last time they went to the vet?{" "}
+                When was the last time your pet went to the vet? How about the
+                date of their most recent rabies vaccination? Can't remember?
+                <br />You're not alone.
               </p>
             </div>
           </div>
@@ -60,10 +56,9 @@ export function LandingPage(props) {
             <div className="card-content">
               <h2>Save and Track</h2>
               <p>
-                Pet.rx helps you organize and track your pet’s health
-                information in a convenient and accessible way so you can get
-                back to spending more of your time with your four-legged family
-                member.
+                Pet.rx helps you organize your pet’s health information so you
+                can get back to spending more of your time with your four-legged
+                family member.
               </p>
             </div>
           </div>
@@ -80,8 +75,8 @@ export function LandingPage(props) {
               <h2>Let Pet.rx Work For You</h2>
               <p>
                 With the ability to track vaccination records, weight, chronic
-                conditions, amongst other things across time you’ll never be
-                left wondering
+                conditions, and other relevant metrics across time you’ll never
+                be left wondering the state of your pets health again.
               </p>
             </div>
           </div>
@@ -91,7 +86,16 @@ export function LandingPage(props) {
       <div className="bottombuttonsbox">
         <button className="bottombuttons">Demo</button>
         <button className="bottombuttons">Sign Up</button>
+        <div className="signup-login-div">
+          <Link to="/login">Login</Link>
+        </div>
       </div>
+
+      <hr id="secondline" />
+
+      <footer>
+        <div className="footerDiv">© Erica Garcia</div>
+      </footer>
     </div>
   );
 }

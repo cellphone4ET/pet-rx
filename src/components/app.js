@@ -6,8 +6,7 @@ import LandingPage from "./Landing/";
 import Dashboard from "./Dashboard";
 import AddPet from "./AddPet";
 import SignUp from "./SignUp";
-
-
+import Login from "./Login";
 
 export class App extends React.Component {
   render() {
@@ -18,6 +17,7 @@ export class App extends React.Component {
         <Route exact path="/addpet" component={AddPet} />
         <Route exact path="/signup" component={SignUp} />
         <Route exact path="/logout" component={LandingPage} />
+        <Route exact path="/login" componenet={Login} />
       </div>
     );
   }
