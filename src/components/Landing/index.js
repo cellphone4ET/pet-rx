@@ -84,8 +84,12 @@ export function LandingPage(props) {
       </div>
 
       <div className="bottombuttonsbox">
-        <button className="bottombuttons">Demo</button>
-        <button className="bottombuttons">Sign Up</button>
+        <Link to="/dashboard">
+          <button className="bottombuttons">Demo</button>
+        </Link>
+        <Link to="/signup">
+          <button className="bottombuttons">Sign Up</button>
+        </Link>
         <div className="signup-login-div">
           <Link to="/login">
             <span id="login">Login</span>
