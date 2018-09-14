@@ -1,5 +1,12 @@
- language: node_js
- node_js: node
- cache:
-   directories:
-     - node_modules
+language: node_js
+node_js: node
+cache:
+  directories:
+  - node_modules
+deploy:
+  provider: heroku
+  api_key:
+    secure: dshhEgxOHCJo1qSbXJPMGgfOZTCQ1f2OManoKXrTz26hBWQCBf8sPh58a5LB4WjJ+FGnW9Kkf/EZoas/BwVgjcx0uOlSMyRrOc5WJHVTnzcU8ZY5Pfbcb7dr3JEkbspwb9tZsN46KFDlz81/WuV1qsCYxx5KAzEHaVVFgji7160gT7aJENaopBsTgJh2/C1CRUL8dCmE+V9hxLJM7kp/F7JLxyde610o3rUMOn7b/g0kd/HpxaTtT3Bdfpc3YRfBAOkZrchxeWYX9kxvbbphZ3fd/AZd/eXpPQkkGqdQQrr/FE930bJNQtMzVg+Z0480Ep8MBVuwlUeDWbpDMTkXHbrcLJIhlf7MPEf08fLSMFIc16VlBrnyTc3weZNQzWvXl6zdxoyO0q82TY7zuLAP4WT1cndTFA4oz5G577jd7Fsi5U6zw7YOiZg/sLWRqdDUh5hYyNT5xfkXY4WQRXDyItNIkwoxGHUEfJmqMODGD26dxbStT8xlplnK9L4zRsdELpjhtABVFyKY7G3JDcgxYHr06zYAse52Fvz9fUUJDI/aax+zLWZQSWwO0JOiBAS8t5iaP5JdZAjPUch/f504Z/pjhYSsMWO7Ks6+MYYJVNqbYUk+7O+qiYDm/PfEgwtjFjLFkzw2SoSkM7Pvk9SZEagLVUqZU74jSH1Xw8Y3TAc=
+  app: thawing-taiga-26814
+  on:
+    repo: cellphone4ET/pet-rx
