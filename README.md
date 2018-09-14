@@ -2,6 +2,6 @@ Pet.rx
 
 To-Do:
 
-1. check data structure
-2. check onscroll nav bar
-3. fix whitespace above header/nav
+1. set up heroku/CI
+2. login/sign up redux forms
+3. css + responsive design for login and sign up pages
