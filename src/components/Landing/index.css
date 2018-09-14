@@ -129,6 +129,10 @@ footer {
   line-height: 35px;
 }
 
+#me {
+  float: right;
+}
+
 @media only screen and (max-width: 720px) {
   .hero {
     background-size: cover;

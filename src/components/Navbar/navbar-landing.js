@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./navbar.css";
+import "./navbar-landing.css";
 
-export default class Navbar extends React.Component {
+export default class NavbarLanding extends React.Component {
   componentDidMount() {
     // code for sticky navbar on landingpage
     window.onscroll = myFunction;

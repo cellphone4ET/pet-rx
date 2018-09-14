@@ -1,0 +1,22 @@
+.logo {
+  font-color: #252525;
+  letter-spacing: -5px;
+  font-family: "Amatic SC", cursive;
+  font-weight: bold;
+  font-size: 70px;
+  display: inline-block;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.header1 {
+  position: absolute;
+  width: 100%;
+  padding: 10px 16px;
+  background: #fdd947;
+  height: 60vh;
+  box-shadow: 3px 3px 7px grey;
+}
+.content {
+  padding: 16px;
+}

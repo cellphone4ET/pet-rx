@@ -1,9 +1,8 @@
 import React from "react";
 // import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import Navbar from "./navbar";
+import NavbarLanding from "../Navbar/navbar-landing";
 import "./index.css";
-import "./navbar.css";
 import "./float-grid.css";
 
 export function LandingPage(props) {
@@ -13,7 +12,7 @@ export function LandingPage(props) {
         <h1 className="landingHeader">Pet.rx</h1>
       </div>
 
-      <Navbar />
+      <NavbarLanding />
 
       <div className="threebasics content">
         <div id="main-statement">
@@ -119,7 +118,7 @@ export function LandingPage(props) {
 
       <footer>
         <div className="footerDiv">
-          <p>© Erica Garcia</p>
+          <p id="me">©|Erica Garcia</p>
         </div>
       </footer>
     </div>

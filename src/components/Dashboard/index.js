@@ -1,7 +1,7 @@
 import React from "react";
 // import { connect } from "react-redux";
 // import { Link, Redirect } from "react-router-dom";
-import Navbar2 from "./navbar2";
+import NavbarDash from "../Navbar/navbar-dash";
 import Pets from "./pets";
 import "./index.css";
 
@@ -10,7 +10,7 @@ import "./index.css";
 export function Dashboard(props) {
   return (
     <div className="mainDiv">
-      <Navbar2 />
+      <NavbarDash />
       <Pets />
     </div>
   );
