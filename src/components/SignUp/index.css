@@ -1,0 +1,23 @@
+#form-div {
+  width: 40%;
+  height: 400px;
+  margin-top: 150px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  position: absolute;
+  background-color: #f3f3f3;
+  z-index: 1;
+  box-shadow: 3px 3px 7px grey;
+  border-radius: 5px;
+}
+
+form {
+  display: block;
+}
+
+@media only screen and (max-width: 720px) {
+  #form-div {
+    width: 70%;
+  }
+}

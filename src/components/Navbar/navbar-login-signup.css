@@ -3,7 +3,7 @@
   letter-spacing: -5px;
   font-family: "Amatic SC", cursive;
   font-weight: bold;
-  font-size: 70px;
+  font-size: 100px;
   display: inline-block;
   margin-top: 0px;
   margin-bottom: 0px;
@@ -19,4 +19,10 @@
 }
 .content {
   padding: 16px;
+}
+
+@media only screen and (max-width: 720px) {
+  .logo {
+    font-size: 70px;
+  }
 }
