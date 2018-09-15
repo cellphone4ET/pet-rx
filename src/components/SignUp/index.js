@@ -3,8 +3,9 @@ import { Field, reduxForm, focus } from "redux-form";
 // import { registerUser } from "../actions/users";
 // import { login } from "../actions/auth";
 import { Link } from "react-router-dom";
-import Input from "../input";
+import Input from "../Input";
 import NavbarLoginSignUp from "../Navbar/navbar-login-signup";
+import Footer from "../Footer";
 import "./index.css";
 // import { required, nonEmpty, matches, length, isTrimmed } from "../validators";
 // const passwordLength = length({ min: 10, max: 72 });
@@ -12,7 +13,6 @@ import "./index.css";
 
 export class SignUp extends React.Component {
   onSubmit(values) {
-    console.log(values);
     // const {username, password, firstName, lastName} = values;
     // const user = {username, password, firstName, lastName};
     // return this.props
@@ -58,6 +58,7 @@ export class SignUp extends React.Component {
             </Link>
           </form>
         </div>
+        <Footer />
       </div>
     );
   }

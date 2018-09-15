@@ -1,0 +1,19 @@
+footer {
+  background-color: #f3f3f3;
+  height: 50px;
+  width: 100%;
+  font-family: "Noto Sans", normal;
+  font-weight: bold;
+  font-size: 1.3em;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+}
+
+#me {
+  float: right;
+}
+
+.footerDiv {
+  padding: 15px;
+}

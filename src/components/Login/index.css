@@ -12,8 +12,30 @@
   border-radius: 5px;
 }
 
-form {
-  display: block;
+#login-button {
+  box-shadow: 3px 3px 7px grey;
+  border-radius: 3px;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1em;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  position: absolute;
+  width: 50%;
+  color: #ffffff;
+  height: 40px;
+  background-color: #252525;
+}
+
+.login-form {
+  font-family: "Noto Sans", normal;
+  font-size: 1.4em;
+  font-weight: bold;
+  margin-top: 30px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  position: absolute;
 }
 
 @media only screen and (max-width: 720px) {

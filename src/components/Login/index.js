@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Field, reduxForm, focus } from "redux-form";
-import Input from "../input";
+import Input from "../Input";
+import Footer from "../Footer";
 import NavbarLoginSignUp from "../Navbar/navbar-login-signup";
 import "./index.css";
 // import {login} from '../actions/auth';
@@ -26,11 +27,11 @@ export class Login extends React.Component {
       <div>
         <NavbarLoginSignUp />
         <div id="form-div">
+          <p id="login-banner">Login</p>
           <form
             className="login-form"
             onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}
           >
-            {error}
             <label htmlFor="username">Username</label>
             <Field
               component={Input}
@@ -47,12 +48,15 @@ export class Login extends React.Component {
               id="password"
               // validate={[required, nonEmpty]}
             />
-
             <Link to="/dashboard">
-              <button>Log in</button>
+              <button id="login-button">Submit</button>
             </Link>
+            <br />
+            <br />
+            {error}
           </form>
         </div>
+        <Footer />
       </div>
     );
   }

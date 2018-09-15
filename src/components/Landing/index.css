@@ -3,15 +3,6 @@ h2 {
   font-size: 1.3em;
 }
 
-footer {
-  background-color: #f3f3f3;
-  height: 50px;
-  width: 100%;
-  font-family: "Noto Sans", normal;
-  font-weight: bold;
-  font-size: 1.3em;
-}
-
 .landingHeader {
   font-family: "Amatic SC", cursive;
   letter-spacing: -15px;
@@ -81,10 +72,6 @@ footer {
   margin-top: 100px;
 }
 
-.footerDiv {
-  padding: 15px;
-}
-
 #main-statement {
   text-align: center;
   margin: 60px 0px 40px 0px;
@@ -127,10 +114,6 @@ footer {
   font-size: 1.4em;
   text-align: center;
   line-height: 35px;
-}
-
-#me {
-  float: right;
 }
 
 @media only screen and (max-width: 720px) {

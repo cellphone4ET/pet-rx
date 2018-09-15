@@ -20,7 +20,7 @@ export default class NavbarLanding extends React.Component {
   render() {
     return (
       <div className="nav header" id="myHeader">
-        <div className="logo">Pet.rx</div>
+        <div className="logo1">Pet.rx</div>
 
         <Link to="/signup">
           <button className="button">Get started!</button>

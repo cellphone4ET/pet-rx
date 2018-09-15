@@ -2,6 +2,7 @@ import React from "react";
 // import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import NavbarLanding from "../Navbar/navbar-landing";
+import Footer from "../Footer";
 import "./index.css";
 import "./float-grid.css";
 
@@ -116,11 +117,7 @@ export function LandingPage(props) {
 
       <hr id="thirdline" />
 
-      <footer>
-        <div className="footerDiv">
-          <p id="me">©|Erica Garcia</p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
