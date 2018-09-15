@@ -12,9 +12,7 @@ export function LandingPage(props) {
       <div className="hero">
         <h1 className="landingHeader">Pet.rx</h1>
       </div>
-
       <NavbarLanding />
-
       <div className="threebasics content">
         <div id="main-statement">
           <p>
@@ -82,7 +80,6 @@ export function LandingPage(props) {
           </div>
         </div>
       </div>
-
       <div className="bottombuttonsbox">
         <Link to="/dashboard">
           <button className="bottombuttons">Demo</button>
@@ -96,9 +93,7 @@ export function LandingPage(props) {
           </Link>
         </div>
       </div>
-
       <hr id="secondline" />
-
       <div id="bottom-expo">
         Managing health records is not an easy task. Whether it be keeping track
         of your own information or someone else’s, it is way too easy to miss
@@ -114,10 +109,8 @@ export function LandingPage(props) {
         <div className="petrx petrxdiv">Pet.rx</div>
         <br />
       </div>
-
       <hr id="thirdline" />
-
-      <Footer />
+      // <Footer />
     </div>
   );
 }
