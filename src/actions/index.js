@@ -5,12 +5,12 @@ export const addVaccine = (vaccination, petIndex) => ({
   petIndex
 });
 
-// export const ADD_CHECKUP = "ADD_CHECKUP";
-// export const addCheckup = (checkup, petIndex) => ({
-//   type: ADD_CHECKUP,
-//   checkup,
-//   petIndex
-// });
+export const ADD_CHECKUP = "ADD_CHECKUP";
+export const addCheckup = (checkup, petIndex) => ({
+  type: ADD_CHECKUP,
+  checkup,
+  petIndex
+});
 
 // export const FETCH_BOARD_SUCCESS = "FETCH_BOARD_SUCCESS";
 // export const fetchBoardSuccess = board => ({
