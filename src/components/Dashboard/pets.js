@@ -1,97 +1,67 @@
 import React from "react";
 import Pet from "./pet";
+
 let petsArray = [
   {
-    Basic_Information: {
-      name: "Murphy",
+    basic_information: {
+      name: "Tina",
       species: "Dog",
-      license: "#01928387465",
-      MicroChip: "#1029384756",
-      Birthday: "10/01/2016",
-      Age: "2"
+      age: "2"
     },
-    Shelter_Breeder: {
-      Name: "Tacoma Humane Society",
-      Phone: "253-867-5309"
+    veterinary_information: {
+      name: "Button's Veterinary Hospital",
+      phone: "787-908-7689"
     },
-    Veterinary_Information: {
-      Name: "Button's Veterinary Hospital",
-      Phone: "787-908-7689"
+    health_conditions: {
+      allergies: "Grass",
+      chronic_Conditions: "Invertebral disc disease"
     },
-    Health_Conditions: {
-      Allergies: "Grass",
-      Chronic_Conditions: "Invertebral disc disease"
+    checkups: {
+      checkup: "fhsdif",
+      checkup_history: []
     },
-    Checkup_History: {
-      Checkup: {
-        date: "10/01/2017",
-        notes: "One year checkup"
-      }
+    vaccinations: {
+      vaccination: "Rabies, 10/10/89",
+      vaccination_history: []
     },
-    Vaccination_History: {
-      Vaccination: {
-        type: "Rabies",
-        date: "10/01/2017",
-        history: ["10/01/2017"]
-      }
-    },
-    Weight: {
-      Current_Weight: {
-        Weight: "90lb",
-        date: "10/01/2017"
-      },
-      Weight_History: []
+    weight: {
+      current_weight: "90",
+      weight_history: []
     }
   },
 
   {
-    Basic_Information: {
-      name: "Lucy",
+    basic_information: {
+      name: "Tina",
       species: "Dog",
-      license: "#01928387465",
-      MicroChip: "#1029384756",
-      Birthday: "10/01/2016",
-      Age: "2"
+      age: "2"
     },
-    Shelter_Breeder: {
-      Name: "Tacoma Humane Society",
-      Phone: "253-867-5309"
+    veterinary_information: {
+      name: "Button's Veterinary Hospital",
+      phone: "787-908-7689"
     },
-    Veterinary_Information: {
-      Name: "Button's Veterinary Hospital",
-      Phone: "787-908-7689"
+    health_conditions: {
+      allergies: "Grass",
+      chronic_Conditions: "Invertebral disc disease"
     },
-    Health_Conditions: {
-      Allergies: "Grass",
-      Chronic_Conditions: "Invertebral disc disease"
+    checkups: {
+      checkup: "fhsdif",
+      checkup_history: []
     },
-    Checkup_History: {
-      Checkup: {
-        date: "10/01/2017",
-        notes: "One year checkup",
-        history: ["10/01/2017"]
-      }
+    vaccinations: {
+      vaccination: "Rabies, 10/10/89",
+      vaccination_history: []
     },
-    Vaccination_History: {
-      Vaccination: {
-        type: "Rabies",
-        date: "10/01/2017",
-        history: ["10/01/2017"]
-      }
-    },
-    Weight: {
-      Current_Weight: {
-        Weight: "90lb",
-        date: "10/01/2017"
-      },
-      Weight_History: []
+    weight: {
+      current_weight: "90",
+      weight_history: []
     }
   }
 ];
 
-export default function Pets(props) {
-  let renderedPetsArray = petsArray.map(pet => <Pet {...pet} />);
+let renderedPetsArray = petsArray.map(pet => <Pet {...pet} />);
 
+export default function Pets(props) {
   return (
     <div>
       <h1>Your pets</h1>
