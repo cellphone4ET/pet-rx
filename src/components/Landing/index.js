@@ -110,7 +110,7 @@ export function LandingPage(props) {
         <br />
       </div>
       <hr id="thirdline" />
-      // <Footer />
+      <Footer />
     </div>
   );
 }

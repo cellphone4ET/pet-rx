@@ -1,17 +1,16 @@
-label {
+.signup-login-label {
   margin-bottom: 5px;
 }
 
-input {
+.signup-login-input {
   width: 275px;
   font-family: "Noto Sans", normal;
   font-size: 15px;
   color: #252525;
   margin-bottom: 20px;
-  box-shadow: 3px 3px 7px grey;
 }
 
-#login-banner {
+.login-signup-banner {
   font-family: "Josefin Sans", sans-serif;
   font-size: 2.8em;
   letter-spacing: -3.5px;
@@ -20,19 +19,19 @@ input {
 }
 
 @media only screen and (max-width: 800px) {
-  input {
+  .signup-login-input {
     width: 250px;
   }
 }
 
 @media only screen and (max-width: 700px) {
-  input {
+  .signup-login-input {
     width: 225px;
   }
 }
 
 @media only screen and (max-width: 600px) {
-  input {
+  .signup-login-input {
     width: 200px;
   }
 }

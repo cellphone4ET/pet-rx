@@ -1,7 +1,8 @@
-#form-div {
+#form-div-signup {
   width: 40%;
-  height: 400px;
+  height: 450px;
   margin-top: 150px;
+  margin-bottom: 100px;
   left: 50%;
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
@@ -12,12 +13,34 @@
   border-radius: 5px;
 }
 
-form {
-  display: block;
+.login-signup-button {
+  box-shadow: 3px 3px 7px grey;
+  border-radius: 3px;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1.2em;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  position: absolute;
+  width: 50%;
+  color: #ffffff;
+  height: 40px;
+  background-color: #252525;
+}
+
+.login-form {
+  font-family: "Noto Sans", normal;
+  font-size: 0.9em;
+  font-weight: bold;
+  margin-top: 30px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  position: absolute;
 }
 
 @media only screen and (max-width: 720px) {
-  #form-div {
+  #form-div-signup {
     width: 70%;
   }
 }

@@ -1,66 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
 import Pet from "./pet";
-import QuickAddform from "../Quickaddform";
+import QuickAddform from "../QuickAddForm";
 import { addVaccine, addCheckup } from "../../actions";
-
-let pets = [
-  {
-    basic_information: {
-      name: "Tina",
-      species: "Dog",
-      age: "2"
-    },
-    veterinary_information: {
-      name: "Button's Veterinary Hospital",
-      phone: "787-908-7689"
-    },
-    health_conditions: {
-      allergies: "Grass",
-      chronic_Conditions: "Invertebral disc disease"
-    },
-    checkups: {
-      checkup: "fhsdif",
-      checkup_history: []
-    },
-    vaccinations: {
-      vaccination: "Rabies, 10/10/89",
-      vaccination_history: []
-    },
-    weight: {
-      current_weight: "90",
-      weight_history: []
-    }
-  },
-
-  {
-    basic_information: {
-      name: "Yoda",
-      species: "Dog",
-      age: "6"
-    },
-    veterinary_information: {
-      name: "Button's Veterinary Hospital",
-      phone: "787-908-7689"
-    },
-    health_conditions: {
-      allergies: "Grass",
-      chronic_Conditions: "Invertebral disc disease"
-    },
-    checkups: {
-      checkup: "fhsdif",
-      checkup_history: []
-    },
-    vaccinations: {
-      vaccination: "Rabies, 10/10/89",
-      vaccination_history: []
-    },
-    weight: {
-      current_weight: "90",
-      weight_history: []
-    }
-  }
-];
 
 export class Pets extends React.Component {
   addVaccine(vaccine) {
@@ -72,9 +14,9 @@ export class Pets extends React.Component {
   }
 
   render() {
-    const renderedPets = pets.map((pet, index) => (
+    const renderedPets = this.props.pets.pets.map((pet, index) => (
       <li key={index}>
-        <Pet {...pet} />
+        <Pet index={index} {...pet} />
         <QuickAddform
           type="checkup"
           onAdd={checkup => this.addCheckup(checkup)}
@@ -88,12 +30,14 @@ export class Pets extends React.Component {
 
     return (
       <div>
-        <h1>Your pets</h1>
-        <br />
         <ul>{renderedPets}</ul>
       </div>
     );
   }
 }
 
-export default connect()(Pets);
+const mapStateToProps = state => ({
+  pets: state.pets
+});
+
+export default connect(mapStateToProps)(Pets);

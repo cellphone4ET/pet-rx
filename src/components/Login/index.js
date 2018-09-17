@@ -26,8 +26,8 @@ export class Login extends React.Component {
     return (
       <div>
         <NavbarLoginSignUp />
-        <div id="form-div">
-          <p id="login-banner">Login</p>
+        <div id="form-div-login">
+          <p className="login-signup-banner">Login</p>
           <form
             className="login-form"
             onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}
@@ -49,7 +49,7 @@ export class Login extends React.Component {
               // validate={[required, nonEmpty]}
             />
             <Link to="/dashboard">
-              <button id="login-button">Submit</button>
+              <button className="login-signup-button">Submit</button>
             </Link>
             <br />
             <br />

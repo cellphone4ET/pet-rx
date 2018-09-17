@@ -1,8 +1,9 @@
 import React from "react";
+import { reduxForm, Field } from "redux-form";
 
 import "./index.css";
 
-export default class QuickAddForm extends React.Component {
+export class QuickAddForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -15,6 +16,7 @@ export default class QuickAddForm extends React.Component {
   onSubmit(event) {
     event.preventDefault();
     const text = this.textInput.value.trim();
+    console.log(text);
     if (text && this.props.onAdd) {
       this.props.onAdd(this.textInput.value);
     }
@@ -37,9 +39,15 @@ export default class QuickAddForm extends React.Component {
     }
 
     return (
-      <form onSubmit={this.onSubmit}>
-        <input type="text" ref={input => (this.textInput = input)} />
-        <button>Add</button>
+      <form onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
+        <label htmlFor={this.props.type}>{this.props.type}</label>
+        <Field
+          name={this.props.type}
+          ref={input => (this.textInput = input)}
+          component="input"
+        />
+
+        <button type="submit">Add</button>
         <button type="button" onClick={() => this.setEditing(false)}>
           Cancel
         </button>
@@ -47,3 +55,7 @@ export default class QuickAddForm extends React.Component {
     );
   }
 }
+
+export default reduxForm({
+  form: "quick-add"
+})(QuickAddForm);

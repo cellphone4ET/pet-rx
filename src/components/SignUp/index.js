@@ -5,7 +5,6 @@ import { Field, reduxForm, focus } from "redux-form";
 import { Link } from "react-router-dom";
 import Input from "../Input";
 import NavbarLoginSignUp from "../Navbar/navbar-login-signup";
-import Footer from "../Footer";
 import "./index.css";
 // import { required, nonEmpty, matches, length, isTrimmed } from "../validators";
 // const passwordLength = length({ min: 10, max: 72 });
@@ -24,7 +23,8 @@ export class SignUp extends React.Component {
     return (
       <div>
         <NavbarLoginSignUp />
-        <div id="form-div">
+        <div id="form-div-signup">
+          <p className="login-signup-banner">Signup</p>
           <form
             className="login-form"
             onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}
@@ -54,11 +54,12 @@ export class SignUp extends React.Component {
             />
 
             <Link to="/dashboard">
-              <button>Sign Up</button>
+              <button className="login-signup-button" id="sign-up-button">
+                Sign Up
+              </button>
             </Link>
           </form>
         </div>
-        <Footer />
       </div>
     );
   }
