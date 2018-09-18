@@ -5,25 +5,29 @@ import QuickAddform from "../QuickAddForm";
 import { addVaccine, addCheckup } from "../../actions";
 
 export class Pets extends React.Component {
-  addVaccine(vaccine) {
-    this.props.dispatch(addVaccine(vaccine, this.props.index));
+  addVaccine() {
+    console.log("add vaccine", this.props);
+    const text = this.props.reduxform.values.vaccine;
+    const id = this.props.dispatch(addVaccine(text, id));
   }
 
-  addCheckup(checkup) {
-    this.props.dispatch(addCheckup(checkup, this.props.index));
+  addCheckup(text) {
+    this.props.dispatch(addCheckup(text, this.props.index));
   }
 
   render() {
     const renderedPets = this.props.pets.pets.map((pet, index) => (
-      <li key={index}>
-        <Pet index={index} {...pet} />
+      <li key={pet.id}>
+        <Pet index={pet.id} {...pet} />
         <QuickAddform
+          ref={pet.id}
           type="checkup"
-          onAdd={checkup => this.addCheckup(checkup)}
+          onAdd={() => this.addCheckup()}
         />
         <QuickAddform
+          petId={pet.id}
           type="vaccine"
-          onAdd={vaccine => this.addVaccine(vaccine)}
+          onAdd={() => this.addVaccine()}
         />
       </li>
     ));
@@ -37,7 +41,8 @@ export class Pets extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  pets: state.pets
+  pets: state.pets,
+  reduxform: state.form["quick-add"]
 });
 
 export default connect(mapStateToProps)(Pets);

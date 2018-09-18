@@ -14,7 +14,8 @@ const store = createStore(
     protectedData: protectedDataReducer,
     pets: petRxReducer
   }),
-  applyMiddleware(thunk)
+  applyMiddleware(thunk),
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
 // Hydrate the authToken from localStorage if it exisddt

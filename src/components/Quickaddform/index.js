@@ -15,12 +15,8 @@ export class QuickAddForm extends React.Component {
 
   onSubmit(event) {
     event.preventDefault();
-    const text = this.textInput.value.trim();
-    console.log(text);
-    if (text && this.props.onAdd) {
-      this.props.onAdd(this.textInput.value);
-    }
-    this.textInput.value = "";
+    this.props.onAdd();
+    //
   }
 
   setEditing(editing) {
@@ -39,14 +35,14 @@ export class QuickAddForm extends React.Component {
     }
 
     return (
-      <form onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
+      <form onSubmit={this.onSubmit}>
         <label htmlFor={this.props.type}>{this.props.type}</label>
         <Field
           name={this.props.type}
           ref={input => (this.textInput = input)}
           component="input"
         />
-
+        <Field name="id" ref={this.props.petId} component="input" hidden />
         <button type="submit">Add</button>
         <button type="button" onClick={() => this.setEditing(false)}>
           Cancel

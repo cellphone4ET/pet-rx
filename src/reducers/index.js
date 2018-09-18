@@ -5,8 +5,9 @@ const initialState = {
     {
       basic_information: {
         name: "Tina",
-        species: "Dog",
-        age: "2"
+        species: "Llama",
+        age: "2",
+        id: 6
       },
       veterinary_information: {
         name: "Button's Veterinary Hospital",
@@ -16,25 +17,17 @@ const initialState = {
         allergies: "Grass",
         chronic_Conditions: "Invertebral disc disease"
       },
-      checkups: {
-        checkup: "fhsdif",
-        checkup_history: []
-      },
-      vaccinations: {
-        vaccination: "Rabies, 10/10/89",
-        vaccination_history: []
-      },
-      weight: {
-        current_weight: "90",
-        weight_history: []
-      }
+      checkups: ["April 17, 2018"],
+      vaccinations: ["Rabies, 10/10/89"],
+      weight_history: ["90lbs"]
     },
 
     {
       basic_information: {
         name: "Yoda",
         species: "Dog",
-        age: "6"
+        age: "6",
+        id: 7
       },
       veterinary_information: {
         name: "Button's Veterinary Hospital",
@@ -44,28 +37,21 @@ const initialState = {
         allergies: "Grass",
         chronic_Conditions: "Invertebral disc disease"
       },
-      checkups: {
-        checkup: "fhsdif",
-        checkup_history: []
-      },
-      vaccinations: {
-        vaccination: "Rabies, 10/10/89",
-        vaccination_history: []
-      },
-      weight: {
-        current_weight: "90",
-        weight_history: []
-      }
+      checkups: ["June 5, 2016"],
+      vaccinations: ["DPPT, 07/10/18"],
+      weight_history: ["19lbs"]
     }
   ]
 };
 
 export const petRxReducer = (state = initialState, action) => {
   if (action.type === actions.ADD_VACCINE) {
+    console.log(action);
     let pets = state.pets.map((pet, index) => {
       if (index !== action.petIndex) {
         return pet;
       }
+      console.log(pet);
       return Object.assign({}, pet, {
         vaccinations: [
           ...pet.vaccinations,
