@@ -5,32 +5,36 @@ import QuickAddform from "../QuickAddForm";
 import { addVaccine, addCheckup } from "../../actions";
 
 export class Pets extends React.Component {
-  addVaccine() {
-    console.log("add vaccine", this.props);
+  addVaccine(id) {
     const text = this.props.reduxform.values.vaccine;
-    const id = this.props.dispatch(addVaccine(text, id));
+    this.props.dispatch(addVaccine(text, id));
   }
 
-  addCheckup(text) {
-    this.props.dispatch(addCheckup(text, this.props.index));
+  addCheckup(id) {
+    console.log("add checkup");
+    const text = this.props.reduxform.values.checkup;
+    this.props.dispatch(addCheckup(text, id));
   }
 
   render() {
-    const renderedPets = this.props.pets.pets.map((pet, index) => (
-      <li key={pet.id}>
-        <Pet index={pet.id} {...pet} />
-        <QuickAddform
-          ref={pet.id}
-          type="checkup"
-          onAdd={() => this.addCheckup()}
-        />
-        <QuickAddform
-          petId={pet.id}
-          type="vaccine"
-          onAdd={() => this.addVaccine()}
-        />
-      </li>
-    ));
+    console.log(this.props, "props");
+    const renderedPets = this.props.pets.pets.map((pet, index) => {
+      return (
+        <li key={pet.id}>
+          <Pet {...pet} />
+          <QuickAddform
+            petId={pet.basic_information.id}
+            type="checkup"
+            onAdd={() => this.addCheckup(pet.basic_information.id)}
+          />
+          <QuickAddform
+            petId={pet.basic_information.id}
+            type="vaccine"
+            onAdd={() => this.addVaccine(pet.basic_information.id)}
+          />
+        </li>
+      );
+    });
 
     return (
       <div>

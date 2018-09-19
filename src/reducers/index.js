@@ -46,33 +46,22 @@ const initialState = {
 
 export const petRxReducer = (state = initialState, action) => {
   if (action.type === actions.ADD_VACCINE) {
-    console.log(action);
-    let pets = state.pets.map((pet, index) => {
-      if (index !== action.petIndex) {
+    let pets = state.pets.map(pet => {
+      if (pet.basic_information.id !== action.petIndex) {
         return pet;
       }
-      console.log(pet);
       return Object.assign({}, pet, {
-        vaccinations: [
-          ...pet.vaccinations,
-          {
-            vaccination: action.vaccine
-          }
-        ]
+        vaccinations: [...pet.vaccinations, action.vaccination]
       });
     });
+    return Object.assign({}, state, { pets });
   } else if (action.type === actions.ADD_CHECKUP) {
-    let pets = state.pets.map((pet, index) => {
-      if (index !== action.petIndex) {
+    let pets = state.pets.map(pet => {
+      if (pet.basic_information.id !== action.petIndex) {
         return pet;
       }
       return Object.assign({}, pet, {
-        checkups: [
-          ...pet.checkups,
-          {
-            checkup: action.checkup
-          }
-        ]
+        checkups: [...pet.checkups, action.checkup]
       });
     });
 

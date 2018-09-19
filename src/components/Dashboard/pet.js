@@ -5,6 +5,7 @@ export default function Pet(props) {
     <div className="pet">
       <p>{props.basic_information.name}</p>
       <p>{props.basic_information.species}</p>
+      <p>{props.basic_information.id}</p>
       <br />
       <p>{props.vaccinations}</p>
       <p>{props.checkups}</p>
