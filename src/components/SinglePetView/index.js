@@ -5,8 +5,6 @@ import NavbarDash from "../Navbar/navbar-dash";
 import Footer from "../Footer";
 import "./index.css";
 
-// can't get these images to render //
-
 export function SinglePetView(props) {
   return (
     <div className="mainDivDash">

@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import Pet from "./pet";
-import QuickAddform from "../QuickAddForm";
+import QuickAddForm from "../QuickAddForm";
 import { addVaccine, addCheckup, addWeight, addNote } from "../../actions";
 
 export class Pets extends React.Component {
@@ -31,22 +31,22 @@ export class Pets extends React.Component {
       return (
         <li key={pet.id}>
           <Pet {...pet} />
-          <QuickAddform
+          <QuickAddForm
             petId={pet.basic_information.id}
             type="checkup"
             onAdd={() => this.addCheckup(pet.basic_information.id)}
           />
-          <QuickAddform
+          <QuickAddForm
             petId={pet.basic_information.id}
             type="vaccine"
             onAdd={() => this.addVaccine(pet.basic_information.id)}
           />
-          <QuickAddform
+          <QuickAddForm
             petId={pet.basic_information.id}
             type="weight"
             onAdd={() => this.addWeight(pet.basic_information.id)}
           />
-          <QuickAddform
+          <QuickAddForm
             petId={pet.basic_information.id}
             type="note"
             onAdd={() => this.addNote(pet.basic_information.id)}
