@@ -16,7 +16,7 @@ export class QuickAddForm extends React.Component {
   onSubmit(event) {
     event.preventDefault();
     this.props.onAdd();
-    //
+    this.setEditing(false);
   }
 
   setEditing(editing) {

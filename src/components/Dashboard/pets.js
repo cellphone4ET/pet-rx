@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import Pet from "./pet";
 import QuickAddform from "../QuickAddForm";
-import { addVaccine, addCheckup } from "../../actions";
+import { addVaccine, addCheckup, addWeight, addNote } from "../../actions";
 
 export class Pets extends React.Component {
   addVaccine(id) {
@@ -11,9 +11,18 @@ export class Pets extends React.Component {
   }
 
   addCheckup(id) {
-    console.log("add checkup");
     const text = this.props.reduxform.values.checkup;
     this.props.dispatch(addCheckup(text, id));
+  }
+
+  addWeight(id) {
+    const text = this.props.reduxform.values.weight;
+    this.props.dispatch(addWeight(text, id));
+  }
+
+  addNote(id) {
+    const text = this.props.reduxform.values.note;
+    this.props.dispatch(addNote(text, id));
   }
 
   render() {
@@ -31,6 +40,16 @@ export class Pets extends React.Component {
             petId={pet.basic_information.id}
             type="vaccine"
             onAdd={() => this.addVaccine(pet.basic_information.id)}
+          />
+          <QuickAddform
+            petId={pet.basic_information.id}
+            type="weight"
+            onAdd={() => this.addWeight(pet.basic_information.id)}
+          />
+          <QuickAddform
+            petId={pet.basic_information.id}
+            type="note"
+            onAdd={() => this.addNote(pet.basic_information.id)}
           />
         </li>
       );

@@ -10,7 +10,7 @@ import "./index.css";
 
 export function Dashboard(props) {
   return (
-    <div className="mainDiv">
+    <div className="mainDivDash">
       <NavbarDash />
       <Pets />
       <Footer />

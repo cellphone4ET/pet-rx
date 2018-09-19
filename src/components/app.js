@@ -7,6 +7,7 @@ import Dashboard from "./Dashboard";
 import AddPet from "./AddPet";
 import SignUp from "./SignUp";
 import Login from "./Login";
+import SinglePetView from "./SinglePetView";
 
 export class App extends React.Component {
   render() {
@@ -18,6 +19,7 @@ export class App extends React.Component {
         <Route exact path="/signup" component={SignUp} />
         <Route exact path="/logout" component={LandingPage} />
         <Route exact path="/login" component={Login} />
+        <Route exact path="/singlepetview" component={SinglePetView} />
       </div>
     );
   }

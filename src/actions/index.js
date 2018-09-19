@@ -12,6 +12,20 @@ export const addCheckup = (checkup, petIndex) => ({
   petIndex
 });
 
+export const ADD_WEIGHT = "ADD_WEIGHT";
+export const addWeight = (weight, petIndex) => ({
+  type: ADD_WEIGHT,
+  weight,
+  petIndex
+});
+
+export const ADD_NOTE = "ADD_NOTE";
+export const addNote = (note, petIndex) => ({
+  type: ADD_NOTE,
+  note,
+  petIndex
+});
+
 // export const FETCH_BOARD_SUCCESS = "FETCH_BOARD_SUCCESS";
 // export const fetchBoardSuccess = board => ({
 //   type: FETCH_BOARD_SUCCESS,
