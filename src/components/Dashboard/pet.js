@@ -1,32 +1,86 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import { currentPet } from "../../actions";
+import QuickAddForm from "../QuickAddForm";
+import { addVaccine, addCheckup, addWeight, addNote } from "../../actions";
 
-export default function Pet(props) {
-  return (
-    <div>
-      <Link to="/singlepetview">
-        <img
-          src={props.basic_information.photo_url}
-          alt={props.basic_information.breed}
-          className="pet-avatar"
-        />
-      </Link>
-      <ul className="pet">
-        <li>Name: {props.basic_information.name}</li>
-        <li>Breed: {props.basic_information.breed}</li>
-        <li>Preferred Vet: {props.veterinary_information.name}</li>
-        <li>Vet Contact: {props.veterinary_information.phone}</li>
-        <li>Allergies: {props.health_conditions.allergies}</li>
-        <li>
-          Chronic Conditions: {props.health_conditions.chronic_conditions}
-        </li>
-        <li>Checkup History: {props.checkups}</li>
-        <li>Vaccination Reccords: {props.vaccinations}</li>
-        <li>Weight History: {props.weight_history}</li>
-        <li>Notes: {props.notes}</li>
+export class Pet extends React.Component {
+  addVaccine(id) {
+    const text = this.props.reduxform.values.vaccine;
+    this.props.dispatch(addVaccine(text, id));
+  }
 
-        <br />
-      </ul>
-    </div>
-  );
+  addCheckup(id) {
+    const text = this.props.reduxform.values.checkup;
+    this.props.dispatch(addCheckup(text, id));
+  }
+
+  addWeight(id) {
+    const text = this.props.reduxform.values.weight;
+    this.props.dispatch(addWeight(text, id));
+  }
+
+  addNote(id) {
+    const text = this.props.reduxform.values.note;
+    this.props.dispatch(addNote(text, id));
+  }
+
+  render() {
+    return (
+      <div>
+        <div className="col-4">
+          <div className="card">
+            <img
+              src={this.props.basic_information.photo_url}
+              alt={this.props.basic_information.breed}
+              className="pet-avatar"
+            />
+            <div className="card-content">
+              <h2>{this.props.basic_information.name}</h2>
+              <ul className="pet">
+                <li>Breed: {this.props.basic_information.breed}</li>
+                <li>Preferred Vet: {this.props.veterinary_information.name}</li>
+                <li>Vet Contact: {this.props.veterinary_information.phone}</li>
+                <li>Allergies: {this.props.health_conditions.allergies}</li>
+                <li>
+                  Chronic Conditions:{" "}
+                  {this.props.health_conditions.chronic_conditions}
+                </li>
+                <li>Checkup History: {this.props.checkups}</li>
+                <li>Vaccination Reccords: {this.props.vaccinations}</li>
+                <li>Weight History: {this.props.weight_history}</li>
+                <li>Notes: {this.props.notes}</li>
+                <QuickAddForm
+                  petId={this.props.basic_information.id}
+                  type="checkup"
+                  onAdd={() => this.addCheckup(this.props.basic_information.id)}
+                />
+                <QuickAddForm
+                  petId={this.props.basic_information.id}
+                  type="vaccine"
+                  onAdd={() => this.addVaccine(this.props.basic_information.id)}
+                />
+                <QuickAddForm
+                  petId={this.props.basic_information.id}
+                  type="weight"
+                  onAdd={() => this.addWeight(this.props.basic_information.id)}
+                />
+                <QuickAddForm
+                  petId={this.props.basic_information.id}
+                  type="note"
+                  onAdd={() => this.addNote(this.props.basic_information.id)}
+                />
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
 }
+
+const mapStateToProps = state => ({
+  reduxform: state.form["quick-add"]
+});
+
+export default connect(mapStateToProps)(Pet);

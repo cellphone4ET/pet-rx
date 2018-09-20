@@ -4,7 +4,7 @@ import { Route, withRouter } from "react-router-dom";
 
 import LandingPage from "./Landing/";
 import Dashboard from "./Dashboard";
-import AddPet from "./AddPet";
+import AddPetForm from "./AddPetForm";
 import SignUp from "./SignUp";
 import Login from "./Login";
 import SinglePetView from "./SinglePetView";
@@ -15,11 +15,10 @@ export class App extends React.Component {
       <div className="app">
         <Route exact path="/" component={LandingPage} />
         <Route exact path="/dashboard" component={Dashboard} />
-        <Route exact path="/addpet" component={AddPet} />
+        <Route exact path="/addpet" component={AddPetForm} />
         <Route exact path="/signup" component={SignUp} />
         <Route exact path="/logout" component={LandingPage} />
         <Route exact path="/login" component={Login} />
-        <Route exact path="/singlepetview" component={SinglePetView} />
       </div>
     );
   }

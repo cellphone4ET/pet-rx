@@ -50,10 +50,10 @@ const initialState = {
 
     {
       basic_information: {
-        name: "Squeaky",
+        name: "Ears",
         photo_url:
-          "https://images.unsplash.com/photo-1425082661705-1834bfd09dca?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=37bb70209e862ea907fc1d2a80daadd1&auto=format&fit=crop&w=1355&q=80",
-        breed: "hampster",
+          "https://images.unsplash.com/photo-1535241749838-299277b6305f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a6953c6f70087b9e4de75a37cec9afe9&auto=format&fit=crop&w=1284&q=80",
+        breed: "Angora",
         age: "1",
         id: 2
       },
@@ -66,9 +66,9 @@ const initialState = {
         chronic_conditions: "none"
       },
       checkups: ["February 17, 2018"],
-      vaccinations: ["hampster-virus, 11/10/17"],
-      weight_history: [".5bs"],
-      notes: ["likes runnning on his wheel"]
+      vaccinations: ["bunny-virus, 11/10/17"],
+      weight_history: ["5lbs"],
+      notes: ["likes digging in the garden for carrots"]
     }
   ]
 };
@@ -121,6 +121,14 @@ export const petRxReducer = (state = initialState, action) => {
       pets
     });
   }
+  // else if (action.type === actions.CURRENT_PET) {
+  //   return Object.assign({}, current_pet, {
+  //     current_pet: [...state.current_pet, action.current_pet]
+  //   });
+  //   return Object.assign({}, state, {
+  //     current_pet
+  //   });
+  // }
   // else if (action.type === actions.FETCH_BOARD_SUCCESS) {
   //   return action.board;
   // }
