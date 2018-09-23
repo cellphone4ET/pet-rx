@@ -26,11 +26,16 @@ export const addNote = (note, petIndex) => ({
   petIndex
 });
 
-export const CURRENT_PET = "CURRENT_PET";
-export const currentPet = petIndex => ({
-  type: CURRENT_PET,
-  petIndex
+export const ADD_PET = "ADD_PET";
+export const addPet = pet => ({
+  type: ADD_PET,
+  pet
 });
+// export const CURRENT_PET = "CURRENT_PET";
+// export const currentPet = petIndex => ({
+//   type: CURRENT_PET,
+//   petIndex
+// });
 
 // export const FETCH_BOARD_SUCCESS = "FETCH_BOARD_SUCCESS";
 // export const fetchBoardSuccess = board => ({

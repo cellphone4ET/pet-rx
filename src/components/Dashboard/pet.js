@@ -1,6 +1,5 @@
 import React from "react";
 import { connect } from "react-redux";
-import { currentPet } from "../../actions";
 import QuickAddForm from "../QuickAddForm";
 import { addVaccine, addCheckup, addWeight, addNote } from "../../actions";
 
@@ -26,6 +25,7 @@ export class Pet extends React.Component {
   }
 
   render() {
+    console.log(this.props.basic_information);
     return (
       <div>
         <div className="col-4">
@@ -50,27 +50,27 @@ export class Pet extends React.Component {
                 <li>Vaccination Reccords: {this.props.vaccinations}</li>
                 <li>Weight History: {this.props.weight_history}</li>
                 <li>Notes: {this.props.notes}</li>
-                <QuickAddForm
-                  petId={this.props.basic_information.id}
-                  type="checkup"
-                  onAdd={() => this.addCheckup(this.props.basic_information.id)}
-                />
-                <QuickAddForm
-                  petId={this.props.basic_information.id}
-                  type="vaccine"
-                  onAdd={() => this.addVaccine(this.props.basic_information.id)}
-                />
-                <QuickAddForm
-                  petId={this.props.basic_information.id}
-                  type="weight"
-                  onAdd={() => this.addWeight(this.props.basic_information.id)}
-                />
-                <QuickAddForm
-                  petId={this.props.basic_information.id}
-                  type="note"
-                  onAdd={() => this.addNote(this.props.basic_information.id)}
-                />
               </ul>
+              <QuickAddForm
+                petId={this.props.basic_information.id}
+                type="checkup"
+                onAdd={() => this.addCheckup(this.props.basic_information.id)}
+              />
+              <QuickAddForm
+                petId={this.props.basic_information.id}
+                type="vaccine"
+                onAdd={() => this.addVaccine(this.props.basic_information.id)}
+              />
+              <QuickAddForm
+                petId={this.props.basic_information.id}
+                type="weight"
+                onAdd={() => this.addWeight(this.props.basic_information.id)}
+              />
+              <QuickAddForm
+                petId={this.props.basic_information.id}
+                type="note"
+                onAdd={() => this.addNote(this.props.basic_information.id)}
+              />
             </div>
           </div>
         </div>

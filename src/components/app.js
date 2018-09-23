@@ -7,7 +7,6 @@ import Dashboard from "./Dashboard";
 import AddPetForm from "./AddPetForm";
 import SignUp from "./SignUp";
 import Login from "./Login";
-import SinglePetView from "./SinglePetView";
 
 export class App extends React.Component {
   render() {

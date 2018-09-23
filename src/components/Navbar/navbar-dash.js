@@ -5,7 +5,9 @@ import "./navbar-dash.css";
 export default function NavbarDash(props) {
   return (
     <div className="nav2">
-      <div className="logo2">Pet.rx</div>
+      <Link to="/dashboard">
+        <div className="logo2">Pet.rx</div>
+      </Link>
       <div className="links">
         <ul>
           <li>

@@ -27,9 +27,9 @@ const initialState = {
 
     {
       basic_information: {
-        name: "Toby",
+        name: "Aburrido",
         photo_url:
-          "https://images.unsplash.com/photo-1529933037705-0d537317ae7b?ixlib=rb-0.3.5&s=bf61e5fdfe6ed04654062c9afd8324c0&auto=format&fit=crop&w=1271&q=80",
+          "https://images.unsplash.com/photo-1533738699159-d0c68059bb61?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=0bb9888db1d270eab08c77f41120dfca&auto=format&fit=crop&w=1234&q=80",
         breed: "alley cat",
         age: "6",
         id: 1
@@ -120,15 +120,12 @@ export const petRxReducer = (state = initialState, action) => {
     return Object.assign({}, state, {
       pets
     });
+  } else if (action.type === actions.ADD_PET) {
+    return Object.assign({}, state, {
+      pets: [...state.pets, action.pet]
+    });
   }
-  // else if (action.type === actions.CURRENT_PET) {
-  //   return Object.assign({}, current_pet, {
-  //     current_pet: [...state.current_pet, action.current_pet]
-  //   });
-  //   return Object.assign({}, state, {
-  //     current_pet
-  //   });
-  // }
+
   // else if (action.type === actions.FETCH_BOARD_SUCCESS) {
   //   return action.board;
   // }

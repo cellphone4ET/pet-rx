@@ -8,7 +8,7 @@ export class Pets extends React.Component {
     console.log(this.props, "props");
     const renderedPets = this.props.pets.pets.map((pet, index) => {
       return (
-        <li key={pet.id}>
+        <li key={index}>
           <Pet {...pet} />
         </li>
       );

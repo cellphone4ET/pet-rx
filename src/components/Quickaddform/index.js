@@ -1,5 +1,5 @@
 import React from "react";
-import { reduxForm, Field } from "redux-form";
+import { reduxForm, Field, reset } from "redux-form";
 
 import "./index.css";
 
@@ -16,6 +16,7 @@ export class QuickAddForm extends React.Component {
   onSubmit(event) {
     event.preventDefault();
     this.props.onAdd();
+    this.props.dispatch(reset("quick-add"));
     this.setEditing(false);
   }
 
@@ -29,7 +30,7 @@ export class QuickAddForm extends React.Component {
     if (!this.state.editing) {
       return (
         <div className="add-button" onClick={() => this.setEditing(true)}>
-          <a href="#">Add a {this.props.type}...</a>
+          Add a {this.props.type}...
         </div>
       );
     }
@@ -37,12 +38,7 @@ export class QuickAddForm extends React.Component {
     return (
       <form onSubmit={this.onSubmit}>
         <label htmlFor={this.props.type}>{this.props.type}</label>
-        <Field
-          name={this.props.type}
-          ref={input => (this.textInput = input)}
-          component="input"
-        />
-        <Field name="id" ref={this.props.petId} component="input" hidden />
+        <Field name={this.props.type} component="input" />
         <button type="submit">Add</button>
         <button type="button" onClick={() => this.setEditing(false)}>
           Cancel
