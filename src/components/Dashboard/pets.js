@@ -6,7 +6,7 @@ import Pet from "./pet";
 export class Pets extends React.Component {
   render() {
     console.log(this.props, "props");
-    const renderedPets = this.props.pets.pets.map((pet, index) => {
+    const renderedPets = this.props.pets.map((pet, index) => {
       return (
         <li key={index}>
           <Pet {...pet} />
@@ -23,7 +23,7 @@ export class Pets extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  pets: state.pets
+  pets: state.pets.pets
 });
 
 export default connect(mapStateToProps)(Pets);

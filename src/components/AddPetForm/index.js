@@ -10,28 +10,28 @@ export class AddPetForm extends React.Component {
     console.log("onsubmit", values);
     const pet = {
       basic_information: {
-        name: values.name,
-        photo_url: values.photo_url,
-        breed: values.breed,
-        age: values.age,
-        id: values.id
+        name: values.basic_information.name,
+        photo_url: values.basic_information.photo_url,
+        breed: values.basic_information.breed,
+        age: values.basic_information.age,
+        id: values.basic_information.id
       },
-      veterinary_information: {
-        name: values.name,
-        phone: values.phone
-      },
+      checkups: [values.checkups],
       health_conditions: {
-        allergies: values.allergies,
-        chronic_conditions: values.chronic_conditions
+        allergies: values.health_conditions.allergies,
+        chronic_conditions: values.health_conditions.chronic_conditions
       },
-      checkups: [values.chornic_conditions],
+      notes: [values.notes],
       vaccinations: [values.vaccinations],
-      weight_history: [values.weight_history],
-      notes: [values.notes]
+      veterinary_information: {
+        name: values.veterinary_information.name,
+        phone: values.veterinary_information.phone
+      },
+      weight_history: [values.weight_history]
     };
     this.props.dispatch(addPet(pet));
     this.props.dispatch(reset("add-pet"));
-    // this.props.history.push("/dashboard");
+    this.props.history.push("/dashboard");
   }
 
   addPet() {}
@@ -45,51 +45,51 @@ export class AddPetForm extends React.Component {
         >
           <p>Basic Info</p>
           <br />
-          <label htmlFor="pet.basic_information.name">Name</label>
-          <Field name="pet.basic_information.name" component="input" />
+          <label htmlFor="basic_information.name">Name</label>
+          <Field name="basic_information.name" component="input" />
           <br />
-          <label htmlFor="pet.basic_information.photo-url">Photo URL</label>
-          <Field name="pet.basic_information.photo-url" component="input" />
+          <label htmlFor="basic_information.photourl">Photo URL</label>
+          <Field name="basic_information.photo_url" component="input" />
           <br />
-          <label htmlFor="pet.basic_information.breed">Breed</label>
-          <Field name="pet.basic_information.breed" component="input" />
+          <label htmlFor="basic_information.breed">Breed</label>
+          <Field name="basic_information.breed" component="input" />
           <br />
-          <label htmlFor="pet.basic_information.age">Age</label>
-          <Field name="pet.basic_information.age" component="input" />
+          <label htmlFor="basic_information.age">Age</label>
+          <Field name="basic_information.age" component="input" />
           <br />
           <br />
           <p>Veterinary Information</p>
-          <label htmlFor="pet.veterinary_information.name">Vet</label>
-          <Field name="pet.veterinary_information.name" component="input" />
+          <label htmlFor="veterinary_information.name">Vet</label>
+          <Field name="veterinary_information.name" component="input" />
           <br />
-          <label htmlFor="pet.veterinary_information.phone">Phone</label>
-          <Field name="pet.veterinary_information.phone" component="input" />
+          <label htmlFor="veterinary_information.phone">Phone</label>
+          <Field name="veterinary_information.phone" component="input" />
           <br /> <br />
           <p>Health Conditions</p>
-          <label htmlFor="pet.health_conditions.allergies">Allergies</label>
-          <Field name="pet.health_conditions.allergies" component="input" />
+          <label htmlFor="health_conditions.allergies">Allergies</label>
+          <Field name="health_conditions.allergies" component="input" />
           <br />
-          <label htmlFor="pet.health_conditions.chronic_conditions">
+          <label htmlFor="health_conditions.chronic_conditions">
             Chronic Conditions
           </label>
           <Field
-            name="pet.health_conditions.chronic_conditions"
+            name="health_conditions.chronic_conditions"
             component="input"
           />
           <br />
           <br />
-          <label htmlFor="pet.checkups">Checkup History</label>
-          <Field name="pet.checkups" component="input" />
+          <label htmlFor="checkups">Checkup History</label>
+          <Field name="checkups" component="input" />
           <br />
-          <label htmlFor="pet.vaccinations">Vaccination History</label>
-          <Field name="pet.vaccinations" component="input" />
+          <label htmlFor="vaccinations">Vaccination History</label>
+          <Field name="vaccinations" component="input" />
           <br />
-          <label htmlFor="pet.weight_history">Weight History</label>
-          <Field name="pet.weight_history" component="input" />
+          <label htmlFor="weight_history">Weight History</label>
+          <Field name="weight_history" component="input" />
           <br />
           <br />
-          <label htmlFor="pet.notes">Notes</label>
-          <Field name="pet.notes" component="input" />
+          <label htmlFor="notes">Notes</label>
+          <Field name="notes" component="input" />
           <br />
           <br />
           <button type="submit">Create Pet</button>

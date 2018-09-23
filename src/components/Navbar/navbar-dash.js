@@ -11,10 +11,14 @@ export default function NavbarDash(props) {
       <div className="links">
         <ul>
           <li>
-            <Link to="/addpet">+ add pet</Link>
+            <Link to="/addpet" className="linkz">
+              + add pet
+            </Link>
           </li>
           <li>
-            <Link to="/logout">- logout</Link>
+            <Link to="/logout" className="linkz">
+              - logout
+            </Link>
           </li>
         </ul>
       </div>
