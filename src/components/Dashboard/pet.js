@@ -36,21 +36,46 @@ export class Pet extends React.Component {
               className="pet-avatar"
             />
             <div className="card-content">
-              <h2>{this.props.basic_information.name}</h2>
-              <ul className="pet">
-                <li>Breed: {this.props.basic_information.breed}</li>
-                <li>Preferred Vet: {this.props.veterinary_information.name}</li>
-                <li>Vet Contact: {this.props.veterinary_information.phone}</li>
-                <li>Allergies: {this.props.health_conditions.allergies}</li>
-                <li>
-                  Chronic Conditions:{" "}
-                  {this.props.health_conditions.chronic_conditions}
-                </li>
-                <li>Checkup History: {this.props.checkups}</li>
-                <li>Vaccination Reccords: {this.props.vaccinations}</li>
-                <li>Weight History: {this.props.weight_history}</li>
-                <li>Notes: {this.props.notes}</li>
-              </ul>
+              <div className="displayed-info">
+                <h2 class="name">{this.props.basic_information.name}</h2>
+                <ul className="pet">
+                  <li>
+                    <span className="bold">Breed:</span>{" "}
+                    {this.props.basic_information.breed}
+                  </li>
+                  <li>
+                    <span className="bold">Preferred Vet:</span>{" "}
+                    {this.props.veterinary_information.name}
+                  </li>
+                  <li>
+                    <span className="bold">Vet Contact:</span>{" "}
+                    {this.props.veterinary_information.phone}
+                  </li>
+                  <li>
+                    <span className="bold">Allergies:</span>{" "}
+                    {this.props.health_conditions.allergies}
+                  </li>
+                  <li>
+                    <span className="bold">Chronic Conditions:</span>{" "}
+                    {this.props.health_conditions.chronic_conditions}
+                  </li>
+                  <li>
+                    <span className="bold">Checkup History:</span>{" "}
+                    {this.props.checkups}
+                  </li>
+                  <li>
+                    <span className="bold">Vaccination Reccords:</span>{" "}
+                    {this.props.vaccinations}
+                  </li>
+                  <li>
+                    <span className="bold">Weight History:</span>{" "}
+                    {this.props.weight_history}
+                  </li>
+                  <li>
+                    <span className="bold">Notes:</span> {this.props.notes}
+                  </li>
+                </ul>
+              </div>
               <QuickAddForm
                 petId={this.props.basic_information.id}
                 type="checkup"

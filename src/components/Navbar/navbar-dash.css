@@ -1,7 +1,7 @@
 .nav2 {
   padding: 10px 16px;
   background: #fdd947;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .logo2 {
@@ -9,19 +9,19 @@
   letter-spacing: -5px;
   font-family: "Amatic SC", cursive;
   font-weight: bold;
-  font-size: 5em;
+  font-size: 8em;
   margin-top: 0px;
   display: inline-block;
 }
 
 .links {
   color: #252525;
-  font-family: "Josefin Sans", sans-serif;
-  /* font-weight: bold; */
+  font-family: "Noto Sans", normal;
+  font-weight: bold;
   display: inline-block;
   float: right;
   letter-spacing: -2px;
-  font-size: 2.6em;
+  font-size: 2.3em;
 }
 
 .linkz {
