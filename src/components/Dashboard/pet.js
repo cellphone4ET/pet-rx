@@ -8,6 +8,27 @@ import { addVaccine, addCheckup, addWeight, deletePet } from "../../actions";
 //the quickadd form is connected to this component;
 
 export class Pet extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      open: false
+    };
+
+    this.onClick = this.onClick.bind(this);
+  }
+
+  onClick(event) {
+    this.props.onAdd();
+    this.setEditing(false);
+  }
+
+  setOpen(open) {
+    this.setState({
+      open
+    });
+    console.log("set open ran");
+  }
+
   addVaccine(id) {
     const text = this.props.reduxform.values.vaccine;
     this.props.dispatch(addVaccine(text, id));
@@ -45,10 +66,67 @@ export class Pet extends React.Component {
       return <li key={index}>• {weight}</li>;
     });
 
+    if (!this.state.open) {
+      return (
+        <div>
+          <div className="col-4">
+            <div className="card">
+              <img
+                src={this.props.basic_information.photo_url}
+                alt={this.props.basic_information.breed}
+                className="pet-avatar"
+              />
+              <div className="card-content">
+                <div className="displayed-info">
+                  <h2 className="name">{this.props.basic_information.name}</h2>
+
+                  <div className="petdiv">
+                    <ul className="pet">
+                      <li>
+                        <span className="bold">Breed:</span>{" "}
+                        {this.props.basic_information.breed}
+                      </li>
+                      <li>
+                        <span className="bold">Preferred Vet:</span>{" "}
+                        {this.props.veterinary_information.name}
+                      </li>
+                      <li>
+                        <span className="bold">Vet Contact:</span>{" "}
+                        {this.props.veterinary_information.phone}
+                      </li>
+                      <li>
+                        <span className="bold">Allergies:</span>{" "}
+                        {this.props.health_conditions.allergies}
+                      </li>
+                      <li>
+                        <span className="bold">Chronic Conditions:</span>{" "}
+                        {this.props.health_conditions.chronic_conditions}
+                      </li>
+                      <li>
+                        <span className="bold">Notes:</span>{" "}
+                        {this.props.basic_information.notes}
+                      </li>
+                    </ul>
+                  </div>
+
+                  <img
+                    src="https://image.flaticon.com/icons/svg/32/32195.svg"
+                    alt="expand"
+                    className="expand-icon"
+                    onClick={() => this.setOpen(true)}
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      );
+    }
+
     return (
       <div>
         <div className="col-4">
-          <div className="card">
+          <div className="card cardd">
             <img
               src={this.props.basic_information.photo_url}
               alt={this.props.basic_information.breed}
@@ -57,6 +135,7 @@ export class Pet extends React.Component {
             <div className="card-content">
               <div className="displayed-info">
                 <h2 className="name">{this.props.basic_information.name}</h2>
+
                 <ul className="pet">
                   <li>
                     <span className="bold">Breed:</span>{" "}
@@ -131,6 +210,13 @@ export class Pet extends React.Component {
 
                 <div className="delete-edit-pet">Edit </div>
               </div>
+
+              <img
+                src="https://image.flaticon.com/icons/svg/32/32323.svg"
+                alt="expand"
+                className="expand-icon"
+                onClick={() => this.setOpen(false)}
+              />
             </div>
           </div>
         </div>
