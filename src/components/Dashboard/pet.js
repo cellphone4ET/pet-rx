@@ -82,27 +82,25 @@ export class Pet extends React.Component {
                     <span className="bold">Notes:</span>{" "}
                     {this.props.basic_information.notes}
                   </li>
-                  <img
-                    src="https://image.flaticon.com/icons/svg/1083/1083206.svg"
-                    onClick={() =>
-                      this.deletePet(this.props.basic_information.id)
-                    }
-                    className="delete-pet"
-                    alt="delete-icon"
-                  />
                   <br />
-                  <li>
-                    <span className="bold">Checkup History:</span>{" "}
-                    <ul>{checkups}</ul>
-                  </li>
-                  <li>
-                    <span className="bold">Vaccination Records:</span>{" "}
-                    <ul>{vaccinations}</ul>
-                  </li>
-                  <li>
-                    <span className="bold">Weight History:</span>{" "}
-                    <ul>{weight_history}</ul>
-                  </li>
+                  <div>
+                    <li>
+                      <span className="bold">Checkup History:</span>{" "}
+                      <ul>{checkups}</ul>
+                    </li>
+                  </div>
+                  <div>
+                    <li>
+                      <span className="bold">Vaccination Records:</span>{" "}
+                      <ul>{vaccinations}</ul>
+                    </li>
+                  </div>
+                  <div>
+                    <li>
+                      <span className="bold">Weight History:</span>{" "}
+                      <ul>{weight_history}</ul>
+                    </li>
+                  </div>
                 </ul>
               </div>
               <hr id="pet-hr" />
@@ -121,6 +119,18 @@ export class Pet extends React.Component {
                 type="weight"
                 onAdd={() => this.addWeight(this.props.basic_information.id)}
               />
+              <div className="delete-edit-buttons">
+                <div
+                  onClick={() =>
+                    this.deletePet(this.props.basic_information.id)
+                  }
+                  className="delete-edit-pet"
+                >
+                  Delete
+                </div>
+
+                <div className="delete-edit-pet">Edit </div>
+              </div>
             </div>
           </div>
         </div>

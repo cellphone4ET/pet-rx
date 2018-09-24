@@ -28,12 +28,21 @@
   padding-right: 20px;
 }
 
-.delete-pet {
-  height: 20px;
-  float: left;
-  margin-top: 5px;
+.delete-edit-pet {
+  font-family: "Noto Sans", normal;
+  font-size: 0.8em;
+  color: white;
+  display: inline;
+  border-radius: 3px;
+  background-color: grey;
+  padding: 0px 5px 0px 5px;
+  margin: 0px 5px 0px 5px;
 }
 
-.delete-pet:hover {
+.delete-edit-buttons {
+  text-align: right;
+  padding-right: 10px;
+}
+.delete-edit-pet:hover {
   cursor: pointer;
 }

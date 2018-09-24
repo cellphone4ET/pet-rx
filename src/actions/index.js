@@ -30,6 +30,14 @@ export const deletePet = petId => ({
   type: DELETE_PET,
   petId
 });
+
+export const EDIT_PET = "EDIT_PET";
+export const editPet = (pet, petId) => ({
+  type: EDIT_PET,
+  pet,
+  petId
+});
+
 // export const CURRENT_PET = "CURRENT_PET";
 // export const currentPet = petIndex => ({
 //   type: CURRENT_PET,
