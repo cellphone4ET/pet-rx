@@ -161,28 +161,30 @@ export class Pet extends React.Component {
                     <span className="bold">Notes:</span>{" "}
                     {this.props.basic_information.notes}
                   </li>
-                  <br />
-                  <div>
-                    <li>
-                      <span className="bold">Checkup History:</span>{" "}
-                      <ul>{checkups}</ul>
-                    </li>
-                  </div>
-                  <div>
-                    <li>
-                      <span className="bold">Vaccination Records:</span>{" "}
-                      <ul>{vaccinations}</ul>
-                    </li>
-                  </div>
-                  <div>
-                    <li>
-                      <span className="bold">Weight History:</span>{" "}
-                      <ul>{weight_history}</ul>
-                    </li>
+                  <hr id="pet-hr" />
+                  <div className="histories">
+                    <div>
+                      <li>
+                        <span className="bold">Checkup History:</span>{" "}
+                        <ul>{checkups}</ul>
+                      </li>
+                    </div>
+                    <div>
+                      <li>
+                        <span className="bold">Vaccination Records:</span>{" "}
+                        <ul>{vaccinations}</ul>
+                      </li>
+                    </div>
+                    <div>
+                      <li>
+                        <span className="bold">Weight History:</span>{" "}
+                        <ul>{weight_history}</ul>
+                      </li>
+                    </div>
                   </div>
                 </ul>
               </div>
-              <hr id="pet-hr" />
+
               <QuickAddForm
                 petId={this.props.basic_information.id}
                 type="checkup"
