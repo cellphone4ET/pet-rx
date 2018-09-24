@@ -112,6 +112,13 @@ export const petRxReducer = (state = initialState, action) => {
     return Object.assign({}, state, {
       pets: [...state.pets, action.pet]
     });
+  } else if (action.type === actions.DELETE_PET) {
+    let pets = state.pets.filter(
+      pet => action.petId !== pet.basic_information.id
+    );
+    return Object.assign({}, state, {
+      pets
+    });
   }
 
   // else if (action.type === actions.FETCH_BOARD_SUCCESS) {

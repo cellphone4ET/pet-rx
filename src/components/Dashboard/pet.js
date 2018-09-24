@@ -20,7 +20,7 @@ export class Pet extends React.Component {
   }
 
   deletePet(id) {
-    console.log("delete pet ran");
+    console.log("delete pet ran", this.props.basic_information.id);
     this.props.dispatch(deletePet(id));
   }
 
@@ -50,7 +50,7 @@ export class Pet extends React.Component {
             />
             <div className="card-content">
               <div className="displayed-info">
-                <h2 class="name">{this.props.basic_information.name}</h2>
+                <h2 className="name">{this.props.basic_information.name}</h2>
                 <ul className="pet">
                   <li>
                     <span className="bold">Breed:</span>{" "}
