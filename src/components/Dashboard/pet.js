@@ -3,6 +3,10 @@ import { connect } from "react-redux";
 import QuickAddForm from "../QuickAddForm";
 import { addVaccine, addCheckup, addWeight, deletePet } from "../../actions";
 
+//pet componenet renders each individual pet;
+//its state is passed down from pets component;
+//the quickadd form is connected to this component;
+
 export class Pet extends React.Component {
   addVaccine(id) {
     const text = this.props.reduxform.values.vaccine;
@@ -20,8 +24,10 @@ export class Pet extends React.Component {
   }
 
   deletePet(id) {
-    console.log("delete pet ran", this.props.basic_information.id);
-    this.props.dispatch(deletePet(id));
+    let result = window.confirm(`Are you sure you want to delete this pet?`);
+    if (result) {
+      this.props.dispatch(deletePet(id));
+    }
   }
 
   render() {
