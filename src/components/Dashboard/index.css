@@ -13,6 +13,27 @@
 }
 
 .name {
-  font-size: 2em;
+  font-size: 3em;
+  font-family: "Josefin Sans", sans-serif;
   margin: 10px 0px 30px 0px;
+}
+#pet-hr {
+  margin-bottom: 30px;
+  border-color: #fdd947;
+  width: 70%;
+}
+
+#main {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.delete-pet {
+  height: 20px;
+  float: left;
+  margin-top: 5px;
+}
+
+.delete-pet:hover {
+  cursor: pointer;
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import QuickAddForm from "../QuickAddForm";
-import { addVaccine, addCheckup, addWeight, addNote } from "../../actions";
+import { addVaccine, addCheckup, addWeight, deletePet } from "../../actions";
 
 export class Pet extends React.Component {
   addVaccine(id) {
@@ -19,13 +19,26 @@ export class Pet extends React.Component {
     this.props.dispatch(addWeight(text, id));
   }
 
-  addNote(id) {
-    const text = this.props.reduxform.values.note;
-    this.props.dispatch(addNote(text, id));
+  deletePet(id) {
+    console.log("delete pet ran");
+    this.props.dispatch(deletePet(id));
   }
 
   render() {
     console.log(this.props.basic_information);
+
+    const checkups = this.props.checkups.map((checkup, index) => {
+      return <li key={index}>• {checkup}</li>;
+    });
+
+    const vaccinations = this.props.vaccinations.map((vaccine, index) => {
+      return <li key={index}>• {vaccine}</li>;
+    });
+
+    const weight_history = this.props.weight_history.map((weight, index) => {
+      return <li key={index}>• {weight}</li>;
+    });
+
     return (
       <div>
         <div className="col-4">
@@ -60,22 +73,33 @@ export class Pet extends React.Component {
                     {this.props.health_conditions.chronic_conditions}
                   </li>
                   <li>
+                    <span className="bold">Notes:</span>{" "}
+                    {this.props.basic_information.notes}
+                  </li>
+                  <img
+                    src="https://image.flaticon.com/icons/svg/1083/1083206.svg"
+                    onClick={() =>
+                      this.deletePet(this.props.basic_information.id)
+                    }
+                    className="delete-pet"
+                    alt="delete-icon"
+                  />
+                  <br />
+                  <li>
                     <span className="bold">Checkup History:</span>{" "}
-                    {this.props.checkups}
+                    <ul>{checkups}</ul>
                   </li>
                   <li>
-                    <span className="bold">Vaccination Reccords:</span>{" "}
-                    {this.props.vaccinations}
+                    <span className="bold">Vaccination Records:</span>{" "}
+                    <ul>{vaccinations}</ul>
                   </li>
                   <li>
                     <span className="bold">Weight History:</span>{" "}
-                    {this.props.weight_history}
-                  </li>
-                  <li>
-                    <span className="bold">Notes:</span> {this.props.notes}
+                    <ul>{weight_history}</ul>
                   </li>
                 </ul>
               </div>
+              <hr id="pet-hr" />
               <QuickAddForm
                 petId={this.props.basic_information.id}
                 type="checkup"
@@ -90,11 +114,6 @@ export class Pet extends React.Component {
                 petId={this.props.basic_information.id}
                 type="weight"
                 onAdd={() => this.addWeight(this.props.basic_information.id)}
-              />
-              <QuickAddForm
-                petId={this.props.basic_information.id}
-                type="note"
-                onAdd={() => this.addNote(this.props.basic_information.id)}
               />
             </div>
           </div>

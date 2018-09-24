@@ -19,17 +19,16 @@ export const addWeight = (weight, petIndex) => ({
   petIndex
 });
 
-export const ADD_NOTE = "ADD_NOTE";
-export const addNote = (note, petIndex) => ({
-  type: ADD_NOTE,
-  note,
-  petIndex
-});
-
 export const ADD_PET = "ADD_PET";
 export const addPet = pet => ({
   type: ADD_PET,
   pet
+});
+
+export const DELETE_PET = "DELETE_PET";
+export const deletePet = petId => ({
+  type: DELETE_PET,
+  petId
 });
 // export const CURRENT_PET = "CURRENT_PET";
 // export const currentPet = petIndex => ({

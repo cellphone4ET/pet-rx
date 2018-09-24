@@ -15,7 +15,7 @@ export class Pets extends React.Component {
     });
 
     return (
-      <div>
+      <div id="main">
         <ul>{renderedPets}</ul>
       </div>
     );

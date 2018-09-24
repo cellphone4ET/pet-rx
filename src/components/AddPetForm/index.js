@@ -14,6 +14,7 @@ export class AddPetForm extends React.Component {
         photo_url: values.basic_information.photo_url,
         breed: values.basic_information.breed,
         age: values.basic_information.age,
+        notes: values.basic_information.notes,
         id: values.basic_information.id
       },
       checkups: [values.checkups],
@@ -21,7 +22,6 @@ export class AddPetForm extends React.Component {
         allergies: values.health_conditions.allergies,
         chronic_conditions: values.health_conditions.chronic_conditions
       },
-      notes: [values.notes],
       vaccinations: [values.vaccinations],
       veterinary_information: {
         name: values.veterinary_information.name,
