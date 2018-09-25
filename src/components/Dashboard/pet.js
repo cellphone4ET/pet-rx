@@ -12,22 +12,26 @@ export class Pet extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      open: false
+      open: false,
+      currentPetId: null
     };
-
-    this.onClick = this.onClick.bind(this);
   }
 
-  onClick(event) {
-    this.props.onAdd();
-    this.setEditing(false);
+  onSubmit() {
+    this.setPet();
   }
 
   setOpen(open) {
     this.setState({
       open
     });
-    console.log("set open ran");
+  }
+
+  setPet(currentPetId) {
+    this.setState({
+      currentPetId
+    });
+    console.log("current petid is", currentPetId);
   }
 
   addVaccine(id) {
@@ -53,8 +57,6 @@ export class Pet extends React.Component {
   }
 
   render() {
-    console.log(this.props.basic_information);
-
     const checkups = this.props.checkups.map((checkup, index) => {
       return <li key={index}>• {checkup}</li>;
     });
@@ -187,17 +189,17 @@ export class Pet extends React.Component {
               </div>
 
               <QuickAddForm
-                petId={this.props.basic_information.id}
+                petid={this.props.basic_information.id}
                 type="checkup"
                 onAdd={() => this.addCheckup(this.props.basic_information.id)}
               />
               <QuickAddForm
-                petId={this.props.basic_information.id}
+                petid={this.props.basic_information.id}
                 type="vaccine"
                 onAdd={() => this.addVaccine(this.props.basic_information.id)}
               />
               <QuickAddForm
-                petId={this.props.basic_information.id}
+                petid={this.props.basic_information.id}
                 type="weight"
                 onAdd={() => this.addWeight(this.props.basic_information.id)}
               />
@@ -212,7 +214,13 @@ export class Pet extends React.Component {
                 </div>
 
                 <Link to="/editpet">
-                  <div className="delete-edit-pet">Edit </div>
+                  <div
+                    petid={this.props.basic_information.id}
+                    className="delete-edit-pet"
+                    onClick={() => this.setPet(this.props.basic_information.id)}
+                  >
+                    Edit{" "}
+                  </div>
                 </Link>
               </div>
 
