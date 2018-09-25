@@ -38,12 +38,6 @@ export const editPet = (pet, petId) => ({
   petId
 });
 
-// export const CURRENT_PET = "CURRENT_PET";
-// export const currentPet = petIndex => ({
-//   type: CURRENT_PET,
-//   petIndex
-// });
-
 // export const FETCH_BOARD_SUCCESS = "FETCH_BOARD_SUCCESS";
 // export const fetchBoardSuccess = board => ({
 //   type: FETCH_BOARD_SUCCESS,

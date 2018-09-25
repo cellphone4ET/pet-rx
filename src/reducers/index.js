@@ -119,6 +119,18 @@ export const petRxReducer = (state = initialState, action) => {
     return Object.assign({}, state, {
       pets
     });
+  } else if (action.type === actions.EDIT_PET) {
+    let pets = state.pets.map(pet => {
+      if (pet.basic_information.id !== action.petIndex) {
+        return pet;
+      }
+      return Object.assign({}, pet, {
+        pet: [...state.pet, action.pet]
+      });
+    });
+    return Object.assign({}, state, {
+      pets
+    });
   }
 
   // else if (action.type === actions.FETCH_BOARD_SUCCESS) {

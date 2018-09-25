@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import QuickAddForm from "../QuickAddForm";
+import { Link } from "react-router-dom";
 import { addVaccine, addCheckup, addWeight, deletePet } from "../../actions";
 
 //pet componenet renders each individual pet;
@@ -210,7 +211,9 @@ export class Pet extends React.Component {
                   Delete
                 </div>
 
-                <div className="delete-edit-pet">Edit </div>
+                <Link to="/editpet">
+                  <div className="delete-edit-pet">Edit </div>
+                </Link>
               </div>
 
               <img

@@ -4,6 +4,7 @@ import { Route, withRouter } from "react-router-dom";
 
 import LandingPage from "./Landing/";
 import Dashboard from "./Dashboard";
+import Editpetform from "./Editpetform";
 import AddPetForm from "./AddPetForm";
 import SignUp from "./SignUp";
 import Login from "./Login";
@@ -15,6 +16,7 @@ export class App extends React.Component {
         <Route exact path="/" component={LandingPage} />
         <Route exact path="/dashboard" component={Dashboard} />
         <Route exact path="/addpet" component={AddPetForm} />
+        <Route exact path="/editpet" component={Editpetform} />
         <Route exact path="/signup" component={SignUp} />
         <Route exact path="/logout" component={LandingPage} />
         <Route exact path="/login" component={Login} />
