@@ -70,7 +70,8 @@ const initialState = {
       vaccinations: ["bunny-virus, 11/10/17"],
       weight_history: ["5lbs"]
     }
-  ]
+  ],
+  currentPet: null
 };
 
 export const petRxReducer = (state = initialState, action) => {
@@ -118,6 +119,11 @@ export const petRxReducer = (state = initialState, action) => {
     );
     return Object.assign({}, state, {
       pets
+    });
+  } else if (action.type === actions.SET_CURRENT_PET) {
+    console.log("set current pet reducer ran");
+    return Object.assign({}, state, {
+      currentPet: action.pet
     });
   } else if (action.type === actions.EDIT_PET) {
     let pets = state.pets.map(pet => {

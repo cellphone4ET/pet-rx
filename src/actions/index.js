@@ -31,6 +31,12 @@ export const deletePet = petId => ({
   petId
 });
 
+export const SET_CURRENT_PET = "SET_CURRENT_PET";
+export const setCurrentPet = pet => ({
+  type: SET_CURRENT_PET,
+  pet
+});
+
 export const EDIT_PET = "EDIT_PET";
 export const editPet = (pet, petId) => ({
   type: EDIT_PET,

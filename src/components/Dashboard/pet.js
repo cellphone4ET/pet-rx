@@ -2,7 +2,13 @@ import React from "react";
 import { connect } from "react-redux";
 import QuickAddForm from "../QuickAddForm";
 import { Link } from "react-router-dom";
-import { addVaccine, addCheckup, addWeight, deletePet } from "../../actions";
+import {
+  addVaccine,
+  addCheckup,
+  addWeight,
+  deletePet,
+  setCurrentPet
+} from "../../actions";
 
 //pet componenet renders each individual pet;
 //its state is passed down from pets component;
@@ -12,13 +18,8 @@ export class Pet extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      open: false,
-      currentPetId: null
+      open: false
     };
-  }
-
-  onSubmit() {
-    this.setPet();
   }
 
   setOpen(open) {
@@ -27,11 +28,8 @@ export class Pet extends React.Component {
     });
   }
 
-  setPet(currentPetId) {
-    this.setState({
-      currentPetId
-    });
-    console.log("current petid is", currentPetId);
+  setCurrentPet(currentPetId) {
+    this.props.dispatch(setCurrentPet(currentPetId));
   }
 
   addVaccine(id) {
@@ -217,7 +215,7 @@ export class Pet extends React.Component {
                   <div
                     petid={this.props.basic_information.id}
                     className="delete-edit-pet"
-                    onClick={() => this.setPet(this.props.basic_information.id)}
+                    onClick={() => this.setCurrentPet(this.props)}
                   >
                     Edit{" "}
                   </div>
@@ -239,7 +237,8 @@ export class Pet extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  reduxform: state.form["quick-add"]
+  reduxform: state.form["quick-add"],
+  currentPet: state.pets.currentPetId
 });
 
 export default connect(mapStateToProps)(Pet);
