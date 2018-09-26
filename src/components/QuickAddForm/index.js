@@ -40,8 +40,14 @@ export class QuickAddForm extends React.Component {
         <form onSubmit={this.onSubmit}>
           <label htmlFor={this.props.type} />
           <Field name={this.props.type} component="input" />
-          <button type="submit">Add</button>
-          <button type="button" onClick={() => this.setEditing(false)}>
+          <button className="quickaddbutt" type="submit">
+            Add
+          </button>
+          <button
+            className="quickaddbutt"
+            type="button"
+            onClick={() => this.setEditing(false)}
+          >
             Cancel
           </button>
         </form>

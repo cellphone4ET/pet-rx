@@ -1,5 +1,16 @@
 .quickaddformbuttondiv {
   text-align: center;
+  background-color: #fdd947;
+  border-radius: 5px;
+  margin: 5px;
+  padding: 5px;
+}
+
+.quickaddbutt {
+  background-color: grey;
+  margin-left: 5px;
+  color: #ffffff;
+  border-radius: 3px;
 }
 
 .add-button {
