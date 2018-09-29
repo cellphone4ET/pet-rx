@@ -71,7 +71,7 @@ const initialState = {
       weight_history: ["5lbs"]
     }
   ],
-  currentPet: null
+  currentPet: []
 };
 
 export const petRxReducer = (state = initialState, action) => {

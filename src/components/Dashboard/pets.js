@@ -5,7 +5,6 @@ import Pet from "./pet";
 
 export class Pets extends React.Component {
   render() {
-    console.log(this.props, "props");
     const renderedPets = this.props.pets.map((pet, index) => {
       return (
         <li key={index}>
