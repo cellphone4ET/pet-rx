@@ -8,7 +8,7 @@ import "./index.css";
 
 const name = "";
 export class Editpetform extends React.Component {
-  componentWillMount() {
+  componentDidMount() {
     this.props.initialize({
       name: this.props.currentPet.basic_information.name,
       photo: this.props.currentPet.basic_information.photo_url,
