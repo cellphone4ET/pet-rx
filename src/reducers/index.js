@@ -121,21 +121,18 @@ export const petRxReducer = (state = initialState, action) => {
       pets
     });
   } else if (action.type === actions.SET_CURRENT_PET) {
-    console.log("set current pet reducer ran");
     return Object.assign({}, state, {
       currentPet: action.pet
     });
   } else if (action.type === actions.EDIT_PET) {
+    console.log("edit pet ran");
     let pets = state.pets.map(pet => {
-      if (pet.basic_information.id !== action.petIndex) {
+      if (pet.basic_information.id !== action.petId) {
         return pet;
       }
       return Object.assign({}, pet, {
-        pet: [...state.pet, action.pet]
+        pets: [...state.pets, action.pet]
       });
-    });
-    return Object.assign({}, state, {
-      pets
     });
   }
 

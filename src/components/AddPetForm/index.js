@@ -34,8 +34,6 @@ export class AddPetForm extends React.Component {
     this.props.history.push("/dashboard");
   }
 
-  addPet() {}
-
   render() {
     return (
       <div>
@@ -48,7 +46,7 @@ export class AddPetForm extends React.Component {
           <label htmlFor="basic_information.name">Name</label>
           <Field name="basic_information.name" component="input" />
           <br />
-          <label htmlFor="basic_information.photourl">Photo URL</label>
+          <label htmlFor="basic_information.photo_url">Photo URL</label>
           <Field name="basic_information.photo_url" component="input" />
           <br />
           <label htmlFor="basic_information.breed">Breed</label>
