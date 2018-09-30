@@ -9,15 +9,14 @@
   position: absolute;
   background-color: #f3f3f3;
   z-index: 1;
-  box-shadow: 3px 3px 7px grey;
-  border-radius: 5px;
+
+  border-radius: 1px;
 }
 
 .login-signup-button {
-  box-shadow: 3px 3px 7px grey;
   border-radius: 3px;
-  font-family: "Josefin Sans", sans-serif;
-  font-size: 1.2em;
+  font-family: "Noto Sans", normal;
+  font-size: 0.9em;
   left: 50%;
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);

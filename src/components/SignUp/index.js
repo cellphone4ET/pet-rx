@@ -4,6 +4,7 @@ import { Field, reduxForm, focus } from "redux-form";
 // import { login } from "../actions/auth";
 import { Link } from "react-router-dom";
 import Input from "../Input";
+import Footer from "../Footer";
 import NavbarLoginSignUp from "../Navbar/navbar-login-signup";
 import "./index.css";
 // import { required, nonEmpty, matches, length, isTrimmed } from "../validators";
@@ -55,11 +56,12 @@ export class SignUp extends React.Component {
 
             <Link to="/dashboard">
               <button className="login-signup-button" id="sign-up-button">
-                Sign Up
+                Submit
               </button>
             </Link>
           </form>
         </div>
+        <Footer />
       </div>
     );
   }
