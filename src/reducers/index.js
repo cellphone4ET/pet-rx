@@ -126,7 +126,7 @@ export const petRxReducer = (state = initialState, action) => {
     });
   } else if (action.type === actions.EDIT_PET) {
     console.log("edit pet ran");
-    let pets = state.pets.map(pet => {
+    state.pets.map(pet => {
       if (pet.basic_information.id !== action.petId) {
         return pet;
       }

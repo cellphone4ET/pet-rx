@@ -15,13 +15,11 @@ export function LandingPage(props) {
       <NavbarLanding />
       <div className="threebasics content">
         <div id="main-statement">
-          <p>
-            <span id="main-statment-span">
-              Take control of your pets health with . . .
-              <br />
-            </span>
-            <div className="petrx">Pet.rx </div>
-          </p>
+          <span id="main-statment-span">
+            Take control of your pets health with . . .
+            <br />
+          </span>
+          <div className="petrx">Pet.rx </div>
         </div>
 
         <hr id="firstline" />

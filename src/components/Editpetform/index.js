@@ -2,7 +2,7 @@ import React from "react";
 import { reduxForm, Field, reset } from "redux-form";
 import { connect } from "react-redux";
 import NavbarDash from "../Navbar/navbar-dash";
-// import Footer from "../Footer";
+import Footer from "../Footer";
 import { editPet } from "../../actions";
 import "./index.css";
 
@@ -51,7 +51,7 @@ export class Editpetform extends React.Component {
     const petId = this.props.currentPet.basic_information.id;
     this.props.dispatch(editPet(pet, petId));
     this.props.dispatch(reset("edit-pet"));
-    this.props.history.push("/dashboard");
+    // this.props.history.push("/dashboard");
   }
 
   render() {
@@ -109,13 +109,15 @@ export class Editpetform extends React.Component {
           <br />
           <button type="submit">Edit Pet</button>
         </form>
+        <Footer />
       </div>
     );
   }
 }
 
 let InitializeFromStateForm = reduxForm({
-  form: "initializeFromState"
+  form: "initializeFromState",
+  enableReinitialize: true
 })(Editpetform);
 
 InitializeFromStateForm = connect(state => ({
