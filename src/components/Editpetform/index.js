@@ -58,57 +58,63 @@ export class Editpetform extends React.Component {
     return (
       <div>
         <NavbarDash />
-        <form
-          onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}
-        >
-          <p>Basic Info</p>
-          <br />
-          <label htmlFor="basic_information.name">Name</label>
-          <Field name="first_name" component="input" />
-          <br />
-          <label htmlFor="basic_information.photo_url">Photo URL</label>
-          <Field name="photo_url" component="input" />
-          <br />
-          <label htmlFor="basic_information.breed">Breed</label>
-          <Field name="breed" component="input" />
-          <br />
-          <label htmlFor="basic_information.age">Age</label>
-          <Field name="age" component="input" />
-          <br />
-          <br />
-          <p>Veterinary Information</p>
-          <label htmlFor="veterinary_information.name">Vet</label>
-          <Field name="name" component="input" />
-          <br />
-          <label htmlFor="veterinary_information.phone">Phone</label>
-          <Field name="phone" component="input" />
-          <br /> <br />
-          <p>Health Conditions</p>
-          <label htmlFor="health_conditions.allergies">Allergies</label>
-          <Field name="allergies" component="input" />
-          <br />
-          <label htmlFor="health_conditions.chronic_conditions">
-            Chronic Conditions
-          </label>
-          <Field name="chronic_conditions" component="input" />
-          <br />
-          <br />
-          <label htmlFor="checkups">Checkup History</label>
-          <Field name="checkups" component="input" />
-          <br />
-          <label htmlFor="vaccinations">Vaccination History</label>
-          <Field name="vaccinations" component="input" />
-          <br />
-          <label htmlFor="weight_history">Weight History</label>
-          <Field name="weight_history" component="input" />
-          <br />
-          <br />
-          <label htmlFor="notes">Notes</label>
-          <Field name="notes" component="input" />
-          <br />
-          <br />
-          <button type="submit">Edit Pet</button>
-        </form>
+
+        <div className="edit-add-div">
+          <form
+            onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}
+          >
+            <h2>Basic Info</h2>
+            <br />
+            <label htmlFor="basic_information.name">Name</label>
+            <Field name="first_name" component="input" />
+            <br />
+            <label htmlFor="basic_information.photo_url">Photo URL</label>
+            <Field name="photo_url" component="input" />
+            <br />
+            <label htmlFor="basic_information.breed">Breed</label>
+            <Field name="breed" component="input" />
+            <br />
+            <label htmlFor="basic_information.age">Age</label>
+            <Field name="age" component="input" />
+            <br />
+            <br />
+            <p>Veterinary Information</p>
+            <label htmlFor="veterinary_information.name">Vet</label>
+            <Field name="name" component="input" />
+            <br />
+            <label htmlFor="veterinary_information.phone">Phone</label>
+            <Field name="phone" component="input" />
+            <br /> <br />
+            <p>Health Conditions</p>
+            <label htmlFor="health_conditions.allergies">Allergies</label>
+            <Field name="allergies" component="input" />
+            <br />
+            <label htmlFor="health_conditions.chronic_conditions">
+              Chronic Conditions
+            </label>
+            <Field name="chronic_conditions" component="input" />
+            <br />
+            <br />
+            <label htmlFor="checkups">Checkup History</label>
+            <Field name="checkups" component="input" />
+            <br />
+            <label htmlFor="vaccinations">Vaccination History</label>
+            <Field name="vaccinations" component="input" />
+            <br />
+            <label htmlFor="weight_history">Weight History</label>
+            <Field name="weight_history" component="input" />
+            <br />
+            <br />
+            <label htmlFor="notes">Notes</label>
+            <Field name="notes" component="input" />
+            <br />
+            <br />
+            <button className="submitpet" type="submit">
+              Edit Pet
+            </button>
+          </form>
+        </div>
+
         <Footer />
       </div>
     );

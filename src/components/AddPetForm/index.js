@@ -38,60 +38,137 @@ export class AddPetForm extends React.Component {
     return (
       <div>
         <NavbarDash />
-        <form
-          onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}
-        >
-          <p>Basic Info</p>
-          <br />
-          <label htmlFor="basic_information.name">Name</label>
-          <Field name="basic_information.name" component="input" />
-          <br />
-          <label htmlFor="basic_information.photo_url">Photo URL</label>
-          <Field name="basic_information.photo_url" component="input" />
-          <br />
-          <label htmlFor="basic_information.breed">Breed</label>
-          <Field name="basic_information.breed" component="input" />
-          <br />
-          <label htmlFor="basic_information.age">Age</label>
-          <Field name="basic_information.age" component="input" />
-          <br />
-          <br />
-          <p>Veterinary Information</p>
-          <label htmlFor="veterinary_information.name">Vet</label>
-          <Field name="veterinary_information.name" component="input" />
-          <br />
-          <label htmlFor="veterinary_information.phone">Phone</label>
-          <Field name="veterinary_information.phone" component="input" />
-          <br /> <br />
-          <p>Health Conditions</p>
-          <label htmlFor="health_conditions.allergies">Allergies</label>
-          <Field name="health_conditions.allergies" component="input" />
-          <br />
-          <label htmlFor="health_conditions.chronic_conditions">
-            Chronic Conditions
-          </label>
-          <Field
-            name="health_conditions.chronic_conditions"
-            component="input"
-          />
-          <br />
-          <br />
-          <label htmlFor="checkups">Checkup History</label>
-          <Field name="checkups" component="input" />
-          <br />
-          <label htmlFor="vaccinations">Vaccination History</label>
-          <Field name="vaccinations" component="input" />
-          <br />
-          <label htmlFor="weight_history">Weight History</label>
-          <Field name="weight_history" component="input" />
-          <br />
-          <br />
-          <label htmlFor="notes">Notes</label>
-          <Field name="notes" component="input" />
-          <br />
-          <br />
-          <button type="submit">Create Pet</button>
-        </form>
+        <div className="edit-add-div">
+          <form
+            onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}
+          >
+            <h2>Basic Info</h2>
+            <label className="label" htmlFor="basic_information.name">
+              Name
+            </label>
+            <Field
+              name="basic_information.name"
+              component="input"
+              className="edit-add-input"
+            />
+            <br />
+            <label className="label" htmlFor="basic_information.photo_url">
+              Photo URL
+            </label>
+            <Field
+              name="basic_information.photo_url"
+              component="input"
+              className="edit-add-input"
+            />
+            <br />
+            <label className="label" htmlFor="basic_information.breed">
+              Breed
+            </label>
+            <Field
+              name="basic_information.breed"
+              component="input"
+              className="edit-add-input"
+            />
+            <br />
+            <label className="label" htmlFor="basic_information.age">
+              Age
+            </label>
+            <Field
+              name="basic_information.age"
+              component="input"
+              className="edit-add-input"
+            />
+            <br />
+            <br />
+            <h2>Veterinary Information</h2>
+            <label className="label" htmlFor="veterinary_information.name">
+              Vet
+            </label>
+            <Field
+              name="veterinary_information.name"
+              component="input"
+              className="edit-add-input"
+            />
+            <br />
+            <label className="label" htmlFor="veterinary_information.phone">
+              Phone
+            </label>
+            <Field
+              name="veterinary_information.phone"
+              component="input"
+              className="edit-add-input"
+            />
+            <br /> <br />
+            <h2>Health Conditions</h2>
+            <label className="label" htmlFor="health_conditions.allergies">
+              Allergies
+            </label>
+            <Field
+              name="health_conditions.allergies"
+              component="input"
+              className="edit-add-input"
+            />
+            <br />
+            <label
+              className="label"
+              htmlFor="health_conditions.chronic_conditions"
+            >
+              Chronic Conditions
+            </label>
+            <Field
+              name="health_conditions.chronic_conditions"
+              component="input"
+              className="edit-add-input"
+            />
+            <br /> <br />
+            <hr className="formhr" />
+            <br />
+            <br />
+            <label className="label" htmlFor="checkups">
+              <span className="bold">Checkup History</span>
+            </label>
+            <Field
+              name="checkups"
+              component="textarea"
+              className="edit-add-input inputsize"
+            />
+            <br />
+            <label className="label" htmlFor="vaccinations">
+              <span className="bold">Vaccination History</span>
+            </label>
+            <Field
+              name="vaccinations"
+              component="textarea"
+              className="edit-add-input inputsize"
+            />
+            <br />
+            <label className="label" htmlFor="weight_history">
+              <span className="bold">Weight History</span>
+            </label>
+            <Field
+              name="weight_history"
+              component="textarea"
+              className="edit-add-input inputsize"
+            />
+            <br />
+            <label className="label" htmlFor="notes">
+              <span className="bold">Notes</span>
+            </label>
+            <br />
+            <Field
+              name="notes"
+              component="textarea"
+              className="edit-add-input inputsize"
+            />
+            <br />
+            <br />
+            <div className="submit-edit-pet-button-div">
+              <button className="submit-edit-pet-button" type="submit">
+                Create Pet
+              </button>
+            </div>
+          </form>
+        </div>
         <Footer />
       </div>
     );
