@@ -4,7 +4,6 @@ import { connect } from "react-redux";
 import NavbarDash from "../Navbar/navbar-dash";
 import Footer from "../Footer";
 import { editPet } from "../../actions";
-import "./index.css";
 
 export class Editpetform extends React.Component {
   componentDidMount() {
@@ -58,63 +57,121 @@ export class Editpetform extends React.Component {
     return (
       <div>
         <NavbarDash />
-
         <div className="edit-add-div">
           <form
             onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}
           >
             <h2>Basic Info</h2>
+            <label className="label" htmlFor="basic_information.name">
+              Name
+            </label>
+            <Field
+              name="first_name"
+              component="input"
+              className="edit-add-input"
+            />
             <br />
-            <label htmlFor="basic_information.name">Name</label>
-            <Field name="first_name" component="input" />
+            <label className="label" htmlFor="basic_information.photo_url">
+              Photo URL
+            </label>
+            <Field
+              name="photo_url"
+              component="input"
+              className="edit-add-input"
+            />
             <br />
-            <label htmlFor="basic_information.photo_url">Photo URL</label>
-            <Field name="photo_url" component="input" />
+            <label className="label" htmlFor="basic_information.breed">
+              Breed
+            </label>
+            <Field name="breed" component="input" className="edit-add-input" />
             <br />
-            <label htmlFor="basic_information.breed">Breed</label>
-            <Field name="breed" component="input" />
+            <label className="label" htmlFor="basic_information.age">
+              Age
+            </label>
+            <Field name="age" component="input" className="edit-add-input" />
             <br />
-            <label htmlFor="basic_information.age">Age</label>
-            <Field name="age" component="input" />
             <br />
+            <h2>Veterinary Information</h2>
+            <label className="label" htmlFor="veterinary_information.name">
+              Vet
+            </label>
+            <Field name="name" component="input" className="edit-add-input" />
             <br />
-            <p>Veterinary Information</p>
-            <label htmlFor="veterinary_information.name">Vet</label>
-            <Field name="name" component="input" />
-            <br />
-            <label htmlFor="veterinary_information.phone">Phone</label>
-            <Field name="phone" component="input" />
+            <label className="label" htmlFor="veterinary_information.phone">
+              Phone
+            </label>
+            <Field name="phone" component="input" className="edit-add-input" />
             <br /> <br />
-            <p>Health Conditions</p>
-            <label htmlFor="health_conditions.allergies">Allergies</label>
-            <Field name="allergies" component="input" />
+            <h2>Health Conditions</h2>
+            <label className="label" htmlFor="health_conditions.allergies">
+              Allergies
+            </label>
+            <Field
+              name="allergies"
+              component="input"
+              className="edit-add-input"
+            />
             <br />
-            <label htmlFor="health_conditions.chronic_conditions">
+            <label
+              className="label"
+              htmlFor="health_conditions.chronic_conditions"
+            >
               Chronic Conditions
             </label>
-            <Field name="chronic_conditions" component="input" />
+            <Field
+              name="chronic_conditions"
+              component="input"
+              className="edit-add-input"
+            />
+            <br /> <br />
+            <hr className="formhr" />
             <br />
             <br />
-            <label htmlFor="checkups">Checkup History</label>
-            <Field name="checkups" component="input" />
+            <label className="label" htmlFor="checkups">
+              <span className="bold">Checkup History</span>
+            </label>
+            <Field
+              name="checkups"
+              component="textarea"
+              className="edit-add-input inputsize"
+            />
             <br />
-            <label htmlFor="vaccinations">Vaccination History</label>
-            <Field name="vaccinations" component="input" />
+            <label className="label" htmlFor="vaccinations">
+              <span className="bold">Vaccination History</span>
+            </label>
+            <Field
+              name="vaccinations"
+              component="textarea"
+              className="edit-add-input inputsize"
+            />
             <br />
-            <label htmlFor="weight_history">Weight History</label>
-            <Field name="weight_history" component="input" />
+            <label className="label" htmlFor="weight_history">
+              <span className="bold">Weight History</span>
+            </label>
+            <Field
+              name="weight_history"
+              component="textarea"
+              className="edit-add-input inputsize"
+            />
+            <br />
+            <label className="label" htmlFor="notes">
+              <span className="bold">Notes</span>
+            </label>
+            <br />
+            <Field
+              name="notes"
+              component="textarea"
+              className="edit-add-input inputsize"
+            />
             <br />
             <br />
-            <label htmlFor="notes">Notes</label>
-            <Field name="notes" component="input" />
-            <br />
-            <br />
-            <button className="submitpet" type="submit">
-              Edit Pet
-            </button>
+            <div className="submit-edit-pet-button-div">
+              <button className="submit-edit-pet-button" type="submit">
+                Edit Pet
+              </button>
+            </div>
           </form>
         </div>
-
         <Footer />
       </div>
     );
