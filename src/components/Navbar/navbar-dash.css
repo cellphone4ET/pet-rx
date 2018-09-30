@@ -36,3 +36,13 @@ li {
 a:visited {
   color: #252525;
 }
+
+@media only screen and (max-width: 720px) {
+  .links {
+    font-size: 1.5em;
+  }
+
+  .logo2 {
+    font-size: 6em;
+  }
+}

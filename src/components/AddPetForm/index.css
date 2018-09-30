@@ -50,3 +50,9 @@ h2 {
   width: 75%;
   border-color: #fdd947;
 }
+
+@media only screen and (max-width: 720px) {
+  .edit-add-div {
+    width: 75%;
+  }
+}
