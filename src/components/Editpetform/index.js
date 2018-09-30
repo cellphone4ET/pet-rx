@@ -46,11 +46,10 @@ export class Editpetform extends React.Component {
       },
       weight_history: [values.weight_history]
     };
-    console.log(pet);
     const petId = this.props.currentPet.basic_information.id;
     this.props.dispatch(editPet(pet, petId));
     this.props.dispatch(reset("edit-pet"));
-    // this.props.history.push("/dashboard");
+    this.props.history.push("/dashboard");
   }
 
   render() {
@@ -180,7 +179,8 @@ export class Editpetform extends React.Component {
 
 let InitializeFromStateForm = reduxForm({
   form: "initializeFromState",
-  enableReinitialize: true
+  enableReinitialize: true,
+  keepDirtyOnReinitialize: true
 })(Editpetform);
 
 InitializeFromStateForm = connect(state => ({
