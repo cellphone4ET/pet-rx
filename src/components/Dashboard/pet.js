@@ -187,25 +187,23 @@ export class Pet extends React.Component {
               </div>
 
               <QuickAddForm
-                petid={this.props.basic_information.id}
+                petid={this.props.id}
                 type="checkup"
-                onAdd={() => this.addCheckup(this.props.basic_information.id)}
+                onAdd={() => this.addCheckup(this.props.id)}
               />
               <QuickAddForm
-                petid={this.props.basic_information.id}
+                petid={this.props.id}
                 type="vaccine"
-                onAdd={() => this.addVaccine(this.props.basic_information.id)}
+                onAdd={() => this.addVaccine(this.props.id)}
               />
               <QuickAddForm
-                petid={this.props.basic_information.id}
+                petid={this.props.id}
                 type="weight"
-                onAdd={() => this.addWeight(this.props.basic_information.id)}
+                onAdd={() => this.addWeight(this.props.id)}
               />
               <div className="delete-edit-buttons">
                 <div
-                  onClick={() =>
-                    this.deletePet(this.props.basic_information.id)
-                  }
+                  onClick={() => this.deletePet(this.props.id)}
                   className="delete-edit-pet"
                 >
                   Delete
@@ -213,7 +211,7 @@ export class Pet extends React.Component {
 
                 <Link to="/editpet">
                   <div
-                    petid={this.props.basic_information.id}
+                    petid={this.props.id}
                     className="delete-edit-pet"
                     onClick={() => this.setCurrentPet(this.props)}
                   >

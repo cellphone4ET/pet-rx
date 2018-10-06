@@ -20,7 +20,8 @@ export class Editpetform extends React.Component {
       checkups: this.props.currentPet.checkups,
       weight_history: this.props.currentPet.weight_history,
       vaccinations: this.props.currentPet.vaccinations,
-      notes: this.props.currentPet.basic_information.notes
+      notes: this.props.currentPet.basic_information.notes,
+      id: this.props.currentPet.id
     });
   }
 
@@ -31,14 +32,14 @@ export class Editpetform extends React.Component {
         photo_url: values.photo_url,
         breed: values.breed,
         age: values.age,
-        notes: values.notes,
-        id: this.props.currentPet.basic_information.id
+        notes: values.notes
       },
       checkups: [values.checkups],
       health_conditions: {
         allergies: values.allergies,
         chronic_conditions: values.chronic_conditions
       },
+      id: this.props.currentPet.id,
       vaccinations: [values.vaccinations],
       veterinary_information: {
         name: values.name,
@@ -46,7 +47,7 @@ export class Editpetform extends React.Component {
       },
       weight_history: [values.weight_history]
     };
-    const petId = this.props.currentPet.basic_information.id;
+    const petId = this.props.currentPet.id;
     this.props.dispatch(editPet(pet, petId));
     this.props.dispatch(reset("edit-pet"));
     this.props.history.push("/dashboard");
