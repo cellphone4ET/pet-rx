@@ -23,9 +23,7 @@ export class Loginn extends React.Component {
       );
     }
     //checks to see if auth token is present, if so redirects to dashboard
-    let authToken = this.props.authToken;
-    if (authToken !== null) {
-      console.log(authToken);
+    if (this.props.authToken !== null) {
       this.props.history.push("/dashboard");
     }
     return (
