@@ -2,7 +2,6 @@ import React from "react";
 import { Field, reduxForm, focus } from "redux-form";
 import { registerUser } from "../../actions/users";
 import { login } from "../../actions/auth";
-import { Link } from "react-router-dom";
 import Input from "../Input";
 import Footer from "../Footer";
 import NavbarLoginSignUp from "../Navbar/navbar-login-signup";
@@ -58,16 +57,14 @@ export class SignUp extends React.Component {
               validate={[required, nonEmpty, matchesPassword]}
             />
 
-            <Link to="/dashboard">
-              <button
-                type="submit"
-                disabled={this.props.pristine || this.props.submitting}
-                className="login-signup-button"
-                id="sign-up-button"
-              >
-                Submit
-              </button>
-            </Link>
+            <button
+              type="submit"
+              disabled={this.props.pristine || this.props.submitting}
+              className="login-signup-button"
+              id="sign-up-button"
+            >
+              Submit
+            </button>
           </form>
         </div>
         <Footer />
