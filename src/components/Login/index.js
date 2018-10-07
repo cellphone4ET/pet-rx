@@ -5,13 +5,12 @@ import Input from "../Input";
 import Footer from "../Footer";
 import NavbarLoginSignUp from "../Navbar/navbar-login-signup";
 import "./index.css";
-// import {login} from '../actions/auth';
-// import {required, nonEmpty} from '../validators';
+import { login } from "../../actions/auth";
+import { required, nonEmpty } from "../../validators";
 
 export class Login extends React.Component {
   onSubmit(values) {
-    console.log("hi");
-    // return this.props.dispatch(login(values.username, values.password));
+    return this.props.dispatch(login(values.username, values.password));
   }
 
   render() {
@@ -38,7 +37,7 @@ export class Login extends React.Component {
               type="text"
               name="username"
               id="username"
-              // validate={[required, nonEmpty]}
+              validate={[required, nonEmpty]}
             />
             <label htmlFor="password">Password</label>
             <Field
@@ -46,10 +45,16 @@ export class Login extends React.Component {
               type="password"
               name="password"
               id="password"
-              // validate={[required, nonEmpty]}
+              validate={[required, nonEmpty]}
             />
             <Link to="/dashboard">
-              <button className="login-signup-button">Submit</button>
+              <button
+                className="login-signup-button"
+                type="submit"
+                disabled={this.props.pristine || this.props.submitting}
+              >
+                Submit
+              </button>
             </Link>
             <br />
             <br />
