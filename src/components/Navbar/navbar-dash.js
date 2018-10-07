@@ -23,9 +23,9 @@ export default class NavbarDash extends React.Component {
               </Link>
             </li>
             <li>
-              <p className="linkz" onClick={() => this.onClick()}>
+              <Link to="/" className="linkz" onClick={() => this.onClick()}>
                 - logout
-              </p>
+              </Link>
             </li>
           </ul>
         </div>
