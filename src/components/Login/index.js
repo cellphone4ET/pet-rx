@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { connect } from "react-redux";
 import { Field, reduxForm, focus } from "redux-form";
 import Input from "../Input";
 import Footer from "../Footer";
@@ -8,7 +8,7 @@ import "./index.css";
 import { login } from "../../actions/auth";
 import { required, nonEmpty } from "../../validators";
 
-export class Login extends React.Component {
+export class Loginn extends React.Component {
   onSubmit(values) {
     return this.props.dispatch(login(values.username, values.password));
   }
@@ -21,6 +21,10 @@ export class Login extends React.Component {
           {this.props.error}
         </div>
       );
+    }
+    //checks to see if auth token is present, if so redirects to dashaboard
+    if (this.props.authToken) {
+      this.props.history.push("/dashboard");
     }
     return (
       <div>
@@ -47,15 +51,15 @@ export class Login extends React.Component {
               id="password"
               validate={[required, nonEmpty]}
             />
-            <Link to="/dashboard">
-              <button
-                className="login-signup-button"
-                type="submit"
-                disabled={this.props.pristine || this.props.submitting}
-              >
-                Submit
-              </button>
-            </Link>
+
+            <button
+              className="login-signup-button"
+              type="submit"
+              disabled={this.props.pristine || this.props.submitting}
+            >
+              Submit
+            </button>
+
             <br />
             <br />
             {error}
@@ -67,7 +71,14 @@ export class Login extends React.Component {
   }
 }
 
-export default reduxForm({
+let Login = reduxForm({
   form: "login",
-  onSubmitFail: (errors, dispatch) => dispatch(focus("login", "username"))
-})(Login);
+  onSubmitFail: (errors, dispatch) =>
+    dispatch(focus("registration", Object.keys(errors)[0]))
+})(Loginn);
+
+Login = connect(state => ({
+  authToken: state.auth.authToken
+}))(Login);
+
+export default Login;
