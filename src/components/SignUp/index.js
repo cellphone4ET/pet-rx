@@ -18,6 +18,7 @@ const passwordLength = length({ min: 10, max: 72 });
 const matchesPassword = matches("password");
 
 export class SignUpp extends React.Component {
+  // user is automatically signed in if user authentication passes
   onSubmit(values) {
     const { username, password } = values;
     const user = { username, password };
@@ -28,7 +29,7 @@ export class SignUpp extends React.Component {
 
   render() {
     // checks to see if auth token is present upon successful signup/login, if so page redirects to dashboard
-    if (this.props.authToken) {
+    if (this.props.authToken !== null) {
       this.props.history.push("/dashboard");
     }
     return (
