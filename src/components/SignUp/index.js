@@ -1,4 +1,5 @@
 import React from "react";
+import { connect } from "react-redux";
 import { Field, reduxForm, focus } from "redux-form";
 import { registerUser } from "../../actions/users";
 import { login } from "../../actions/auth";
@@ -16,7 +17,7 @@ import {
 const passwordLength = length({ min: 10, max: 72 });
 const matchesPassword = matches("password");
 
-export class SignUp extends React.Component {
+export class SignUpp extends React.Component {
   onSubmit(values) {
     const { username, password } = values;
     const user = { username, password };
@@ -26,6 +27,10 @@ export class SignUp extends React.Component {
   }
 
   render() {
+    // checks to see if auth token is present upon successful signup/login, if so page redirects to dashboard
+    if (this.props.authToken) {
+      this.props.history.push("/dashboard");
+    }
     return (
       <div>
         <NavbarLoginSignUp />
@@ -73,8 +78,14 @@ export class SignUp extends React.Component {
   }
 }
 
-export default reduxForm({
-  form: "registration",
+let SignUp = reduxForm({
+  form: "signup",
   onSubmitFail: (errors, dispatch) =>
     dispatch(focus("registration", Object.keys(errors)[0]))
-})(SignUp);
+})(SignUpp);
+
+SignUp = connect(state => ({
+  authToken: state.auth.authToken
+}))(SignUp);
+
+export default SignUp;
