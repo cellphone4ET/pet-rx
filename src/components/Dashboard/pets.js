@@ -27,7 +27,7 @@ export class Pets extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  pets: state.pets.pets
+  pets: state.protectedData.pets
 });
 
 export default connect(mapStateToProps)(Pets);

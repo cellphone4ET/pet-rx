@@ -185,7 +185,7 @@ let InitializeFromStateForm = reduxForm({
 })(Editpetform);
 
 InitializeFromStateForm = connect(state => ({
-  pets: state.pets.pets,
+  pets: state.protectedData.pets,
   currentPet: state.pets.currentPet
 }))(InitializeFromStateForm);
 
