@@ -1,11 +1,12 @@
 import React from "react";
 import { connect } from "react-redux";
 import Pet from "./pet";
+
 import { fetchProtectedData } from "../../actions/protected-data";
 
 export class Pets extends React.Component {
   componentDidMount() {
-    console.log("hi");
+    console.log("fetch protected data");
     this.props.dispatch(fetchProtectedData);
   }
 

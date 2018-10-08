@@ -1,12 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { clearAuth } from "../../actions/auth";
+import { clearAuthToken } from "../../local-storage";
 import "./navbar-dash.css";
 import store from "../../store";
 
 export default class NavbarDash extends React.Component {
   onClick() {
-    return store.dispatch(clearAuth());
+    this.props.dispatch(clearAuth());
+    clearAuthToken();
   }
 
   render() {

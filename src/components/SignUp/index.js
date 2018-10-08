@@ -5,6 +5,7 @@ import { registerUser } from "../../actions/users";
 import { login } from "../../actions/auth";
 import Input from "../Input";
 import Footer from "../Footer";
+import { Redirect } from "react-router-dom";
 import NavbarLoginSignUp from "../Navbar/navbar-login-signup";
 import "./index.css";
 import {
@@ -19,6 +20,12 @@ const matchesPassword = matches("password");
 
 export class SignUpp extends React.Component {
   // user is automatically signed in if user authentication passes
+  componentDidMount() {
+    if (this.props.loggedIn) {
+      return <Redirect to="/dashboard" />;
+    }
+  }
+
   onSubmit(values) {
     const { username, password } = values;
     const user = { username, password };
@@ -28,10 +35,6 @@ export class SignUpp extends React.Component {
   }
 
   render() {
-    // checks to see if auth token is present upon successful signup/login, if so page redirects to dashboard
-    if (this.props.authToken !== null) {
-      this.props.history.push("/dashboard");
-    }
     return (
       <div>
         <NavbarLoginSignUp />
@@ -86,7 +89,7 @@ let SignUp = reduxForm({
 })(SignUpp);
 
 SignUp = connect(state => ({
-  authToken: state.auth.authToken
+  loggedIn: state.auth.currentUser !== null
 }))(SignUp);
 
 export default SignUp;

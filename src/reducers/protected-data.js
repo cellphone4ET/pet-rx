@@ -8,6 +8,7 @@ const initialState = {
 
 export default function reducer(state = initialState, action) {
   if (action.type === actions.FETCH_PETS_SUCCESS) {
+    console.log("fetch pets success ran");
     return Object.assign({}, state, {
       pets: action.pets,
       error: null
@@ -16,7 +17,6 @@ export default function reducer(state = initialState, action) {
     return Object.assign({}, state, {
       error: action.error
     });
-    // //////////////
   } else if (action.type === actions.ADD_VACCINE) {
     let pets = state.pets.map(pet => {
       if (pet.id !== action.petIndex) {

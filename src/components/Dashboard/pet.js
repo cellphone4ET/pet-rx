@@ -236,7 +236,7 @@ export class Pet extends React.Component {
 
 const mapStateToProps = state => ({
   reduxform: state.form["quick-add"],
-  currentPet: state.pets.currentPetId
+  currentPet: state.protectedData.currentPetId
 });
 
 export default connect(mapStateToProps)(Pet);
