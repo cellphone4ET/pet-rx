@@ -1,9 +1,14 @@
 import React from "react";
 import { connect } from "react-redux";
 import Pet from "./pet";
-// import QuickAddForm from "../QuickAddForm";
+import { fetchProtectedData } from "../../actions/protected-data";
 
 export class Pets extends React.Component {
+  componentDidMount() {
+    console.log("hi");
+    this.props.dispatch(fetchProtectedData);
+  }
+
   render() {
     const renderedPets = this.props.pets.map((pet, index) => {
       return (

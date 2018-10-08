@@ -8,7 +8,7 @@ import {
   addWeight,
   deletePet,
   setCurrentPet
-} from "../../actions";
+} from "../../actions/protected-data";
 
 //pet componenet renders each individual pet;
 //its state is passed down from pets component;
