@@ -19,13 +19,6 @@ const passwordLength = length({ min: 10, max: 72 });
 const matchesPassword = matches("password");
 
 export class SignUpp extends React.Component {
-  // user is automatically signed in if user authentication passes
-  componentDidMount() {
-    if (this.props.loggedIn) {
-      return <Redirect to="/dashboard" />;
-    }
-  }
-
   onSubmit(values) {
     const { username, password } = values;
     const user = { username, password };
@@ -35,6 +28,11 @@ export class SignUpp extends React.Component {
   }
 
   render() {
+    // user is automatically signed in if user authentication passes
+    if (this.props.loggedIn) {
+      return <Redirect to="/dashboard" />;
+    }
+
     return (
       <div>
         <NavbarLoginSignUp />
@@ -82,14 +80,14 @@ export class SignUpp extends React.Component {
   }
 }
 
-let SignUp = reduxForm({
+const SignUp = reduxForm({
   form: "signup",
   onSubmitFail: (errors, dispatch) =>
     dispatch(focus("registration", Object.keys(errors)[0]))
 })(SignUpp);
 
-SignUp = connect(state => ({
+const mapStateToProps = state => ({
   loggedIn: state.auth.currentUser !== null
-}))(SignUp);
+});
 
-export default SignUp;
+export default connect(mapStateToProps)(SignUp);
