@@ -1,11 +1,13 @@
 import React from "react";
 import NavbarDash from "../Navbar/navbar-dash";
 import Footer from "../Footer";
+import RequiresLogin from "../requires-login";
+import { connect } from "react-redux";
 import { reduxForm, Field, reset } from "redux-form";
 import "./index.css";
 import { addPet } from "../../actions/protected-data";
 
-export class AddPetForm extends React.Component {
+export class AddPetFormm extends React.Component {
   onSubmit(values) {
     console.log("onsubmit", values);
     const pet = {
@@ -175,6 +177,12 @@ export class AddPetForm extends React.Component {
   }
 }
 
-export default reduxForm({
+const AddPetForm = reduxForm({
   form: "add-pet"
-})(AddPetForm);
+})(AddPetFormm);
+
+const mapStateToProps = state => ({
+  loggedIn: state.auth.currentUser !== null
+});
+
+export default RequiresLogin()(connect(mapStateToProps)(AddPetForm));
