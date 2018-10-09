@@ -63,7 +63,6 @@ export const fetchError = error => ({
 
 export const fetchProtectedData = () => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
-  console.log(API_BASE_URL);
   return fetch(`${API_BASE_URL}/pets`, {
     method: "GET",
     headers: {
@@ -73,7 +72,7 @@ export const fetchProtectedData = () => (dispatch, getState) => {
   })
     .then(res => normalizeResponseErrors(res))
     .then(res => res.json())
-    .then(({ data }) => dispatch(fetchPetsSuccess(data)))
+    .then(data => dispatch(fetchPetsSuccess(data)))
     .catch(error => {
       dispatch(fetchError(error));
     });
