@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import { Redirect } from "react-router-dom";
 import { Field, reduxForm, focus } from "redux-form";
 import Input from "../Input";
 import Footer from "../Footer";
@@ -22,10 +23,11 @@ export class Loginn extends React.Component {
         </div>
       );
     }
-    //checks to see if auth token is present, if so redirects to dashboard
-    if (this.props.authToken !== null) {
-      this.props.history.push("/dashboard");
+
+    if (this.props.loggedIn) {
+      return <Redirect to="/dashboard" />;
     }
+    //
     return (
       <div>
         <NavbarLoginSignUp />
@@ -71,14 +73,14 @@ export class Loginn extends React.Component {
   }
 }
 
-let Login = reduxForm({
+const Login = reduxForm({
   form: "login",
   onSubmitFail: (errors, dispatch) =>
     dispatch(focus("registration", Object.keys(errors)[0]))
 })(Loginn);
 
-Login = connect(state => ({
-  authToken: state.auth.authToken
-}))(Login);
+const mapStateToProps = state => ({
+  loggedIn: state.auth.currentUser !== null
+});
 
-export default Login;
+export default connect(mapStateToProps)(Login);

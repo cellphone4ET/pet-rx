@@ -8,7 +8,7 @@ import {
   addWeight,
   deletePet,
   setCurrentPet
-} from "../../actions";
+} from "../../actions/protected-data";
 
 //pet componenet renders each individual pet;
 //its state is passed down from pets component;
@@ -236,7 +236,7 @@ export class Pet extends React.Component {
 
 const mapStateToProps = state => ({
   reduxform: state.form["quick-add"],
-  currentPet: state.pets.currentPetId
+  currentPet: state.protectedData.currentPetId
 });
 
 export default connect(mapStateToProps)(Pet);

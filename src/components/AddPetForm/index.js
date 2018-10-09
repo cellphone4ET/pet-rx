@@ -3,7 +3,7 @@ import NavbarDash from "../Navbar/navbar-dash";
 import Footer from "../Footer";
 import { reduxForm, Field, reset } from "redux-form";
 import "./index.css";
-import { addPet } from "../../actions";
+import { addPet } from "../../actions/protected-data";
 
 export class AddPetForm extends React.Component {
   onSubmit(values) {

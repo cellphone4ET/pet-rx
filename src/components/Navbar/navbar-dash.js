@@ -1,12 +1,14 @@
 import React from "react";
+import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { clearAuth } from "../../actions/auth";
+import { clearAuthToken } from "../../local-storage";
 import "./navbar-dash.css";
-import store from "../../store";
 
-export default class NavbarDash extends React.Component {
+export class NavbarDash extends React.Component {
   onClick() {
-    return store.dispatch(clearAuth());
+    this.props.dispatch(clearAuth());
+    clearAuthToken();
   }
 
   render() {
@@ -33,3 +35,9 @@ export default class NavbarDash extends React.Component {
     );
   }
 }
+
+const mapStateToProps = state => ({
+  loggedIn: state.auth.currentUser !== null
+});
+
+export default connect(mapStateToProps)(NavbarDash);

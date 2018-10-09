@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { Route, withRouter } from "react-router-dom";
-
+import { refreshAuthToken } from "../actions/auth";
 import LandingPage from "./Landing/";
 import Dashboard from "./Dashboard";
 import Editpetform from "./Editpetform";
@@ -10,6 +10,32 @@ import SignUp from "./SignUp";
 import Login from "./Login";
 
 export class App extends React.Component {
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.loggedIn && !this.props.loggedIn) {
+      this.startPeriodicRefresh();
+    } else if (!nextProps.loggedIn && this.props.loggedIn) {
+      this.stopPeriodicRefresh();
+    }
+  }
+
+  componentWillUnmount() {
+    this.stopPeriodicRefresh();
+  }
+
+  startPeriodicRefresh() {
+    this.refreshInterval = setInterval(
+      () => this.props.dispatch(refreshAuthToken()),
+      60 * 60 * 1000
+    );
+  }
+
+  stopPeriodicRefresh() {
+    if (!this.refreshInterval) {
+      return;
+    }
+
+    clearInterval(this.refreshInterval);
+  }
   render() {
     return (
       <div className="app">
@@ -25,7 +51,9 @@ export class App extends React.Component {
   }
 }
 
-const mapStateToProps = state => ({});
+const mapStateToProps = state => ({
+  hasAuthToken: state.auth.authToken !== null,
+  loggedIn: state.auth.currentUser !== null
+});
 
-// Deal with update blocking - https://reacttraining.com/react-router/web/guides/dealing-with-update-blocking
 export default withRouter(connect(mapStateToProps)(App));

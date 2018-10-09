@@ -3,7 +3,7 @@ import { reduxForm, Field, reset } from "redux-form";
 import { connect } from "react-redux";
 import NavbarDash from "../Navbar/navbar-dash";
 import Footer from "../Footer";
-import { editPet } from "../../actions";
+import { editPet } from "../../actions/protected-data";
 
 export class Editpetform extends React.Component {
   componentDidMount() {
@@ -185,8 +185,8 @@ let InitializeFromStateForm = reduxForm({
 })(Editpetform);
 
 InitializeFromStateForm = connect(state => ({
-  pets: state.pets.pets,
-  currentPet: state.pets.currentPet
+  pets: state.protectedData.pets,
+  currentPet: state.protectedtData.currentPet
 }))(InitializeFromStateForm);
 
 export default InitializeFromStateForm;
