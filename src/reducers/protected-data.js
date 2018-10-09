@@ -1,6 +1,7 @@
 import * as actions from "../actions/protected-data";
 
 const initialState = {
+  data: "",
   pets: [],
   currentPet: [],
   error: null
@@ -8,9 +9,9 @@ const initialState = {
 
 export default function reducer(state = initialState, action) {
   if (action.type === actions.FETCH_PETS_SUCCESS) {
-    console.log("fetch pets success ran");
+    console.log(action);
     return Object.assign({}, state, {
-      pets: action.pets,
+      pets: action.data.pets,
       error: null
     });
   } else if (action.type === actions.FETCH_ERROR) {

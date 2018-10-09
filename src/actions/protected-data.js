@@ -50,9 +50,9 @@ export const editPet = (pet, petId) => ({
 //////////////////////////////////////////
 
 export const FETCH_PETS_SUCCESS = "FETCH_PETS_SUCCESS";
-export const fetchPetsSuccess = pets => ({
+export const fetchPetsSuccess = data => ({
   type: FETCH_PETS_SUCCESS,
-  pets
+  data
 });
 
 export const FETCH_ERROR = "FETCH_ERROR";
@@ -62,8 +62,8 @@ export const fetchError = error => ({
 });
 
 export const fetchProtectedData = () => (dispatch, getState) => {
-  console.log("fetchProtectedData data ran");
   const authToken = getState().auth.authToken;
+  console.log(API_BASE_URL);
   return fetch(`${API_BASE_URL}/pets`, {
     method: "GET",
     headers: {
@@ -73,9 +73,9 @@ export const fetchProtectedData = () => (dispatch, getState) => {
   })
     .then(res => normalizeResponseErrors(res))
     .then(res => res.json())
-    .then(({ pets }) => dispatch(fetchPetsSuccess(pets)))
-    .catch(err => {
-      dispatch(fetchError(err));
+    .then(({ data }) => dispatch(fetchPetsSuccess(data)))
+    .catch(error => {
+      dispatch(fetchError(error));
     });
 };
 

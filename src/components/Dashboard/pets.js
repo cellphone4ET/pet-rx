@@ -6,8 +6,7 @@ import { fetchProtectedData } from "../../actions/protected-data";
 
 export class Pets extends React.Component {
   componentDidMount() {
-    console.log("fetch protected data");
-    this.props.dispatch(fetchProtectedData);
+    this.props.dispatch(fetchProtectedData());
   }
 
   render() {
