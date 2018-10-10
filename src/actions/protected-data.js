@@ -22,11 +22,11 @@ export const addWeight = (weight, petIndex) => ({
   petIndex
 });
 
-export const DELETE_PET = "DELETE_PET";
-export const deletePet = petId => ({
-  type: DELETE_PET,
-  petId
-});
+// export const DELETE_PET = "DELETE_PET";
+// export const deletePet = petId => ({
+//   type: DELETE_PET,
+//   petId
+// });
 
 export const SET_CURRENT_PET = "SET_CURRENT_PET";
 export const setCurrentPet = pet => ({
@@ -127,6 +127,21 @@ export const editPet = (values, currentPet) => (dispatch, getState) => {
     })
   })
     .then(data => dispatch(fetchProtectedData()))
+    .catch(error => {
+      dispatch(fetchError(error));
+    });
+};
+
+export const deletePet = petId => (dispatch, getState) => {
+  const authToken = getState().auth.authToken;
+  return fetch(`${API_BASE_URL}/pets/${petId}`, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${authToken}`
+    }
+  })
+    .then(dispatch(fetchProtectedData()))
     .catch(error => {
       dispatch(fetchError(error));
     });
