@@ -73,39 +73,37 @@ export class Pet extends React.Component {
           <div className="col-4">
             <div className="card">
               <img
-                src={this.props.basic_information.photo_url}
-                alt={this.props.basic_information.breed}
+                src={this.props.photo_url}
+                alt={this.props.breed}
                 className="pet-avatar"
               />
               <div className="card-content">
                 <div className="displayed-info">
-                  <h2 className="name">{this.props.basic_information.name}</h2>
+                  <h2 className="name">{this.props.name}</h2>
 
                   <div className="petdiv">
                     <ul className="pet">
                       <li>
-                        <span className="bold">Breed:</span>{" "}
-                        {this.props.basic_information.breed}
+                        <span className="bold">Breed:</span> {this.props.breed}
                       </li>
                       <li>
                         <span className="bold">Preferred Vet:</span>{" "}
-                        {this.props.veterinary_information.name}
+                        {this.props.vet_name}
                       </li>
                       <li>
                         <span className="bold">Vet Contact:</span>{" "}
-                        {this.props.veterinary_information.phone}
+                        {this.props.phone}
                       </li>
                       <li>
                         <span className="bold">Allergies:</span>{" "}
-                        {this.props.health_conditions.allergies}
+                        {this.props.allergies}
                       </li>
                       <li>
                         <span className="bold">Chronic Conditions:</span>{" "}
-                        {this.props.health_conditions.chronic_conditions}
+                        {this.props.chronic_conditions}
                       </li>
                       <li>
-                        <span className="bold">Notes:</span>{" "}
-                        {this.props.basic_information.notes}
+                        <span className="bold">Notes:</span> {this.props.notes}
                       </li>
                     </ul>
                   </div>
@@ -129,38 +127,36 @@ export class Pet extends React.Component {
         <div className="col-4">
           <div className="card cardd">
             <img
-              src={this.props.basic_information.photo_url}
-              alt={this.props.basic_information.breed}
+              src={this.props.photo_url}
+              alt={this.props.breed}
               className="pet-avatar"
             />
             <div className="card-content">
               <div className="displayed-info">
-                <h2 className="name">{this.props.basic_information.name}</h2>
+                <h2 className="name">{this.props.name}</h2>
 
                 <ul className="pet">
                   <li>
-                    <span className="bold">Breed:</span>{" "}
-                    {this.props.basic_information.breed}
+                    <span className="bold">Breed:</span> {this.props.breed}
                   </li>
                   <li>
                     <span className="bold">Preferred Vet:</span>{" "}
-                    {this.props.veterinary_information.name}
+                    {this.props.vet_name}
                   </li>
                   <li>
                     <span className="bold">Vet Contact:</span>{" "}
-                    {this.props.veterinary_information.phone}
+                    {this.props.phone}
                   </li>
                   <li>
                     <span className="bold">Allergies:</span>{" "}
-                    {this.props.health_conditions.allergies}
+                    {this.props.allergies}
                   </li>
                   <li>
                     <span className="bold">Chronic Conditions:</span>{" "}
-                    {this.props.health_conditions.chronic_conditions}
+                    {this.props.chronic_conditions}
                   </li>
                   <li>
-                    <span className="bold">Notes:</span>{" "}
-                    {this.props.basic_information.notes}
+                    <span className="bold">Notes:</span> {this.props.notes}
                   </li>
                   <hr id="pet-hr" />
                   <div className="histories">

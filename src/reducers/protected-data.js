@@ -9,6 +9,7 @@ const initialState = {
 
 export default function reducer(state = initialState, action) {
   if (action.type === actions.FETCH_PETS_SUCCESS) {
+    console.log(action);
     return Object.assign({}, state, {
       pets: action.data,
       error: null
@@ -60,17 +61,18 @@ export default function reducer(state = initialState, action) {
     return Object.assign({}, state, {
       currentPet: action.pet
     });
-  } else if (action.type === actions.EDIT_PET) {
-    let pets = state.pets.map(pet => {
-      if (pet.id !== action.petId) {
-        return pet;
-      }
-      return action.pet;
-    });
-    return Object.assign({}, state, {
-      pets
-    });
   }
+  // } else if (action.type === actions.EDIT_PET) {
+  //   let pets = state.pets.map(pet => {
+  //     if (pet.id !== action.petId) {
+  //       return pet;
+  //     }
+  //     return action.pet;
+  //   });
+  //   return Object.assign({}, state, {
+  //     pets
+  //   });
+  // }
 
   // else if (action.type === actions.FETCH_BOARD_SUCCESS) {
   //   return action.board;

@@ -22,12 +22,6 @@ export const addWeight = (weight, petIndex) => ({
   petIndex
 });
 
-// export const ADD_PET = "ADD_PET";
-// export const addPet = pet => ({
-//   type: ADD_PET,
-//   pet
-// });
-
 export const DELETE_PET = "DELETE_PET";
 export const deletePet = petId => ({
   type: DELETE_PET,
@@ -40,12 +34,12 @@ export const setCurrentPet = pet => ({
   pet
 });
 
-export const EDIT_PET = "EDIT_PET";
-export const editPet = (pet, petId) => ({
-  type: EDIT_PET,
-  pet,
-  petId
-});
+// export const EDIT_PET = "EDIT_PET";
+// export const editPet = (pet, petId) => ({
+//   type: EDIT_PET,
+//   pet,
+//   petId
+// });
 
 //////////////////////////////////////////
 
@@ -87,25 +81,49 @@ export const addPet = values => (dispatch, getState) => {
       Authorization: `Bearer ${authToken}`
     },
     body: JSON.stringify({
-      basic_information: {
-        name: values.basic_information.name,
-        photo_url: values.basic_information.photo_url,
-        breed: values.basic_information.breed,
-        age: values.basic_information.age,
-        notes: values.basic_information.notes
-      },
+      name: values.name,
+      photo_url: values.photo_url,
+      breed: values.breed,
+      age: values.age,
+      notes: values.notes,
       checkups: [values.checkups],
-      health_conditions: {
-        allergies: values.health_conditions.allergies,
-        chronic_conditions: values.health_conditions.chronic_conditions
-      },
-      id: values.id,
+      allergies: values.allergies,
+      chronic_conditions: values.chronic_conditions,
       vaccinations: [values.vaccinations],
-      veterinary_information: {
-        name: values.veterinary_information.name,
-        phone: values.veterinary_information.phone
-      },
-      weight_history: [values.weight_history]
+      vet_name: values.vet_name,
+      phone: values.phone,
+      weight_history: [values.weight_history],
+      id: values.id
+    })
+  })
+    .then(data => dispatch(fetchProtectedData()))
+    .catch(error => {
+      dispatch(fetchError(error));
+    });
+};
+
+export const editPet = (values, currentPet) => (dispatch, getState) => {
+  const authToken = getState().auth.authToken;
+  return fetch(`${API_BASE_URL}/pets/${values.id}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${authToken}`
+    },
+    body: JSON.stringify({
+      name: values.name,
+      photo_url: values.photo_url,
+      breed: values.breed,
+      age: values.age,
+      notes: values.notes,
+      checkups: [values.checkups],
+      allergies: values.allergies,
+      chronic_conditions: values.chronic_conditions,
+      vaccinations: [values.vaccinations],
+      vet_name: values.vet_name,
+      phone: values.phone,
+      weight_history: [values.weight_history],
+      id: values.id
     })
   })
     .then(data => dispatch(fetchProtectedData()))

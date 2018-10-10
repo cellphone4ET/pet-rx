@@ -11,24 +11,18 @@ export class AddPetFormm extends React.Component {
   onSubmit(values) {
     console.log("onsubmit", values);
     const pet = {
-      basic_information: {
-        name: values.basic_information.name,
-        photo_url: values.basic_information.photo_url,
-        breed: values.basic_information.breed,
-        age: values.basic_information.age,
-        notes: values.basic_information.notes
-      },
+      name: values.name,
+      photo_url: values.photo_url,
+      breed: values.breed,
+      age: values.age,
+      notes: values.notes,
       checkups: [values.checkups],
-      health_conditions: {
-        allergies: values.health_conditions.allergies,
-        chronic_conditions: values.health_conditions.chronic_conditions
-      },
+      allergies: values.allergies,
+      chronic_conditions: values.chronic_conditions,
       id: values.id,
       vaccinations: [values.vaccinations],
-      veterinary_information: {
-        name: values.veterinary_information.name,
-        phone: values.veterinary_information.phone
-      },
+      vet_name: values.vet_name,
+      phone: values.phone,
       weight_history: [values.weight_history]
     };
     this.props.dispatch(addPet(pet));
@@ -45,80 +39,61 @@ export class AddPetFormm extends React.Component {
             onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}
           >
             <h2>Basic Info</h2>
-            <label className="label" htmlFor="basic_information.name">
+            <label className="label" htmlFor="name">
               Name
             </label>
-            <Field
-              name="basic_information.name"
-              component="input"
-              className="edit-add-input"
-            />
+            <Field name="name" component="input" className="edit-add-input" />
             <br />
-            <label className="label" htmlFor="basic_information.photo_url">
+            <label className="label" htmlFor="photo_url">
               Photo URL
             </label>
             <Field
-              name="basic_information.photo_url"
+              name="photo_url"
               component="input"
               className="edit-add-input"
             />
             <br />
-            <label className="label" htmlFor="basic_information.breed">
+            <label className="label" htmlFor="breed">
               Breed
             </label>
-            <Field
-              name="basic_information.breed"
-              component="input"
-              className="edit-add-input"
-            />
+            <Field name="breed" component="input" className="edit-add-input" />
             <br />
-            <label className="label" htmlFor="basic_information.age">
+            <label className="label" htmlFor="age">
               Age
             </label>
-            <Field
-              name="basic_information.age"
-              component="input"
-              className="edit-add-input"
-            />
+            <Field name="age" component="input" className="edit-add-input" />
             <br />
             <br />
             <h2>Veterinary Information</h2>
-            <label className="label" htmlFor="veterinary_information.name">
+            <label className="label" htmlFor="name">
               Vet
             </label>
             <Field
-              name="veterinary_information.name"
+              name="vet_name"
               component="input"
               className="edit-add-input"
             />
             <br />
-            <label className="label" htmlFor="veterinary_information.phone">
+            <label className="label" htmlFor="phone">
               Phone
             </label>
-            <Field
-              name="veterinary_information.phone"
-              component="input"
-              className="edit-add-input"
-            />
+            <Field name="phone" component="input" className="edit-add-input" />
             <br /> <br />
             <h2>Health Conditions</h2>
-            <label className="label" htmlFor="health_conditions.allergies">
+            <label className="label" htmlFor="allergies">
               Allergies
             </label>
             <Field
-              name="health_conditions.allergies"
+              name="allergies"
               component="input"
               className="edit-add-input"
             />
             <br />
-            <label
-              className="label"
-              htmlFor="health_conditions.chronic_conditions"
-            >
+            <label className="label" htmlFor="chronic_conditions">
               Chronic Conditions
             </label>
             <Field
-              name="health_conditions.chronic_conditions"
+              name="chronic_conditions"
               component="input"
               className="edit-add-input"
             />
