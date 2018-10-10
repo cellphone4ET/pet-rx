@@ -51,10 +51,6 @@ export default function reducer(state = initialState, action) {
     return Object.assign({}, state, {
       pets
     });
-  } else if (action.type === actions.ADD_PET) {
-    return Object.assign({}, state, {
-      pets: [...state.pets, action.pet]
-    });
   } else if (action.type === actions.DELETE_PET) {
     let pets = state.pets.filter(pet => action.petId !== pet.id);
     return Object.assign({}, state, {

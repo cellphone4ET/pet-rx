@@ -22,11 +22,11 @@ export const addWeight = (weight, petIndex) => ({
   petIndex
 });
 
-export const ADD_PET = "ADD_PET";
-export const addPet = pet => ({
-  type: ADD_PET,
-  pet
-});
+// export const ADD_PET = "ADD_PET";
+// export const addPet = pet => ({
+//   type: ADD_PET,
+//   pet
+// });
 
 export const DELETE_PET = "DELETE_PET";
 export const deletePet = petId => ({
@@ -78,49 +78,38 @@ export const fetchProtectedData = () => (dispatch, getState) => {
     });
 };
 
-// export const addPet = job => (dispatch, getState) => {
-//   const authToken = getState().auth.authToken;
-//   return fetch(`${API_BASE_URL}/jobs`, {
-//     method: "POST",
-//     headers: {
-//       "Content-Type": "application/json",
-//       Authorization: `Bearer ${authToken}`
-//     },
-//     body: JSON.stringify({
-//       title: job.title,
-//       company: job.company,
-//       posting: job.posting,
-//       image: job.image,
-//       contact: job.contact,
-//       priority: job.priority,
-//       style: job.style,
-//       keywords: job.keywords,
-//       notes: job.notes,
-//       date: new Date(),
-//       completion: job.completion,
-//       checkpoints: job.checkpoints,
-//       id: job._id
-//     })
-//   })
-//     .then(data => dispatch(fetchJobs()))
-//     .catch(err => {
-//       dispatch(fetchProtectedDataError(err));
-//     });
-// };
-
-// export const fetchProtectedData = () => (dispatch, getState) => {
-//   const authToken = getState().auth.authToken;
-//   return fetch(`${API_BASE_URL}/protected`, {
-//     method: "GET",
-//     headers: {
-//       // Provide our auth token as credentials
-//       Authorization: `Bearer ${authToken}`
-//     }
-//   })
-//     .then(res => normalizeResponseErrors(res))
-//     .then(res => res.json())
-//     .then(({ data }) => dispatch(fetchProtectedDataSuccess(data)))
-//     .catch(err => {
-//       dispatch(fetchProtectedDataError(err));
-//     });
-// };
+export const addPet = values => (dispatch, getState) => {
+  const authToken = getState().auth.authToken;
+  return fetch(`${API_BASE_URL}/pets`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${authToken}`
+    },
+    body: JSON.stringify({
+      basic_information: {
+        name: values.basic_information.name,
+        photo_url: values.basic_information.photo_url,
+        breed: values.basic_information.breed,
+        age: values.basic_information.age,
+        notes: values.basic_information.notes
+      },
+      checkups: [values.checkups],
+      health_conditions: {
+        allergies: values.health_conditions.allergies,
+        chronic_conditions: values.health_conditions.chronic_conditions
+      },
+      id: values.id,
+      vaccinations: [values.vaccinations],
+      veterinary_information: {
+        name: values.veterinary_information.name,
+        phone: values.veterinary_information.phone
+      },
+      weight_history: [values.weight_history]
+    })
+  })
+    .then(data => dispatch(fetchProtectedData()))
+    .catch(error => {
+      dispatch(fetchError(error));
+    });
+};
