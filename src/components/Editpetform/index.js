@@ -1,11 +1,12 @@
 import React from "react";
 import { reduxForm, Field, reset } from "redux-form";
 import { connect } from "react-redux";
+import RequiresLogin from "../requires-login";
 import NavbarDash from "../Navbar/navbar-dash";
 import Footer from "../Footer";
 import { editPet } from "../../actions/protected-data";
 
-export class Editpetform extends React.Component {
+export class Editpetformm extends React.Component {
   componentDidMount() {
     this.props.initialize({
       first_name: this.props.currentPet.basic_information.name,
@@ -177,16 +178,16 @@ export class Editpetform extends React.Component {
     );
   }
 }
-
-let InitializeFromStateForm = reduxForm({
+let EditPetForm = reduxForm({
   form: "initializeFromState",
   enableReinitialize: true,
   keepDirtyOnReinitialize: true
-})(Editpetform);
+})(Editpetformm);
 
-InitializeFromStateForm = connect(state => ({
+const mapStateToProps = state => ({
   pets: state.protectedData.pets,
-  currentPet: state.protectedData.currentPet
-}))(InitializeFromStateForm);
+  currentPet: state.protectedData.currentPet,
+  loggedIn: state.auth.currentUser !== null
+});
 
-export default InitializeFromStateForm;
+export default RequiresLogin()(connect(mapStateToProps)(EditPetForm));

@@ -78,6 +78,36 @@ export const fetchProtectedData = () => (dispatch, getState) => {
     });
 };
 
+// export const addPet = job => (dispatch, getState) => {
+//   const authToken = getState().auth.authToken;
+//   return fetch(`${API_BASE_URL}/jobs`, {
+//     method: "POST",
+//     headers: {
+//       "Content-Type": "application/json",
+//       Authorization: `Bearer ${authToken}`
+//     },
+//     body: JSON.stringify({
+//       title: job.title,
+//       company: job.company,
+//       posting: job.posting,
+//       image: job.image,
+//       contact: job.contact,
+//       priority: job.priority,
+//       style: job.style,
+//       keywords: job.keywords,
+//       notes: job.notes,
+//       date: new Date(),
+//       completion: job.completion,
+//       checkpoints: job.checkpoints,
+//       id: job._id
+//     })
+//   })
+//     .then(data => dispatch(fetchJobs()))
+//     .catch(err => {
+//       dispatch(fetchProtectedDataError(err));
+//     });
+// };
+
 // export const fetchProtectedData = () => (dispatch, getState) => {
 //   const authToken = getState().auth.authToken;
 //   return fetch(`${API_BASE_URL}/protected`, {
