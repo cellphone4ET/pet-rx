@@ -91,6 +91,9 @@ export class Pet extends React.Component {
                         {this.props.pet.breed}
                       </li>
                       <li>
+                        <span className="bold">Age:</span> {this.props.pet.age}
+                      </li>
+                      <li>
                         <span className="bold">Preferred Vet:</span>{" "}
                         {this.props.pet.vet_name}
                       </li>
@@ -144,6 +147,9 @@ export class Pet extends React.Component {
                 <ul className="pet">
                   <li>
                     <span className="bold">Breed:</span> {this.props.pet.breed}
+                  </li>
+                  <li>
+                    <span className="bold">Age:</span> {this.props.pet.age}
                   </li>
                   <li>
                     <span className="bold">Preferred Vet:</span>{" "}
