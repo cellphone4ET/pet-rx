@@ -98,9 +98,9 @@ export const editPet = (values, currentPet) => (dispatch, getState) => {
     });
 };
 
-export const deletePet = petId => (dispatch, getState) => {
+export const deletePet = pet => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
-  return fetch(`${API_BASE_URL}/pets/${petId}`, {
+  return fetch(`${API_BASE_URL}/pets/${pet.id}`, {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json",

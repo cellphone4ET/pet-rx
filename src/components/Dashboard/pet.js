@@ -47,10 +47,10 @@ export class Pet extends React.Component {
     this.props.dispatch(addWeight(text, pet));
   }
 
-  deletePet(id) {
+  deletePet(pet) {
     let result = window.confirm(`Are you sure you want to delete this pet?`);
     if (result) {
-      this.props.dispatch(deletePet(id));
+      this.props.dispatch(deletePet(pet));
     }
   }
 
@@ -211,7 +211,7 @@ export class Pet extends React.Component {
               />
               <div className="delete-edit-buttons">
                 <div
-                  onClick={() => this.deletePet(this.props.pet.id)}
+                  onClick={() => this.deletePet(this.props.pet)}
                   className="delete-edit-pet"
                 >
                   Delete
