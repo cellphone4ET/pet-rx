@@ -10,10 +10,7 @@ import {
   setCurrentPet
 } from "../../actions/protected-data";
 
-//pet componenet renders each individual pet;
-//its state is passed down from pets component;
-//the quickadd form is connected to this component;
-
+//pet componenet renders each individual pet, data passed down from parent pets component
 export class Pet extends React.Component {
   constructor(props) {
     super(props);
@@ -22,29 +19,32 @@ export class Pet extends React.Component {
     };
   }
 
+  //sets whether the extended info tab has been clicked or not, default false
   setOpen(open) {
     this.setState({
       open
     });
   }
 
+  //setcurrent pet only necessary for edit of entire pet, not for quick-addPet
+  //of vaccine, weight, checkup history
   setCurrentPet(currentPetId) {
     this.props.dispatch(setCurrentPet(currentPetId));
   }
 
-  addVaccine(id) {
+  addVaccine(pet) {
     const text = this.props.reduxform.values.vaccine;
-    this.props.dispatch(addVaccine(text, id));
+    this.props.dispatch(addVaccine(text, pet));
   }
 
-  addCheckup(id) {
+  addCheckup(pet) {
     const text = this.props.reduxform.values.checkup;
-    this.props.dispatch(addCheckup(text, id));
+    this.props.dispatch(addCheckup(text, pet));
   }
 
-  addWeight(id) {
+  addWeight(pet) {
     const text = this.props.reduxform.values.weight;
-    this.props.dispatch(addWeight(text, id));
+    this.props.dispatch(addWeight(text, pet));
   }
 
   deletePet(id) {
@@ -55,55 +55,60 @@ export class Pet extends React.Component {
   }
 
   render() {
-    const checkups = this.props.checkups.map((checkup, index) => {
+    const checkups = this.props.pet.checkups.map((checkup, index) => {
       return <li key={index}>• {checkup}</li>;
     });
 
-    const vaccinations = this.props.vaccinations.map((vaccine, index) => {
+    const vaccinations = this.props.pet.vaccinations.map((vaccine, index) => {
       return <li key={index}>• {vaccine}</li>;
     });
 
-    const weight_history = this.props.weight_history.map((weight, index) => {
-      return <li key={index}>• {weight}</li>;
-    });
+    const weight_history = this.props.pet.weight_history.map(
+      (weight, index) => {
+        return <li key={index}>• {weight}</li>;
+      }
+    );
 
+    //if not set to open, limited info option renders
     if (!this.state.open) {
       return (
         <div>
           <div className="col-4">
             <div className="card">
               <img
-                src={this.props.photo_url}
-                alt={this.props.breed}
+                src={this.props.pet.photo_url}
+                alt={this.props.pet.breed}
                 className="pet-avatar"
               />
               <div className="card-content">
                 <div className="displayed-info">
-                  <h2 className="name">{this.props.name}</h2>
+                  <h2 className="name">{this.props.pet.name}</h2>
 
                   <div className="petdiv">
                     <ul className="pet">
                       <li>
-                        <span className="bold">Breed:</span> {this.props.breed}
+                        <span className="bold">Breed:</span>{" "}
+                        {this.props.pet.breed}
                       </li>
                       <li>
                         <span className="bold">Preferred Vet:</span>{" "}
-                        {this.props.vet_name}
+                        {this.props.pet.vet_name}
                       </li>
                       <li>
                         <span className="bold">Vet Contact:</span>{" "}
-                        {this.props.phone}
+                        {this.props.pet.phone}
                       </li>
                       <li>
                         <span className="bold">Allergies:</span>{" "}
-                        {this.props.allergies}
+                        {this.props.pet.allergies}
                       </li>
                       <li>
                         <span className="bold">Chronic Conditions:</span>{" "}
-                        {this.props.chronic_conditions}
+                        {this.props.pet.chronic_conditions}
                       </li>
                       <li>
-                        <span className="bold">Notes:</span> {this.props.notes}
+                        <span className="bold">Notes:</span>{" "}
+                        {this.props.pet.notes}
                       </li>
                     </ul>
                   </div>
@@ -122,41 +127,42 @@ export class Pet extends React.Component {
       );
     }
 
+    //extended info option when set to open === true
     return (
       <div>
         <div className="col-4">
           <div className="card cardd">
             <img
-              src={this.props.photo_url}
-              alt={this.props.breed}
+              src={this.props.pet.photo_url}
+              alt={this.props.pet.breed}
               className="pet-avatar"
             />
             <div className="card-content">
               <div className="displayed-info">
-                <h2 className="name">{this.props.name}</h2>
+                <h2 className="name">{this.props.pet.name}</h2>
 
                 <ul className="pet">
                   <li>
-                    <span className="bold">Breed:</span> {this.props.breed}
+                    <span className="bold">Breed:</span> {this.props.pet.breed}
                   </li>
                   <li>
                     <span className="bold">Preferred Vet:</span>{" "}
-                    {this.props.vet_name}
+                    {this.props.pet.vet_name}
                   </li>
                   <li>
                     <span className="bold">Vet Contact:</span>{" "}
-                    {this.props.phone}
+                    {this.props.pet.phone}
                   </li>
                   <li>
                     <span className="bold">Allergies:</span>{" "}
-                    {this.props.allergies}
+                    {this.props.pet.allergies}
                   </li>
                   <li>
                     <span className="bold">Chronic Conditions:</span>{" "}
-                    {this.props.chronic_conditions}
+                    {this.props.pet.chronic_conditions}
                   </li>
                   <li>
-                    <span className="bold">Notes:</span> {this.props.notes}
+                    <span className="bold">Notes:</span> {this.props.pet.notes}
                   </li>
                   <hr id="pet-hr" />
                   <div className="histories">
@@ -185,21 +191,21 @@ export class Pet extends React.Component {
               <QuickAddForm
                 petid={this.props.id}
                 type="checkup"
-                onAdd={() => this.addCheckup(this.props.id)}
+                onAdd={() => this.addCheckup(this.props.pet)}
               />
               <QuickAddForm
                 petid={this.props.id}
                 type="vaccine"
-                onAdd={() => this.addVaccine(this.props.id)}
+                onAdd={() => this.addVaccine(this.props.pet)}
               />
               <QuickAddForm
                 petid={this.props.id}
                 type="weight"
-                onAdd={() => this.addWeight(this.props.id)}
+                onAdd={() => this.addWeight(this.props.pet)}
               />
               <div className="delete-edit-buttons">
                 <div
-                  onClick={() => this.deletePet(this.props.id)}
+                  onClick={() => this.deletePet(this.props.pet.id)}
                   className="delete-edit-pet"
                 >
                   Delete
@@ -207,9 +213,9 @@ export class Pet extends React.Component {
 
                 <Link to="/editpet">
                   <div
-                    petid={this.props.id}
+                    petid={this.props.pet.id}
                     className="delete-edit-pet"
-                    onClick={() => this.setCurrentPet(this.props)}
+                    onClick={() => this.setCurrentPet(this.props.pet)}
                   >
                     Edit{" "}
                   </div>
