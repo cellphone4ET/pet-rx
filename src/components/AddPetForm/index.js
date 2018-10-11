@@ -101,33 +101,6 @@ export class AddPetFormm extends React.Component {
             <hr className="formhr" />
             <br />
             <br />
-            <label className="label" htmlFor="checkups">
-              <span className="bold">Checkup History</span>
-            </label>
-            <Field
-              name="checkups"
-              component="textarea"
-              className="edit-add-input inputsize"
-            />
-            <br />
-            <label className="label" htmlFor="vaccinations">
-              <span className="bold">Vaccination History</span>
-            </label>
-            <Field
-              name="vaccinations"
-              component="textarea"
-              className="edit-add-input inputsize"
-            />
-            <br />
-            <label className="label" htmlFor="weight_history">
-              <span className="bold">Weight History</span>
-            </label>
-            <Field
-              name="weight_history"
-              component="textarea"
-              className="edit-add-input inputsize"
-            />
-            <br />
             <label className="label" htmlFor="notes">
               <span className="bold">Notes</span>
             </label>
