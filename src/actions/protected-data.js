@@ -135,7 +135,7 @@ export const addWeight = (text, pet) => (dispatch, getState) => {
 
 export const addVaccine = (text, pet) => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
-  pet.vaccine_history.push(text);
+  pet.vaccinations.push(text);
   return fetch(`${API_BASE_URL}/pets/${pet.id}`, {
     method: "PUT",
     headers: {
@@ -143,7 +143,7 @@ export const addVaccine = (text, pet) => (dispatch, getState) => {
       Authorization: `Bearer ${authToken}`
     },
     body: JSON.stringify({
-      vaccine_history: pet.vaccine_history,
+      vaccinations: pet.vaccinations,
       id: pet.id
     })
   })
@@ -155,7 +155,7 @@ export const addVaccine = (text, pet) => (dispatch, getState) => {
 
 export const addCheckup = (text, pet) => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
-  pet.checkup_history.push(text);
+  pet.checkups.push(text);
   return fetch(`${API_BASE_URL}/pets/${pet.id}`, {
     method: "PUT",
     headers: {
@@ -163,7 +163,7 @@ export const addCheckup = (text, pet) => (dispatch, getState) => {
       Authorization: `Bearer ${authToken}`
     },
     body: JSON.stringify({
-      checkup_history: pet.checkup_history,
+      checkups: pet.checkups,
       id: pet.id
     })
   })
