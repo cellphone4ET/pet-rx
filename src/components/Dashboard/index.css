@@ -56,3 +56,13 @@
 .histories {
   margin-bottom: 40px;
 }
+
+.delete-x {
+  float: right;
+  padding-right: 10px;
+  color: grey;
+}
+
+.delete-x:hover {
+  cursor: pointer;
+}

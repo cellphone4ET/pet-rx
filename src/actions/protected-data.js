@@ -172,3 +172,61 @@ export const addCheckup = (text, pet) => (dispatch, getState) => {
       dispatch(fetchError(error));
     });
 };
+
+export const deleteCheckup = (pet, index) => (dispatch, getState) => {
+  const authToken = getState().auth.authToken;
+  pet.checkups.splice(index);
+  return fetch(`${API_BASE_URL}/pets/${pet.id}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${authToken}`
+    },
+    body: JSON.stringify({
+      checkups: pet.checkups,
+      id: pet.id
+    })
+  })
+    .then(dispatch(fetchProtectedData()))
+    .catch(error => {
+      dispatch(fetchError(error));
+    });
+};
+export const deleteWeight = (pet, index) => (dispatch, getState) => {
+  const authToken = getState().auth.authToken;
+  pet.weight_history.splice(index);
+  return fetch(`${API_BASE_URL}/pets/${pet.id}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${authToken}`
+    },
+    body: JSON.stringify({
+      weight_history: pet.weight_history,
+      id: pet.id
+    })
+  })
+    .then(dispatch(fetchProtectedData()))
+    .catch(error => {
+      dispatch(fetchError(error));
+    });
+};
+export const deleteVaccine = (pet, index) => (dispatch, getState) => {
+  const authToken = getState().auth.authToken;
+  pet.vaccinations.splice(index);
+  return fetch(`${API_BASE_URL}/pets/${pet.id}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${authToken}`
+    },
+    body: JSON.stringify({
+      vaccinations: pet.vaccinations,
+      id: pet.id
+    })
+  })
+    .then(dispatch(fetchProtectedData()))
+    .catch(error => {
+      dispatch(fetchError(error));
+    });
+};

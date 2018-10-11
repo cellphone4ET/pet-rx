@@ -4,8 +4,11 @@ import QuickAddForm from "../QuickAddForm";
 import { Link } from "react-router-dom";
 import {
   addVaccine,
+  deleteVaccine,
   addCheckup,
+  deleteCheckup,
   addWeight,
+  deleteWeight,
   deletePet,
   setCurrentPet
 } from "../../actions/protected-data";
@@ -37,14 +40,39 @@ export class Pet extends React.Component {
     this.props.dispatch(addVaccine(text, pet));
   }
 
+  deleteVaccine(pet, index) {
+    let result = window.confirm(
+      `Are you sure you want to delete this vaccination?`
+    );
+    if (result) {
+      this.props.dispatch(deleteVaccine(pet, index));
+    }
+  }
+
   addCheckup(pet) {
     const text = this.props.reduxform.values.checkup;
     this.props.dispatch(addCheckup(text, pet));
   }
 
+  deleteCheckup(pet, index) {
+    let result = window.confirm(
+      `Are you sure you want to delete this checkup?`
+    );
+    if (result) {
+      this.props.dispatch(deleteCheckup(pet, index));
+    }
+  }
+
   addWeight(pet) {
     const text = this.props.reduxform.values.weight;
     this.props.dispatch(addWeight(text, pet));
+  }
+
+  deleteWeight(pet, index) {
+    let result = window.confirm(`Are you sure you want to delete this weight?`);
+    if (result) {
+      this.props.dispatch(deleteWeight(pet, index));
+    }
   }
 
   deletePet(pet) {
@@ -56,16 +84,49 @@ export class Pet extends React.Component {
 
   render() {
     const checkups = this.props.pet.checkups.map((checkup, index) => {
-      return <li key={index}>• {checkup}</li>;
+      return (
+        <li key={index}>
+          • {checkup}
+          <span
+            index={index}
+            className="delete-x"
+            onClick={() => this.deleteCheckup(this.props.pet, index)}
+          >
+            X
+          </span>
+        </li>
+      );
     });
 
     const vaccinations = this.props.pet.vaccinations.map((vaccine, index) => {
-      return <li key={index}>• {vaccine}</li>;
+      return (
+        <li key={index}>
+          • {vaccine}
+          <span
+            index={index}
+            className="delete-x"
+            onClick={() => this.deleteVaccination(this.props.pet)}
+          >
+            X
+          </span>
+        </li>
+      );
     });
 
     const weight_history = this.props.pet.weight_history.map(
       (weight, index) => {
-        return <li key={index}>• {weight}</li>;
+        return (
+          <li key={index}>
+            • {weight}
+            <span
+              index={index}
+              className="delete-x"
+              onClick={() => this.deleteWeight(this.props.pet, index)}
+            >
+              X
+            </span>
+          </li>
+        );
       }
     );
 
