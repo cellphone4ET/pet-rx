@@ -1,26 +1,26 @@
 import { API_BASE_URL } from "../config";
 import { normalizeResponseErrors } from "./utils";
 
-export const ADD_VACCINE = "ADD_VACCINE";
-export const addVaccine = (vaccination, petIndex) => ({
-  type: ADD_VACCINE,
-  vaccination,
-  petIndex
-});
+// export const ADD_VACCINE = "ADD_VACCINE";
+// export const addVaccine = (vaccination, petIndex) => ({
+//   type: ADD_VACCINE,
+//   vaccination,
+//   petIndex
+// });
 
-export const ADD_CHECKUP = "ADD_CHECKUP";
-export const addCheckup = (checkup, petIndex) => ({
-  type: ADD_CHECKUP,
-  checkup,
-  petIndex
-});
+// export const ADD_CHECKUP = "ADD_CHECKUP";
+// export const addCheckup = (checkup, petIndex) => ({
+//   type: ADD_CHECKUP,
+//   checkup,
+//   petIndex
+// });
 
-export const ADD_WEIGHT = "ADD_WEIGHT";
-export const addWeight = (weight, petIndex) => ({
-  type: ADD_WEIGHT,
-  weight,
-  petIndex
-});
+// export const ADD_WEIGHT = "ADD_WEIGHT";
+// export const addWeight = (weight, petIndex) => ({
+//   type: ADD_WEIGHT,
+//   weight,
+//   petIndex
+// });
 
 // export const DELETE_PET = "DELETE_PET";
 // export const deletePet = petId => ({
@@ -33,13 +33,6 @@ export const setCurrentPet = pet => ({
   type: SET_CURRENT_PET,
   pet
 });
-
-// export const EDIT_PET = "EDIT_PET";
-// export const editPet = (pet, petId) => ({
-//   type: EDIT_PET,
-//   pet,
-//   petId
-// });
 
 //////////////////////////////////////////
 
@@ -142,6 +135,63 @@ export const deletePet = petId => (dispatch, getState) => {
     }
   })
     .then(dispatch(fetchProtectedData()))
+    .catch(error => {
+      dispatch(fetchError(error));
+    });
+};
+
+export const addWeight = (text, id) => (dispatch, getState) => {
+  const authToken = getState().auth.authToken;
+  return fetch(`${API_BASE_URL}/pets/${id}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${authToken}`
+    },
+    body: JSON.stringify({
+      weight_history: text,
+      id: id
+    })
+  })
+    .then(data => dispatch(fetchProtectedData()))
+    .catch(error => {
+      dispatch(fetchError(error));
+    });
+};
+
+export const addVaccine = (text, id) => (dispatch, getState) => {
+  const authToken = getState().auth.authToken;
+  return fetch(`${API_BASE_URL}/pets/${id}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${authToken}`
+    },
+    body: JSON.stringify({
+      vaccine_history: [text],
+      id: id
+    })
+  })
+    .then(data => dispatch(fetchProtectedData()))
+    .catch(error => {
+      dispatch(fetchError(error));
+    });
+};
+
+export const addCheckup = (text, id) => (dispatch, getState) => {
+  const authToken = getState().auth.authToken;
+  return fetch(`${API_BASE_URL}/pets/${id}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${authToken}`
+    },
+    body: JSON.stringify({
+      checkup_history: [text],
+      id: id
+    })
+  })
+    .then(data => dispatch(fetchProtectedData()))
     .catch(error => {
       dispatch(fetchError(error));
     });
