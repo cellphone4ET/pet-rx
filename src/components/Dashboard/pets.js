@@ -13,7 +13,7 @@ export class Pets extends React.Component {
     const renderedPets = this.props.pets.map((pet, index) => {
       return (
         <li key={index}>
-          <Pet {...pet} />
+          <Pet pet={pet} />
         </li>
       );
     });
