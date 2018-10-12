@@ -2,12 +2,12 @@ import React from "react";
 import { connect } from "react-redux";
 import { Route, withRouter } from "react-router-dom";
 import { refreshAuthToken } from "../actions/auth";
-import LandingPage from "./Landing/";
-import Dashboard from "./Dashboard";
-import Editpetform from "./Editpetform";
-import AddPetForm from "./AddPetForm";
-import SignUp from "./SignUp";
-import Login from "./Login";
+import LandingPage from "./pages/Landing/";
+import Dashboard from "./pages/Dashboard";
+import Editpetform from "./pages/Editpetform";
+import AddPetForm from "./pages/AddPetForm";
+import SignUp from "./pages/SignUp";
+import Login from "./pages/Login";
 
 export class App extends React.Component {
   componentWillReceiveProps(nextProps) {

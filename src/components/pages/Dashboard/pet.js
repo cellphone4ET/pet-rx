@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import QuickAddForm from "../QuickAddForm";
+import QuickAddForm from "../../page-components/QuickAddForm";
 import { Link } from "react-router-dom";
 import {
   addVaccine,
@@ -11,7 +11,7 @@ import {
   deleteWeight,
   deletePet,
   setCurrentPet
-} from "../../actions/protected-data";
+} from "../../../actions/protected-data";
 
 //pet componenet renders each individual pet, data passed down from parent pets component
 export class Pet extends React.Component {

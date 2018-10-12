@@ -2,12 +2,12 @@ import React from "react";
 import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
 import { Field, reduxForm, focus } from "redux-form";
-import Input from "../Input";
-import Footer from "../Footer";
-import NavbarLoginSignUp from "../Navbar/navbar-login-signup";
+import Input from "../../page-components/Input";
+import Footer from "../../page-components/Footer";
+import NavbarLoginSignUp from "../../page-components/Navbar/navbar-login-signup";
 import "./index.css";
-import { login } from "../../actions/auth";
-import { required, nonEmpty } from "../../validators";
+import { login } from "../../../actions/auth";
+import { required, nonEmpty } from "../../../validators";
 
 export class Loginn extends React.Component {
   onSubmit(values) {

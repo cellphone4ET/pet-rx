@@ -1,12 +1,12 @@
 import React from "react";
 import { connect } from "react-redux";
 import { Field, reduxForm, focus } from "redux-form";
-import { registerUser } from "../../actions/users";
-import { login } from "../../actions/auth";
-import Input from "../Input";
-import Footer from "../Footer";
+import { registerUser } from "../../../actions/users";
+import { login } from "../../../actions/auth";
+import Input from "../../page-components/Input";
+import Footer from "../../page-components/Footer";
 import { Redirect } from "react-router-dom";
-import NavbarLoginSignUp from "../Navbar/navbar-login-signup";
+import NavbarLoginSignUp from "../../page-components/Navbar/navbar-login-signup";
 import "./index.css";
 import {
   required,
@@ -14,7 +14,7 @@ import {
   matches,
   length,
   isTrimmed
-} from "../../validators";
+} from "../../../validators";
 const passwordLength = length({ min: 10, max: 72 });
 const matchesPassword = matches("password");
 

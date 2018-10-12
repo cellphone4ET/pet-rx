@@ -1,10 +1,10 @@
 import React from "react";
 import { reduxForm, Field, reset } from "redux-form";
 import { connect } from "react-redux";
-import RequiresLogin from "../requires-login";
-import NavbarDash from "../Navbar/navbar-dash";
-import Footer from "../Footer";
-import { editPet } from "../../actions/protected-data";
+import RequiresLogin from "../../requires-login";
+import NavbarDash from "../../page-components/Navbar/navbar-dash";
+import Footer from "../../page-components/Footer";
+import { editPet } from "../../../actions/protected-data";
 
 export class Editpetformm extends React.Component {
   componentDidMount() {

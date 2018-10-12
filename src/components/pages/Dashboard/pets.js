@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import Pet from "./pet";
 
-import { fetchProtectedData } from "../../actions/protected-data";
+import { fetchProtectedData } from "../../../actions/protected-data";
 
 export class Pets extends React.Component {
   componentDidMount() {

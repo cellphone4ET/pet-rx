@@ -1,11 +1,11 @@
 import React from "react";
-import NavbarDash from "../Navbar/navbar-dash";
-import Footer from "../Footer";
-import RequiresLogin from "../requires-login";
+import NavbarDash from "../../page-components/Navbar/navbar-dash";
+import Footer from "../../page-components/Footer";
+import RequiresLogin from "../../requires-login";
 import { connect } from "react-redux";
 import { reduxForm, Field, reset } from "redux-form";
 import "./index.css";
-import { addPet } from "../../actions/protected-data";
+import { addPet } from "../../../actions/protected-data";
 
 export class AddPetFormm extends React.Component {
   onSubmit(values) {

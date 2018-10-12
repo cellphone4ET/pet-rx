@@ -1,12 +1,12 @@
 import React from "react";
 import { Link, Redirect } from "react-router-dom";
-import { login } from "../../actions/auth";
+import { login } from "../../../actions/auth";
 import { connect } from "react-redux";
-import NavbarLanding from "../Navbar/navbar-landing";
-import Footer from "../Footer";
+import NavbarLanding from "../../page-components/Navbar/navbar-landing";
+import Footer from "../../page-components/Footer";
 import "./index.css";
 import "./float-grid.css";
-import { store } from "../../store";
+// import { store } from "../../store";
 
 export class LandingPage extends React.Component {
   handleDemo() {
