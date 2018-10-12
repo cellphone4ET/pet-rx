@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import NavbarDash from "../Navbar/navbar-dash";
-import RequiresLogin from "../requires-login";
+import RequiresLogin from "../../page-components/requires-login";
 import Pets from "./pets";
 
 import "./index.css";
