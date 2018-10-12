@@ -6,6 +6,7 @@ import NavbarLanding from "../Navbar/navbar-landing";
 import Footer from "../Footer";
 import "./index.css";
 import "./float-grid.css";
+import { store } from "../../store";
 
 export class LandingPage extends React.Component {
   handleDemo() {

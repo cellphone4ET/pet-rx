@@ -4,7 +4,7 @@ import QuickAddForm from "../QuickAddForm";
 import { Link } from "react-router-dom";
 import {
   addVaccine,
-  deleteVaccine,
+  deleteVaccination,
   addCheckup,
   deleteCheckup,
   addWeight,
@@ -40,12 +40,12 @@ export class Pet extends React.Component {
     this.props.dispatch(addVaccine(text, pet));
   }
 
-  deleteVaccine(pet, index) {
+  deleteVaccination(pet, index) {
     let result = window.confirm(
       `Are you sure you want to delete this vaccination?`
     );
     if (result) {
-      this.props.dispatch(deleteVaccine(pet, index));
+      this.props.dispatch(deleteVaccination(pet, index));
     }
   }
 

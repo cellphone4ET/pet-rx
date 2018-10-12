@@ -211,7 +211,7 @@ export const deleteWeight = (pet, index) => (dispatch, getState) => {
       dispatch(fetchError(error));
     });
 };
-export const deleteVaccine = (pet, index) => (dispatch, getState) => {
+export const deleteVaccination = (pet, index) => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
   pet.vaccinations.splice(index);
   return fetch(`${API_BASE_URL}/pets/${pet.id}`, {

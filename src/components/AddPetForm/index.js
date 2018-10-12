@@ -111,6 +111,36 @@ export class AddPetFormm extends React.Component {
               className="edit-add-input inputsize"
             />
             <br />
+            <label className="label" htmlFor="checkups">
+              <span className="bold">Checkups</span>
+            </label>
+            <br />
+            <Field
+              name="checkups"
+              component="textarea"
+              className="edit-add-input inputsize"
+            />
+            <br />
+            <label className="label" htmlFor="vaccinations">
+              <span className="bold">Vaccinations</span>
+            </label>
+            <br />
+            <Field
+              name="vaccinations"
+              component="textarea"
+              className="edit-add-input inputsize"
+            />
+            <br />
+            <label className="label" htmlFor="weight_history">
+              <span className="bold">Weight History</span>
+            </label>
+            <br />
+            <Field
+              name="weight_history"
+              component="textarea"
+              className="edit-add-input inputsize"
+            />
+            <br />
             <br />
             <div className="submit-edit-pet-button-div">
               <button className="submit-edit-pet-button" type="submit">
