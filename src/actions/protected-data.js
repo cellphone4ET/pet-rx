@@ -7,6 +7,11 @@ export const setCurrentPet = pet => ({
   pet
 });
 
+export const CLEAR_PETS = "CLEAR_PETS";
+export const clearPets = () => ({
+  type: CLEAR_PETS
+});
+
 export const FETCH_PETS_SUCCESS = "FETCH_PETS_SUCCESS";
 export const fetchPetsSuccess = data => ({
   type: FETCH_PETS_SUCCESS,

@@ -2,11 +2,13 @@ import React from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { clearAuth } from "../../../actions/auth";
+import { clearPets } from "../../../actions/protected-data";
 import { clearAuthToken } from "../../../local-storage";
 import "./navbar-dash.css";
 
 export class NavbarDash extends React.Component {
   onClick() {
+    this.props.dispatch(clearPets());
     this.props.dispatch(clearAuth());
     clearAuthToken();
   }
