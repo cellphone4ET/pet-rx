@@ -21,3 +21,7 @@
   border-radius: 5px;
   margin: 5px;
 }
+
+.add-button:hover {
+  cursor: pointer;
+}
