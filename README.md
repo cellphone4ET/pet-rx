@@ -14,8 +14,6 @@ Regardless of whether or not you have access to your past veterinarians and thei
 
 ##### [Click here](https://protected-everglades-84885.herokuapp.com/) to view Pet.rx in action.
 
-##### [Click here](https://github.com/cellphone4ET/pet-rx-api) to view the server repo for Pet.rx.
-
 ## Technologies
 
 * **Front-end**
@@ -26,7 +24,7 @@ Regardless of whether or not you have access to your past veterinarians and thei
   * CSS
   * JavaScript
 
-* **Back-end**
+* [**Back-end**](https://github.com/cellphone4ET/pet-rx-api)
 
   * Node.js
   * MongoDB + Mongoose
