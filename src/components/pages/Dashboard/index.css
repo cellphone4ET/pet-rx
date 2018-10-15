@@ -53,6 +53,10 @@
   margin-top: 20px;
 }
 
+.expand-icon:hover {
+  cursor: pointer;
+}
+
 .histories {
   margin-bottom: 40px;
 }
