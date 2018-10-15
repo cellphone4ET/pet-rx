@@ -36,7 +36,6 @@ export const fetchProtectedData = () => (dispatch, getState) => {
     .then(res => res.json())
     .then(data => {
       dispatch(fetchPetsSuccess(data));
-      console.log(data);
     })
     .catch(error => {
       dispatch(fetchError(error));

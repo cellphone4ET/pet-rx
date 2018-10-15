@@ -9,7 +9,6 @@ const initialState = {
 
 export default function reducer(state = initialState, action) {
   if (action.type === actions.FETCH_PETS_SUCCESS) {
-    console.log(action);
     return Object.assign({}, state, {
       pets: action.data,
       error: null

@@ -83,6 +83,7 @@ export class Pet extends React.Component {
     let result = window.confirm(`Are you sure you want to delete this pet?`);
     if (result) {
       this.props.dispatch(deletePet(pet));
+      this.props.dispatch(fetchProtectedData());
     }
   }
 

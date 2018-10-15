@@ -18,7 +18,7 @@ const store = createStore(
   )
 );
 
-// Hydrate the authToken from localStorage if it exisddt
+// Hydrate the authToken from localStorage if it exists
 const authToken = loadAuthToken();
 if (authToken) {
   const token = authToken;
