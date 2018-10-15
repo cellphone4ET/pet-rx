@@ -3,7 +3,7 @@ import NavbarDash from "../../page-components/Navbar/navbar-dash";
 import Footer from "../../page-components/Footer";
 import RequiresLogin from "../../requires-login";
 import { connect } from "react-redux";
-import { reduxForm, Field, reset } from "redux-form";
+import { reduxForm, Field, reset, focus } from "redux-form";
 import "./index.css";
 import { addPet } from "../../../actions/protected-data";
 
@@ -16,14 +16,11 @@ export class AddPetFormm extends React.Component {
       breed: values.breed,
       age: values.age,
       notes: values.notes,
-      checkups: [values.checkups],
       allergies: values.allergies,
       chronic_conditions: values.chronic_conditions,
       id: values.id,
-      vaccinations: [values.vaccinations],
       vet_name: values.vet_name,
-      phone: values.phone,
-      weight_history: [values.weight_history]
+      phone: values.phone
     };
     this.props.dispatch(addPet(pet));
     this.props.dispatch(reset("add-pet"));
@@ -111,39 +108,13 @@ export class AddPetFormm extends React.Component {
               className="edit-add-input inputsize"
             />
             <br />
-            <label className="label" htmlFor="checkups">
-              <span className="bold">Checkups</span>
-            </label>
-            <br />
-            <Field
-              name="checkups"
-              component="textarea"
-              className="edit-add-input inputsize"
-            />
-            <br />
-            <label className="label" htmlFor="vaccinations">
-              <span className="bold">Vaccinations</span>
-            </label>
-            <br />
-            <Field
-              name="vaccinations"
-              component="textarea"
-              className="edit-add-input inputsize"
-            />
-            <br />
-            <label className="label" htmlFor="weight_history">
-              <span className="bold">Weight History</span>
-            </label>
-            <br />
-            <Field
-              name="weight_history"
-              component="textarea"
-              className="edit-add-input inputsize"
-            />
-            <br />
             <br />
             <div className="submit-edit-pet-button-div">
-              <button className="submit-edit-pet-button" type="submit">
+              <button
+                className="submit-edit-pet-button"
+                type="submit"
+                disabled={this.props.pristine || this.props.submitting}
+              >
                 Create Pet
               </button>
             </div>
@@ -156,7 +127,9 @@ export class AddPetFormm extends React.Component {
 }
 
 const AddPetForm = reduxForm({
-  form: "add-pet"
+  form: "add-pet",
+  onSubmitFail: (errors, dispatch) =>
+    dispatch(focus("add-pet", Object.keys(errors)[0]))
 })(AddPetFormm);
 
 const mapStateToProps = state => ({

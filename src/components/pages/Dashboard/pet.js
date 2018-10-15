@@ -10,7 +10,8 @@ import {
   addWeight,
   deleteWeight,
   deletePet,
-  setCurrentPet
+  setCurrentPet,
+  fetchProtectedData
 } from "../../../actions/protected-data";
 
 //pet componenet renders each individual pet, data passed down from parent pets component
@@ -46,6 +47,7 @@ export class Pet extends React.Component {
     );
     if (result) {
       this.props.dispatch(deleteVaccination(pet, index));
+      this.props.dispatch(fetchProtectedData());
     }
   }
 
@@ -60,6 +62,7 @@ export class Pet extends React.Component {
     );
     if (result) {
       this.props.dispatch(deleteCheckup(pet, index));
+      this.props.dispatch(fetchProtectedData());
     }
   }
 
@@ -72,6 +75,7 @@ export class Pet extends React.Component {
     let result = window.confirm(`Are you sure you want to delete this weight?`);
     if (result) {
       this.props.dispatch(deleteWeight(pet, index));
+      this.props.dispatch(fetchProtectedData());
     }
   }
 
