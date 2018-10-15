@@ -88,6 +88,7 @@ export class Pet extends React.Component {
   }
 
   render() {
+    // map over pet checkups to properly format them
     const checkups = this.props.pet.checkups.map((checkup, index) => {
       return (
         <li key={index}>

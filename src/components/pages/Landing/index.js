@@ -6,15 +6,16 @@ import NavbarLanding from "../../page-components/Navbar/navbar-landing";
 import Footer from "../../page-components/Footer";
 import "./index.css";
 import "./float-grid.css";
-// import { store } from "../../store";
 
 export class LandingPage extends React.Component {
+  //when demo button clicked redirected to dashboard with demo user account
+  //credentials
   handleDemo() {
     return this.props.dispatch(login("testuser1", "testing123"));
   }
 
   render() {
-    //when demo button clicked redirected to dashboard
+    //if logged in goes straight to dashbaord
     if (this.props.loggedIn) {
       return <Redirect to="/dashboard" />;
     }
@@ -27,7 +28,7 @@ export class LandingPage extends React.Component {
         <div className="threebasics content">
           <div id="main-statement">
             <span id="main-statment-span">
-              Take control of your pets health with . . .
+              Take control of your pet's health with . . .
               <br />
             </span>
             <div className="petrx">Pet.rx </div>
