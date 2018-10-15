@@ -24,7 +24,7 @@ Regardless of whether or not you have access to your past veterinarians and thei
 
 ### Quick-Add a Weight, Vaccine, checkup
 
-![pet-rx-quick-add](https://user-images.githubusercontent.com/30470040/46978498-f553c080-d083-11e8-8b51-5ac53739e16d.png)
+![pet-rx-quick-add](https://user-images.githubusercontent.com/30470040/46978626-5085b300-d084-11e8-9d28-a90d5b14c70a.png)
 
 #### Create a Pet
 
@@ -63,7 +63,7 @@ Regardless of whether or not you have access to your past veterinarians and thei
   * Npm
   * Git
 
-## To Be Added in future versions:
+## To Be Added in Future Versions:
 
 * expanded input options
 * visual data representations
