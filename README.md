@@ -1,6 +1,6 @@
-# Pet.rx
+# Pet.rx [![Build Status](https://travis-ci.org/cellphone4ET/pet-rx.svg?branch=master)](https://travis-ci.org/cellphone4ET/pet-rx)
 
-Pet.rx is a user-friendly and fully-responsive web application that allows you to take control of your pet's health care records by helping you to organize your pet’s health information in one convenient place. With the ability to track vaccination records, weight, chronic conditions, and other relevant metrics across time you’ll never be left wondering the state of your pets health again.
+Pet.rx is a user-friendly and fully-responsive web application that allows you to take control of your pet's health care records. With the ability to track vaccination records, weight, chronic conditions, and other relevant metrics across time you’ll never be left wondering the state of your pets health again.
 
 #### Motivation
 
