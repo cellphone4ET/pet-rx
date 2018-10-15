@@ -10,7 +10,7 @@ Out of this need, Pet.rx was born.
 
 Regardless of whether or not you have access to your past veterinarians and their often hard-to-decipher records of your pets health you can now easily store, manage, and track all your pets health information with ease from wherever you are with Pet.rx.
 
-##### [Click here](https://protected-everglades-84885.herokuapp.com/) to view Pet.rx in action. [Click here](https://github.com/cellphone4ET/pet-rx-api) to view the server-side code.
+##### [Click here](https://pet-rx.herokuapp.com/) to view Pet.rx in action. [Click here](https://github.com/cellphone4ET/pet-rx-api) to view the server-side code.
 
 ## Screen Views
 

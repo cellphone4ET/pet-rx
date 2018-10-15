@@ -133,6 +133,7 @@ export class Pet extends React.Component {
         );
       }
     );
+    //
 
     //if not set to open, limited info option renders
     if (!this.state.open) {
