@@ -10,9 +10,25 @@ Out of this need, Pet.rx was born.
 
 Regardless of whether or not you have access to your past veterinarians and their often hard-to-decipher records of your pets health you can now easily store, manage, and track all your pets health information with ease from wherever you are with Pet.rx.
 
-#### Live Demo
-
 ##### [Click here](https://protected-everglades-84885.herokuapp.com/) to view Pet.rx in action.
+
+## Screen Views
+
+#### Dashboard
+
+![pet-rx-dashboard](https://user-images.githubusercontent.com/30470040/46977974-6eeaaf00-d082-11e8-9331-6d1e1c889243.png)
+
+#### Expanded Pet Information
+
+![pet-rx-expanded-info](https://user-images.githubusercontent.com/30470040/46978023-993c6c80-d082-11e8-94f9-cae8b2ce2212.png)
+
+### Quick-Add a Weight, Vaccine, checkup
+
+![pet-rx-quick-add](https://user-images.githubusercontent.com/30470040/46978498-f553c080-d083-11e8-8b51-5ac53739e16d.png)
+
+#### Create a Pet
+
+![pet-rx-create](https://user-images.githubusercontent.com/30470040/46978068-b96c2b80-d082-11e8-9ca8-0f5b43b9a8b9.png)
 
 ## Technologies
 
@@ -22,7 +38,7 @@ Regardless of whether or not you have access to your past veterinarians and thei
   * JSX
   * HTML
   * CSS
-  * JavaScript
+  * JavaScript + AJAX
 
 * [**Back-end**](https://github.com/cellphone4ET/pet-rx-api)
 
@@ -47,16 +63,8 @@ Regardless of whether or not you have access to your past veterinarians and thei
   * Npm
   * Git
 
-## Screen Views
+## To Be Added in future versions:
 
-#### Dashboard
-
-![pet-rx-dashboard](https://user-images.githubusercontent.com/30470040/46977974-6eeaaf00-d082-11e8-9331-6d1e1c889243.png)
-
-#### Expanded Pet Information
-
-![pet-rx-expanded-info](https://user-images.githubusercontent.com/30470040/46978023-993c6c80-d082-11e8-94f9-cae8b2ce2212.png)
-
-#### Create a Pet
-
-![pet-rx-create](https://user-images.githubusercontent.com/30470040/46978068-b96c2b80-d082-11e8-9ca8-0f5b43b9a8b9.png)
+* expanded input options
+* visual data representations
+* customizable inputs
