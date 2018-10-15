@@ -8,9 +8,12 @@ import "./navbar-dash.css";
 
 export class NavbarDash extends React.Component {
   onClick() {
-    this.props.dispatch(clearPets());
-    this.props.dispatch(clearAuth());
-    clearAuthToken();
+    let result = window.confirm(`Are you sure you want to logout?`);
+    if (result) {
+      this.props.dispatch(clearPets());
+      this.props.dispatch(clearAuth());
+      clearAuthToken();
+    }
   }
 
   render() {
