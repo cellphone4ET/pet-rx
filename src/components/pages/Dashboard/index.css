@@ -8,10 +8,15 @@
   font-weight: bold;
 }
 
-/* .displayed-info {
-  margin-bottom: 20px;
-} */
-
+.get-started {
+  text-align: center;
+  margin-top: 100px;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1.5em;
+  margin-left: 10%;
+  margin-right: 10%;
+  letter-spacing: -2px;
+}
 .name {
   font-size: 3em;
   font-family: "Josefin Sans", sans-serif;
