@@ -2,7 +2,7 @@ import React from "react";
 import { shallow } from "enzyme";
 import RequiresLogin from "../../requires-login";
 import { Pets } from "./pets";
-import { Pet } from "./pet";
+
 import { fetchProtectedData } from "../../../actions/protected-data";
 
 const mockFetchPetAction = {

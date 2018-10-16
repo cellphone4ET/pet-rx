@@ -149,4 +149,8 @@ h2 {
     text-align: center;
     line-height: 23px;
   }
+
+  .bottombuttons {
+    font-size: 1.3em;
+  }
 }
