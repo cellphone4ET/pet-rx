@@ -32,7 +32,7 @@ export class Editpetformm extends React.Component {
       breed: values.breed,
       age: values.age,
       notes: values.notes,
-      checkups: [values.checkups],
+      checkups: values.checkups,
       allergies: values.allergies,
       chronic_conditions: values.chronic_conditions,
       id: this.props.currentPet.id,

@@ -83,10 +83,12 @@ export class Pet extends React.Component {
     let result = window.confirm(`Are you sure you want to delete this pet?`);
     if (result) {
       this.props.dispatch(deletePet(pet));
+      this.props.dispatch(fetchProtectedData());
     }
   }
 
   render() {
+    // map over pet checkups to properly format them
     const checkups = this.props.pet.checkups.map((checkup, index) => {
       return (
         <li key={index}>
@@ -133,6 +135,7 @@ export class Pet extends React.Component {
         );
       }
     );
+    //
 
     //if not set to open, limited info option renders
     if (!this.state.open) {

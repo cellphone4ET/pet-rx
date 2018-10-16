@@ -36,7 +36,6 @@ export const fetchProtectedData = () => (dispatch, getState) => {
     .then(res => res.json())
     .then(data => {
       dispatch(fetchPetsSuccess(data));
-      console.log(data);
     })
     .catch(error => {
       dispatch(fetchError(error));
@@ -87,13 +86,10 @@ export const editPet = (values, currentPet) => (dispatch, getState) => {
       breed: values.breed,
       age: values.age,
       notes: values.notes,
-      checkups: [values.checkups],
       allergies: values.allergies,
       chronic_conditions: values.chronic_conditions,
-      vaccinations: [values.vaccinations],
       vet_name: values.vet_name,
       phone: values.phone,
-      weight_history: [values.weight_history],
       id: values.id
     })
   })

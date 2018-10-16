@@ -5,7 +5,7 @@ import RequiresLogin from "../../requires-login";
 import { connect } from "react-redux";
 import { reduxForm, Field, reset, focus } from "redux-form";
 import "./index.css";
-import { addPet } from "../../../actions/protected-data";
+import { addPet, fetchProtectedData } from "../../../actions/protected-data";
 
 export class AddPetFormm extends React.Component {
   onSubmit(values) {
@@ -23,6 +23,7 @@ export class AddPetFormm extends React.Component {
       phone: values.phone
     };
     this.props.dispatch(addPet(pet));
+    this.props.dispatch(fetchProtectedData());
     this.props.dispatch(reset("add-pet"));
     this.props.history.push("/dashboard");
   }
