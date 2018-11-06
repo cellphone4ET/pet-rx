@@ -153,4 +153,9 @@ h2 {
   .bottombuttons {
     font-size: 1.3em;
   }
+
+  #login {
+    color: #252525;
+    font-size: 1em;
+  }
 }
