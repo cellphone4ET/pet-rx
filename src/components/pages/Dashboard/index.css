@@ -1,3 +1,7 @@
+.landing-loader-div {
+text-align: center;
+}
+
 .pet-avatar {
   object-fit: cover;
   width: 100%;

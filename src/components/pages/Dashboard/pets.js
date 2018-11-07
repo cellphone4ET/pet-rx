@@ -16,7 +16,7 @@ export class Pets extends React.Component {
     if (this.props.loading === true) {
       return <Loading />;
     }
-    
+
     if (this.props.pets.length === 0) {
       return <GetStarted />;
     }
