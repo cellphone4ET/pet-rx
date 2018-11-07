@@ -159,3 +159,21 @@ h2 {
     font-size: 1em;
   }
 }
+
+
+@media only screen and (max-width: 500px) {
+
+  .bottombuttons {
+    height: 75px;
+    width: 40%;
+    font-size: 1.5em;
+  }
+
+  #secondline {
+    margin-top: 75px;
+    margin-bottom: 0px;
+    width: 40%;
+    color: #fdd947;
+    border-color: #fdd947;
+  }
+}
