@@ -1,3 +1,7 @@
+button:hover {
+  cursor: pointer;
+}
+
 #form-div-login {
   width: 40%;
   height: 350px;
@@ -32,6 +36,11 @@
   margin-top: 30px;
   left: 50%;
   position: absolute;
+}
+
+.form-error {
+  font-weight: normal;
+  color: red;
 }
 
 @media only screen and (max-width: 720px) {
