@@ -24,12 +24,13 @@ export const fetchError = error => ({
   error
 });
 
-export const SET_LOADING = "SET_LOADING";
-export const setLoading = () => ({
-  type: SET_LOADING
+export const FETCH_PETS_REQUEST = "FETCH_PETS_REQUEST";
+export const fetchPetsRequest = () => ({
+  type: FETCH_PETS_REQUEST
 });
 
 export const fetchProtectedData = () => (dispatch, getState) => {
+  dispatch(fetchPetsRequest());
   const authToken = getState().auth.authToken;
   return fetch(`${API_BASE_URL}/pets`, {
     method: "GET",

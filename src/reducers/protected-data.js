@@ -12,17 +12,8 @@ export default function reducer(state = initialState, action) {
   if (action.type === actions.FETCH_PETS_SUCCESS) {
     return Object.assign({}, state, {
       pets: action.data,
+      loading: false,
       error: null
-    });
-  } else if (action.type === actions.SET_LOADING) {
-    let status;
-    if (state.loading === false) {
-      return status === true;
-    } else {
-      return status === false;
-    }
-    return Object.assign({}, {
-      loading: status
     });
   } else if (action.type === actions.FETCH_ERROR) {
     return Object.assign({}, state, {
@@ -35,6 +26,10 @@ export default function reducer(state = initialState, action) {
   } else if (action.type === actions.CLEAR_PETS) {
     return Object.assign({}, {
       pets: []
+    });
+  } else if (action.type === actions.FETCH_PETS_REQUEST) {
+    return Object.assign({}, {
+      loading: true
     });
   }
   return state;
