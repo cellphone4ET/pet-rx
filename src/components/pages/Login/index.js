@@ -7,11 +7,13 @@ import Footer from "../../page-components/Footer";
 import NavbarLoginSignUp from "../../page-components/Navbar/navbar-login-signup";
 import "./index.css";
 import { login } from "../../../actions/auth";
+import { setLoading } from "../../../actions/protected-data";
 import { required, nonEmpty } from "../../../validators";
 
 export class Loginn extends React.Component {
   onSubmit(values) {
-    return this.props.dispatch(login(values.username, values.password));
+    this.props.dispatch(setLoading);
+    this.props.dispatch(login(values.username, values.password));
   }
 
   render() {

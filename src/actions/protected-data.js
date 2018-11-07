@@ -24,6 +24,11 @@ export const fetchError = error => ({
   error
 });
 
+export const SET_LOADING = "SET_LOADING";
+export const setLoading = () => ({
+  type: SET_LOADING
+});
+
 export const fetchProtectedData = () => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
   return fetch(`${API_BASE_URL}/pets`, {

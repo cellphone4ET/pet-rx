@@ -4,7 +4,8 @@ const initialState = {
   data: "",
   pets: [],
   currentPet: [],
-  error: null
+  error: null,
+  loading: false
 };
 
 export default function reducer(state = initialState, action) {
@@ -12,6 +13,16 @@ export default function reducer(state = initialState, action) {
     return Object.assign({}, state, {
       pets: action.data,
       error: null
+    });
+  } else if (action.type === actions.SET_LOADING) {
+    let status;
+    if (state.loading === false) {
+      return status === true;
+    } else {
+      return status === false;
+    }
+    return Object.assign({}, {
+      loading: status
     });
   } else if (action.type === actions.FETCH_ERROR) {
     return Object.assign({}, state, {
@@ -22,12 +33,9 @@ export default function reducer(state = initialState, action) {
       currentPet: action.pet
     });
   } else if (action.type === actions.CLEAR_PETS) {
-    return Object.assign(
-      {},
-      {
-        pets: []
-      }
-    );
+    return Object.assign({}, {
+      pets: []
+    });
   }
   return state;
 }
