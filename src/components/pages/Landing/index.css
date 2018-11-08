@@ -30,7 +30,7 @@ h2 {
 
 .bottombuttons {
   font-family: "Noto Sans", normal;
-  display: inline-block;
+
   background-color: #252525;
   color: #ffffff;
   height: 100px;
@@ -164,9 +164,9 @@ h2 {
 @media only screen and (max-width: 500px) {
 
   .bottombuttons {
-    height: 75px;
-    width: 40%;
-    font-size: 1.5em;
+    height: 60px;
+    width: 35%;
+    font-size: 1.0em;
   }
 
   #secondline {
@@ -175,5 +175,13 @@ h2 {
     width: 40%;
     color: #fdd947;
     border-color: #fdd947;
+  }
+  .signup-login-div {
+    position: absolute;
+    margin-left: 56%;
+    margin-top: 10px;
+    font-size: 1.0em;
+    width: 25%;
+    color: blue;
   }
 }
